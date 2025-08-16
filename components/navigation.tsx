@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Button } from '@/components/ui/button'
-import { Menu, X } from 'lucide-react'
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { motion, AnimatePresence } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,17 +14,18 @@ export function Navigation() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/studio', label: 'Studio' },
-    { href: '/focus', label: 'Focus' },
-    { href: '/ventures', label: 'Ventures' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
+    { href: "/", label: "Home" },
+    { href: "/services", label: "Services" },
+    { href: "/studio", label: "Studio" },
+    { href: "/focus", label: "Focus" },
+    { href: "/ventures", label: "Ventures" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
   ]
 
   return (
@@ -32,7 +33,7 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : 'bg-transparent'
+        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,16 +56,11 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button className="bg-primary hover:bg-primary/90">
-              Book a Call
-            </Button>
+            <Button className="bg-primary hover:bg-primary/90">Book a Call</Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -75,7 +71,7 @@ export function Navigation() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background border-b border-border"
           >
@@ -90,9 +86,7 @@ export function Navigation() {
                   {item.label}
                 </Link>
               ))}
-              <Button className="w-full bg-primary hover:bg-primary/90">
-                Book a Call
-              </Button>
+              <Button className="w-full bg-primary hover:bg-primary/90">Book a Call</Button>
             </div>
           </motion.div>
         )}
