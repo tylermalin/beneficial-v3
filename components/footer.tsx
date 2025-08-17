@@ -28,10 +28,10 @@ const footerLinks = {
     { href: '/careers', label: 'Careers' }
   ],
   Legal: [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' },
-    { href: '/disclaimer', label: 'Legal Disclaimer' },
-    { href: '/compliance', label: 'Compliance' }
+    { href: '/privacy-policy', label: 'Privacy Policy' },
+    { href: '/terms-of-service', label: 'Terms of Service' },
+    { href: '/data-deletion', label: 'Data Deletion' },
+    { href: '/disclaimer', label: 'Legal Disclaimer' }
   ]
 }
 
