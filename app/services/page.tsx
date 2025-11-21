@@ -6,6 +6,7 @@ import { ServiceCategories } from "@/components/sections/service-categories"
 import { ServicesProcess } from "@/components/sections/services-process"
 import { ServicesClients } from "@/components/sections/services-clients"
 import { ServicesContact } from "@/components/sections/services-contact"
+import { LimitedOffer } from "@/components/sections/limited-offer"
 
 export const metadata = {
   title: "Legal Engineering Services - Beneficial Technology",
@@ -23,6 +24,7 @@ export default function ServicesPage() {
       <ServicesProcess />
       <ServicesClients />
       <ServicesContact />
+      <LimitedOffer />
       <Footer />
     </main>
   )

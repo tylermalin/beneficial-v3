@@ -4,6 +4,7 @@ import { AboutHero } from '@/components/sections/about-hero'
 import { AboutStory } from '@/components/sections/about-story'
 import { AboutTeam } from '@/components/sections/about-team'
 import { AboutValues } from '@/components/sections/about-values'
+import { LimitedOffer } from '@/components/sections/limited-offer'
 
 export const metadata = {
   title: 'About Us - Beneficial Technology',
@@ -18,6 +19,7 @@ export default function AboutPage() {
       <AboutStory />
       <AboutValues />
       <AboutTeam />
+      <LimitedOffer />
       <Footer />
     </main>
   )

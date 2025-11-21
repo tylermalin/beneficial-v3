@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { ServiceHero } from "@/components/sections/service-hero"
 import { ServiceDetails } from "@/components/sections/service-details"
 import { CTAStrip } from "@/components/sections/cta-strip"
+import { LimitedOffer } from "@/components/sections/limited-offer"
 
 export const metadata = {
   title: "Legal Engineering Services - Beneficial Technology",
@@ -84,6 +85,7 @@ export default function LegalEngineeringPage() {
         description={serviceData.description}
       />
       <ServiceDetails serviceData={serviceData} />
+      <LimitedOffer />
       <CTAStrip />
       <Footer />
     </main>

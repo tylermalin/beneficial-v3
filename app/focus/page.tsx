@@ -4,6 +4,7 @@ import { FocusHero } from '@/components/sections/focus-hero'
 import { FocusDetails } from '@/components/sections/focus-details'
 import { FocusStats } from '@/components/sections/focus-stats'
 import { FocusCTA } from '@/components/sections/focus-cta'
+import { LimitedOffer } from '@/components/sections/limited-offer'
 
 export const metadata = {
   title: 'Focus Areas - Beneficial Technology',
@@ -18,6 +19,7 @@ export default function FocusPage() {
       <FocusDetails />
       <FocusStats />
       <FocusCTA />
+      <LimitedOffer />
       <Footer />
     </main>
   )

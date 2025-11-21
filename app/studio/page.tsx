@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer'
 import { StudioHero } from '@/components/sections/studio-hero'
 import { StudioProcess } from '@/components/sections/studio-process'
 import { LegalInfrastructure } from '@/components/sections/legal-infrastructure'
+import { LimitedOffer } from '@/components/sections/limited-offer'
 
 export const metadata = {
   title: 'Studio Model - Beneficial Technology',
@@ -16,6 +17,7 @@ export default function StudioPage() {
       <StudioHero />
       <StudioProcess />
       <LegalInfrastructure />
+      <LimitedOffer />
       <Footer />
     </main>
   )

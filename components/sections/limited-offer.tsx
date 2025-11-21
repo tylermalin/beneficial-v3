@@ -38,7 +38,7 @@ export function LimitedOffer() {
               className="bg-primary hover:bg-primary/90 text-lg px-10 py-6"
               asChild
             >
-              <Link href="/services">
+              <Link href="/enterprise-ai-strategy-sprint">
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>

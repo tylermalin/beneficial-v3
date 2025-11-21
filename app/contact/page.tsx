@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer'
 import { ContactHero } from '@/components/sections/contact-hero'
 import { ContactForm } from '@/components/sections/contact-form'
 import { ContactInfo } from '@/components/sections/contact-info'
+import { LimitedOffer } from '@/components/sections/limited-offer'
 
 export const metadata = {
   title: 'Contact Us - Beneficial Technology',
@@ -18,6 +19,7 @@ export default function ContactPage() {
         <ContactForm />
         <ContactInfo />
       </div>
+      <LimitedOffer />
       <Footer />
     </main>
   )

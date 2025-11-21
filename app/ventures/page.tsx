@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer'
 import { VenturesHero } from '@/components/sections/ventures-hero'
 import { VenturesPortfolio } from '@/components/sections/ventures-portfolio'
 import { VenturesProcess } from '@/components/sections/ventures-process'
+import { LimitedOffer } from '@/components/sections/limited-offer'
 
 export const metadata = {
   title: 'Ventures Portfolio - Beneficial Technology',
@@ -16,6 +17,7 @@ export default function VenturesPage() {
       <VenturesHero />
       <VenturesPortfolio />
       <VenturesProcess />
+      <LimitedOffer />
       <Footer />
     </main>
   )
