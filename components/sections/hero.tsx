@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 import { ThreeBackground } from '@/components/three-background'
 
 export function Hero() {
@@ -38,13 +39,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-4">
-              Explore Our Studio
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4">
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-4" asChild>
+              <Link href="/studio">
+                Explore Our Studio
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </motion.div>
         </div>

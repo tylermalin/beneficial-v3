@@ -1,6 +1,13 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend only if API key is available
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    return null
+  }
+  return new Resend(apiKey)
+}
 
 export interface ContactFormData {
   firstName: string
@@ -19,6 +26,12 @@ export async function sendContactNotification(data: ContactFormData) {
     // Validate required fields before sending
     if (!data.firstName || !data.lastName || !data.email || !data.message) {
       throw new Error('Missing required fields for email notification')
+    }
+
+    const resend = getResend()
+    if (!resend) {
+      console.warn('Resend API key not configured. Email sending disabled.')
+      return { success: false, error: 'Email service not configured' }
     }
 
     // Send notification to internal team
@@ -261,6 +274,12 @@ export async function subscribeToNewsletter(email: string) {
   try {
     if (!email || !email.includes('@')) {
       throw new Error('Invalid email address')
+    }
+
+    const resend = getResend()
+    if (!resend) {
+      console.warn('Resend API key not configured. Newsletter subscription disabled.')
+      return { success: false, error: 'Email service not configured' }
     }
 
     const result = await resend.emails.send({

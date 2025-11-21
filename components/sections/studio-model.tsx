@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Building2, Lightbulb, TrendingUp, ArrowRight } from 'lucide-react'
+import { Building2, Lightbulb, TrendingUp } from 'lucide-react'
 
 const studioModels = [
   {
@@ -67,7 +67,7 @@ export function StudioModel() {
                     {model.description}
                   </p>
                   
-                  <ul className="space-y-2 mb-8">
+                  <ul className="space-y-2">
                     {model.features.map((feature) => (
                       <li key={feature} className="flex items-center text-sm">
                         <div className="w-2 h-2 bg-primary rounded-full mr-3" />
@@ -75,11 +75,6 @@ export function StudioModel() {
                       </li>
                     ))}
                   </ul>
-                  
-                  <Button variant="outline" className="w-full group">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
                 </CardContent>
               </Card>
             </motion.div>

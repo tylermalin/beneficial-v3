@@ -17,15 +17,9 @@ const footerLinks = {
   ],
   Services: [
     { href: '/services/legal-engineering', label: 'Legal Engineering' },
-    { href: '/services/venture-building', label: 'Venture Building' },
+    { href: '/services/ai-blockchain-consulting', label: 'AI and Blockchain Consulting Services' },
     { href: '/services/strategic-capital', label: 'Strategic Capital' },
     { href: '/services/regulatory-advisory', label: 'Regulatory Advisory' }
-  ],
-  Resources: [
-    { href: '/blog', label: 'Blog' },
-    { href: '/research', label: 'Research' },
-    { href: '/events', label: 'Events' },
-    { href: '/careers', label: 'Careers' }
   ],
   Legal: [
     { href: '/privacy-policy', label: 'Privacy Policy' },

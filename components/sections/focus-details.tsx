@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Brain, Atom, Zap, Coins, ArrowRight, CheckCircle } from 'lucide-react'
+import { Brain, Atom, Zap, Coins, CheckCircle } from 'lucide-react'
 
 const focusAreas = [
   {
@@ -135,11 +135,6 @@ export function FocusDetails() {
                     ))}
                   </div>
                 </div>
-                
-                <Button className="bg-primary hover:bg-primary/90">
-                  Learn More About {area.title}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
               </div>
               
               {/* Case Studies Card */}

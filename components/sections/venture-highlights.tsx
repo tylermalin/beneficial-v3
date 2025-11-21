@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { ExternalLink, ArrowRight } from 'lucide-react'
 
 const ventures = [
   {
@@ -89,36 +87,19 @@ export function VentureHighlights() {
                     {venture.description}
                   </p>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {venture.metrics.map((metric) => (
                       <div key={metric} className="text-center p-3 bg-muted/50 rounded-lg">
                         <div className="text-sm font-medium">{metric}</div>
                       </div>
                     ))}
                   </div>
-                  
-                  <Button variant="outline" className="w-full group">
-                    Learn More
-                    <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            View All Ventures
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-        </motion.div>
       </div>
     </section>
   )

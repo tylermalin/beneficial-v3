@@ -27,7 +27,7 @@ export function CTAStrip() {
               <Calendar className="mr-2 h-5 w-5" />
               Book a Legal Strategy Call
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white/20 text-white hover:bg-white/10 hover:text-white">
               Explore Our Services
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

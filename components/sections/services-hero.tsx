@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Building, Rocket, TrendingUp } from "lucide-react"
+import { ArrowRight, Building, Rocket, TrendingUp, Calendar } from "lucide-react"
+import Link from "next/link"
 
 export function ServicesHero() {
   return (
@@ -20,12 +21,17 @@ export function ServicesHero() {
             that enable breakthrough technologies to scale globally while maintaining regulatory compliance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Explore Our Services
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+              <Link href="#service-categories">
+                Explore Our Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline">
-              Schedule Consultation
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/reserve-sprint">
+                <Calendar className="mr-2 h-5 w-5" />
+                Book a Call
+              </Link>
             </Button>
           </div>
         </motion.div>

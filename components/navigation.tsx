@@ -25,7 +25,6 @@ export function Navigation() {
     { href: "/focus", label: "Focus" },
     { href: "/ventures", label: "Ventures" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
   ]
 
   return (
@@ -56,7 +55,9 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button className="bg-primary hover:bg-primary/90">Book a Call</Button>
+            <Button className="bg-primary hover:bg-primary/90" asChild>
+              <Link href="/reserve-sprint">Book a Call</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -86,7 +87,9 @@ export function Navigation() {
                   {item.label}
                 </Link>
               ))}
-              <Button className="w-full bg-primary hover:bg-primary/90">Book a Call</Button>
+              <Button className="w-full bg-primary hover:bg-primary/90" asChild>
+                <Link href="/reserve-sprint">Book a Call</Link>
+              </Button>
             </div>
           </motion.div>
         )}

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { CheckCircle } from "lucide-react"
 
 const serviceCategories = [
   {
@@ -139,7 +139,7 @@ const serviceCategories = [
 
 export function ServiceCategories() {
   return (
-    <section className="py-24">
+    <section id="service-categories" className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -198,11 +198,6 @@ export function ServiceCategories() {
                           </div>
                         </div>
                       </div>
-
-                      <Button variant="outline" className="w-full group bg-transparent">
-                        Learn More
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
                     </CardContent>
                   </Card>
                 ))}
