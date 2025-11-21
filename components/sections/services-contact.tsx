@@ -55,9 +55,13 @@ export function ServicesContact() {
     setSelectedServices((prev) => (prev.includes(service) ? prev.filter((s) => s !== service) : [...prev, service]))
   }
 
-  const handleSubmit = async (formData: FormData) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     setIsSubmitting(true)
     setSubmitMessage(null)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
 
     // Add selected services and company info to form data
     selectedServices.forEach((service) => formData.append("services", service))
@@ -65,15 +69,29 @@ export function ServicesContact() {
     if (selectedBudget) formData.append("budget", selectedBudget)
     formData.append("focusAreas", "Legal Engineering Services")
 
-    const result = await submitContactForm(formData)
+    try {
+      const result = await submitContactForm(formData)
 
-    if (result.success) {
-      setIsSubmitted(true)
-    } else {
-      setSubmitMessage(result.message)
+      if (result.success) {
+        setIsSubmitted(true)
+        form.reset()
+        setSelectedServices([])
+        setSelectedStage("")
+        setSelectedBudget("")
+        setSubmitMessage(null)
+      } else {
+        setSubmitMessage(result.message || "Please check your form data and try again.")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setSubmitMessage(
+        error instanceof Error 
+          ? error.message 
+          : "Something went wrong. Please try again or contact us directly."
+      )
+    } finally {
+      setIsSubmitting(false)
     }
-
-    setIsSubmitting(false)
   }
 
   if (isSubmitted) {
@@ -137,7 +155,7 @@ export function ServicesContact() {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Request a Proposal</h3>
 
-                <form action={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium mb-2">First Name *</label>

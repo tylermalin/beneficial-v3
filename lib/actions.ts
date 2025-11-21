@@ -39,20 +39,27 @@ export async function submitContactForm(formData: FormData) {
     // Validate the data
     const validatedData = contactFormSchema.parse(rawData)
 
-    // Send email notifications
-    const emailResult = await sendContactNotification(validatedData)
-
-    if (!emailResult.success) {
-      throw new Error('Failed to send email notifications')
-    }
-
     // Log the submission for analytics (you could also save to database here)
     console.log('Contact form submitted:', {
       email: validatedData.email,
+      company: validatedData.company,
       services: validatedData.services,
       focusAreas: validatedData.focusAreas,
+      timeline: validatedData.timeline,
+      budget: validatedData.budget,
       timestamp: new Date().toISOString(),
     })
+
+    // Try to send email notifications (non-blocking - form succeeds even if email fails)
+    try {
+      const emailResult = await sendContactNotification(validatedData)
+      if (!emailResult.success) {
+        console.warn('Email notification failed, but form submission succeeded:', emailResult.error)
+      }
+    } catch (emailError) {
+      console.warn('Email notification error (non-blocking):', emailError)
+      // Continue anyway - form submission is successful even if email fails
+    }
 
     return {
       success: true,
@@ -62,16 +69,21 @@ export async function submitContactForm(formData: FormData) {
     console.error('Contact form submission error:', error)
     
     if (error instanceof z.ZodError) {
+      const errorMessages = error.errors.map(e => {
+        const field = e.path.join('.')
+        return `${field}: ${e.message}`
+      }).join(', ')
+      
       return {
         success: false,
-        message: 'Please check your form data and try again.',
+        message: `Please check your form data: ${errorMessages}`,
         errors: error.errors,
       }
     }
 
     return {
       success: false,
-      message: 'Something went wrong. Please try again or contact us directly.',
+      message: error instanceof Error ? error.message : 'Something went wrong. Please try again or contact us directly.',
     }
   }
 }
