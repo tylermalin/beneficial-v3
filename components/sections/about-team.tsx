@@ -9,9 +9,10 @@ const teamMembers = [
   {
     name: "Tyler Malin",
     role: "Founder & CEO",
-    bio: "Legal engineer and entrepreneur with expertise in crypto-native legal frameworks, regulatory compliance, and venture building across AI, blockchain, and deep science sectors.",
-    expertise: ["Legal Engineering", "Crypto Law", "Regulatory Strategy", "Venture Building"],
-    education: "Harvard Law School, MIT",
+    bio: "Tyler Malin is a founder, operator, and legal strategist with over 20 years of experience leading high-growth ventures. Sitting at the intersection of climate tech, blockchain, and AI, Tyler specializes in translating complex emerging technologies into trusted markets and durable real-world infrastructure. Currently, Tyler serves as Co-Founder of Mālama Labs, where he leads the development of durable carbon markets powered by biochar, blockchain-based Monitoring, Reporting, and Verification (MRV), and advanced token architecture. He is also the Founder of Beneficial Technology, a firm dedicated to supporting startups with compliant token ecosystems, fundraising strategies, and global product launches.",
+    expertise: ["Climate Tech", "Blockchain", "AI Strategy", "Legal Engineering", "Carbon Markets", "Token Architecture"],
+    education: "Environmental Science & Business",
+    location: "Los Angeles",
     image: "/tyler-malin-profile.png",
   },
 ]
@@ -55,7 +56,10 @@ export function AboutTeam() {
                     </div>
                     <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                     <p className="text-primary font-medium mb-2">{member.role}</p>
-                    <p className="text-sm text-muted-foreground mb-4">{member.education}</p>
+                    <p className="text-sm text-muted-foreground mb-2">{member.education}</p>
+                    {member.location && (
+                      <p className="text-xs text-muted-foreground mb-4">{member.location}</p>
+                    )}
                   </div>
 
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{member.bio}</p>
