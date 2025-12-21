@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Users } from 'lucide-react'
+import { ArrowRight, Users, ClipboardCheck } from 'lucide-react'
+import Link from 'next/link'
 
 export function AboutHero() {
   return (
@@ -26,10 +27,20 @@ export function AboutHero() {
             <br /><br />
             Beneficial Technology helps teams build and deploy technologies that create lasting value. We work across AI, blockchain, energy, and frontier systems, supporting ventures from early ideas through real-world execution.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Meet Our Team
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+              <Link href="#leadership-profile">
+                Meet Our Team
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/tools/ai-readiness-diagnostic">
+                <ClipboardCheck className="mr-2 h-5 w-5" />
+                Assess Your AI Readiness
+              </Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

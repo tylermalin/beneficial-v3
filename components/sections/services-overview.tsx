@@ -3,7 +3,9 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Shield, Scale, Lightbulb, Globe, Zap, Users } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Shield, Scale, Lightbulb, Globe, Zap, Users, TrendingUp, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 const serviceOverview = [
   {
@@ -48,6 +50,13 @@ const serviceOverview = [
     color: "from-indigo-500 to-blue-500",
     stats: "24/7 Expert Support",
   },
+  {
+    icon: TrendingUp,
+    title: "Investor Services",
+    description: "Tailored research, market intelligence, and diligence support across AI, blockchain, energy, and frontier systems.",
+    color: "from-amber-500 to-yellow-500",
+    stats: "Market Intelligence",
+  },
 ]
 
 export function ServicesOverview() {
@@ -85,9 +94,17 @@ export function ServicesOverview() {
                   </div>
                   <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">{service.description}</p>
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="text-xs mb-4">
                     {service.stats}
                   </Badge>
+                  {service.title === "Investor Services" && (
+                    <Button variant="outline" size="sm" className="w-full mt-4" asChild>
+                      <Link href="/investor-services">
+                        Explore Investor Services
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Building, Rocket, TrendingUp, Calendar } from "lucide-react"
+import { ArrowRight, Building, Rocket, TrendingUp, Calendar, ClipboardCheck } from "lucide-react"
 import Link from "next/link"
 
 export function ServicesHero() {
@@ -30,6 +30,12 @@ export function ServicesHero() {
               <Link href="/reserve-sprint">
                 <Calendar className="mr-2 h-5 w-5" />
                 Book a Call
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/tools/ai-readiness-diagnostic">
+                <ClipboardCheck className="mr-2 h-5 w-5" />
+                Assess Your AI Readiness
               </Link>
             </Button>
           </div>

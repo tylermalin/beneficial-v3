@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { Calendar, ArrowRight } from 'lucide-react'
+import { Calendar, ArrowRight, ClipboardCheck } from 'lucide-react'
+import Link from 'next/link'
 
 export function CTAStrip() {
   return (
@@ -23,13 +24,23 @@ export function CTAStrip() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
-              <Calendar className="mr-2 h-5 w-5" />
-              Book a Strategy Call
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
+              <Link href="/book-consultation">
+                <Calendar className="mr-2 h-5 w-5" />
+                Book a Strategy Call
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white/20 text-white hover:bg-white/10 hover:text-white">
-              Explore Our Services
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white/20 text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link href="/services">
+                Explore Our Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white/20 text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link href="/tools/ai-readiness-diagnostic">
+                <ClipboardCheck className="mr-2 h-5 w-5" />
+                Assess Your AI Readiness
+              </Link>
             </Button>
           </div>
         </motion.div>

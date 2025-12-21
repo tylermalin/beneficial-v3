@@ -19,7 +19,8 @@ const footerLinks = {
     { href: '/services', label: 'Technology Development & Support' },
     { href: '/services/ai-blockchain-consulting', label: 'AI & Blockchain Services' },
     { href: '/services/strategic-capital', label: 'Strategic Capital' },
-    { href: '/services', label: 'Advisory & Execution' }
+    { href: '/services', label: 'Advisory & Execution' },
+    { href: '/investor-services', label: 'Investor Services' }
   ],
   Legal: [
     { href: '/privacy-policy', label: 'Privacy Policy' },
