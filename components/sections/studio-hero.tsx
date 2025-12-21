@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Building2, Lightbulb, TrendingUp } from 'lucide-react'
+import Link from 'next/link'
 
 export function StudioHero() {
   return (
@@ -22,9 +23,11 @@ export function StudioHero() {
             <br /><br />
             Our studio brings together product development, strategic capital, and execution support to help teams turn ambitious ideas into real, working ventures. We work hands-on, from early exploration through launch and scale.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Start Building With Us
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+            <Link href="/services#request-proposal">
+              Start Building With Us
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </motion.div>
 

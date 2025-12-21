@@ -17,10 +17,10 @@ export function FinalCTA() {
           className="text-center max-w-4xl mx-auto"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-primary-foreground">
-            Reserve Your November Sprint
+            Reserve Your 2026 Innovation Sprint
           </h2>
           <p className="text-lg sm:text-xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
-            Limited availability. Four-week sprint. Board-ready roadmap. Move beyond AI noise and build defensible intelligence.
+            Limited availability • 2026 Innovation Sprint Package • 2 slots remaining
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -48,9 +48,6 @@ export function FinalCTA() {
             </Button>
           </div>
           
-          <p className="text-sm text-primary-foreground/70">
-            November only: $10,000 • Regular price: $25,000
-          </p>
         </motion.div>
       </div>
     </section>

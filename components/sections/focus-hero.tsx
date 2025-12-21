@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 export function FocusHero() {
   return (
@@ -20,9 +21,11 @@ export function FocusHero() {
           <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto mb-8">
             We specialize in the legal engineering challenges of tomorrow's most transformative technologies. Our expertise spans four critical domains where innovation meets regulation.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Explore Our Expertise
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+            <Link href="#focus-areas">
+              Explore Our Expertise
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </motion.div>
       </div>

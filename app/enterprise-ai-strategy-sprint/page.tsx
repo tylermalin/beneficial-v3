@@ -14,7 +14,7 @@ import { FinalCTA } from "@/components/sections/final-cta"
 export const metadata = {
   title: "Enterprise AI Strategy Sprint — Build Your Defensible Intelligence System",
   description:
-    "Four-week sprint. Board-ready roadmap. Move beyond AI noise. Build defensible intelligence. November only: $10k.",
+    "Four-week sprint. Board-ready roadmap. Move beyond AI noise. Build defensible intelligence. 2026 Innovation Sprint Package.",
 }
 
 export default function EnterpriseAIStrategySprintPage() {

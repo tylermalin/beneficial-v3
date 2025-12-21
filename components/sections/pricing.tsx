@@ -19,11 +19,8 @@ export function Pricing() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Investment
+            Availability
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto">
-            Limited-time pricing for November sprints.
-          </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
@@ -36,20 +33,14 @@ export function Pricing() {
             <Card className="border-2 border-primary bg-card/50 backdrop-blur-sm">
               <CardContent className="p-12">
                 <div className="text-center mb-8">
-                  <Badge className="mb-4 bg-primary text-primary-foreground">
-                    November Only
-                  </Badge>
-                  <div className="mb-4">
-                    <span className="text-5xl sm:text-6xl font-bold">$10,000</span>
-                    <span className="text-2xl text-muted-foreground ml-2 line-through">
-                      $25,000
-                    </span>
-                  </div>
-                  <p className="text-lg text-muted-foreground mb-2">
-                    Regular Price: $25,000
+                  <p className="text-2xl sm:text-3xl font-bold text-primary mb-4">
+                    2026 Innovation Sprint Package
+                  </p>
+                  <p className="text-lg text-muted-foreground mb-4">
+                    2 slots remaining
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Four-week sprint • Board-ready deliverables • Immediate execution
+                    Four-week sprint • Board-ready deliverables • Limited availability
                   </p>
                 </div>
 
@@ -84,7 +75,7 @@ export function Pricing() {
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg px-10 py-6" asChild>
-                    <Link href="/reserve-sprint">Schedule a Call</Link>
+                    <Link href="/book-consultation">Schedule a Call</Link>
                   </Button>
                 </div>
               </CardContent>

@@ -149,7 +149,7 @@ export function ServicesContact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Form */}
-          <div className="lg:col-span-2">
+          <div id="request-proposal" className="lg:col-span-2">
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Request a Proposal</h3>

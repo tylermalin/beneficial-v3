@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Lightbulb, Building2, TrendingUp, Rocket, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 const processSteps = [
   {
@@ -114,9 +115,11 @@ export function VenturesProcess() {
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Whether you have a breakthrough technology or a bold vision, we're here to help you navigate the complex journey from concept to market leadership.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Start Your Venture Journey
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+            <Link href="/start-your-venture-journey">
+              Start Your Venture Journey
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </motion.div>
       </div>

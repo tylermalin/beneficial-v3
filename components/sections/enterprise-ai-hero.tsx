@@ -22,7 +22,10 @@ export function EnterpriseAIHero() {
           </h1>
           
           <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 max-w-4xl mx-auto font-medium">
-            Four-week sprint. Board-ready roadmap. November only: $10k.
+            Four-week sprint. Board-ready roadmap.
+          </p>
+          <p className="text-lg sm:text-xl text-primary font-medium mb-8">
+            2026 Innovation Sprint Package • 2 slots remaining
           </p>
           
           <motion.div
@@ -30,7 +33,7 @@ export function EnterpriseAIHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-10 py-6 text-base sm:text-lg" asChild>
+            <Button size="lg" className="bg-primary hover:bg-primary/90 px-10 py-6 text-base sm:text-lg" asChild>
               <Link href="/reserve-sprint">
                 Reserve Your Sprint
                 <ArrowRight className="ml-2 h-5 w-5" />

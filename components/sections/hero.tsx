@@ -27,11 +27,19 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto"
           >
             Technology should benefit its users, its industry, and the world it operates in.
-            We build, incubate, and accelerate breakthrough technologies focused on creating real value—across AI, blockchain, energy, and frontier systems. Our work is grounded in practical development, real-world deployment, and long-term impact.
-            <br /><br />
+            <br />
+            We build, incubate, and scale technologies that create real value—across AI, blockchain, energy, and frontier systems.
+          </motion.p>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-base sm:text-lg text-muted-foreground/80 mb-8 max-w-2xl mx-auto font-medium"
+          >
             We focus on technology that earns its place in the world.
           </motion.p>
           
@@ -45,6 +53,11 @@ export function Hero() {
               <Link href="/studio">
                 Explore Our Studio
                 <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild>
+              <Link href="/book-consultation">
+                Build with Beneficial
               </Link>
             </Button>
           </motion.div>

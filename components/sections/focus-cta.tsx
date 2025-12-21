@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Calendar, MessageSquare } from 'lucide-react'
+import Link from 'next/link'
 
 export function FocusCTA() {
   return (
@@ -23,13 +24,17 @@ export function FocusCTA() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              <Calendar className="mr-2 h-5 w-5" />
-              Schedule a Consultation
+            <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+              <Link href="/book-consultation">
+                <Calendar className="mr-2 h-5 w-5" />
+                Schedule a Consultation
+              </Link>
             </Button>
-            <Button size="lg" variant="outline">
-              <MessageSquare className="mr-2 h-5 w-5" />
-              Discuss Your Project
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/services#request-proposal">
+                <MessageSquare className="mr-2 h-5 w-5" />
+                Discuss Your Project
+              </Link>
             </Button>
           </div>
         </motion.div>

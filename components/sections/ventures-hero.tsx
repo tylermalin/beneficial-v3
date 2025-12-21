@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, TrendingUp } from 'lucide-react'
+import Link from 'next/link'
 
 export function VenturesHero() {
   return (
@@ -25,12 +26,16 @@ export function VenturesHero() {
             We don't just provide legal services—we build companies. Our venture portfolio represents breakthrough innovations across AI, deep science, energy transition, and blockchain technologies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Explore Portfolio
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+              <Link href="#portfolio">
+                Explore Portfolio
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline">
-              Partner With Us
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/services#request-proposal">
+                Partner With Us
+              </Link>
             </Button>
           </div>
         </motion.div>
