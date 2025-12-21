@@ -8,42 +8,42 @@ const processSteps = [
   {
     icon: MessageSquare,
     title: "Initial Consultation",
-    description: "Deep dive into your business needs, challenges, and objectives",
+    description: "Understand your goals, current situation, and what needs to happen next",
     duration: "1-2 hours",
     deliverables: ["Needs assessment", "Preliminary roadmap", "Service recommendations"],
   },
   {
     icon: Search,
     title: "Discovery & Analysis",
-    description: "Comprehensive analysis of your current legal and regulatory position",
+    description: "Assess where you are, identify constraints, and map the path forward",
     duration: "1-2 weeks",
     deliverables: ["Legal audit", "Risk assessment", "Compliance gap analysis"],
   },
   {
     icon: FileText,
     title: "Strategy Development",
-    description: "Custom legal engineering strategy tailored to your specific requirements",
+    description: "Define the approach, timeline, and resources needed to execute",
     duration: "2-3 weeks",
     deliverables: ["Strategic plan", "Implementation timeline", "Resource allocation"],
   },
   {
     icon: Rocket,
     title: "Implementation",
-    description: "Execute the legal engineering strategy with dedicated project management",
+    description: "Build, deploy, and integrate the structures and systems you need",
     duration: "Variable",
     deliverables: ["Legal documentation", "Compliance frameworks", "Process implementation"],
   },
   {
     icon: BarChart,
     title: "Monitoring & Optimization",
-    description: "Ongoing monitoring and continuous improvement of legal infrastructure",
+    description: "Track performance, adapt to changes, and refine as you scale",
     duration: "Ongoing",
     deliverables: ["Performance metrics", "Regular reviews", "Strategy updates"],
   },
   {
     icon: Headphones,
     title: "Ongoing Support",
-    description: "24/7 access to our legal engineering experts for ongoing guidance",
+    description: "Continuous access to expertise when you need it—for questions, changes, and new challenges",
     duration: "Continuous",
     deliverables: ["Expert consultation", "Emergency support", "Strategic updates"],
   },
@@ -62,8 +62,7 @@ export function ServicesProcess() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Our Proven Process</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A systematic approach to legal engineering that ensures optimal outcomes and long-term success for your
-            business.
+            A clear, structured process designed to move teams from complexity to execution.
           </p>
         </motion.div>
 

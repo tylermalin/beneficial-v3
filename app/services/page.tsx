@@ -9,9 +9,9 @@ import { ServicesContact } from "@/components/sections/services-contact"
 import { LimitedOffer } from "@/components/sections/limited-offer"
 
 export const metadata = {
-  title: "Legal Engineering Services - Beneficial Technology",
+  title: "Technology, Governance, and Execution Services - Beneficial Technology",
   description:
-    "Comprehensive legal engineering services for companies from startups to Fortune 500. Expert guidance in AI, blockchain, energy transition, and deep science.",
+    "Technology, governance, and execution support for companies from startups to Fortune 500. Expert guidance in AI, blockchain, energy transition, and deep science.",
 }
 
 export default function ServicesPage() {

@@ -18,7 +18,9 @@ export function StudioHero() {
             Our Studio Model
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            We don't just invest in the future—we engineer it. Our three-pillar approach combines legal expertise, strategic capital, and operational excellence to build breakthrough ventures from the ground up.
+            We don't just invest in the future—we help build it.
+            <br /><br />
+            Our studio brings together product development, strategic capital, and execution support to help teams turn ambitious ideas into real, working ventures. We work hands-on, from early exploration through launch and scale.
           </p>
           <Button size="lg" className="bg-primary hover:bg-primary/90">
             Start Building With Us
@@ -31,30 +33,37 @@ export function StudioHero() {
             {
               icon: Building2,
               title: 'Build',
-              description: 'From ideation to incorporation, we provide the legal foundation and operational infrastructure needed to transform breakthrough concepts into viable ventures.'
+              subtitle: 'Turn ideas into real ventures.',
+              description: 'From early ideation through company formation, we help teams define what they are building and set up the foundations needed to execute. This is about clarity, focus, and momentum - not paperwork for its own sake.'
             },
             {
               icon: Lightbulb,
               title: 'Incubate',
-              description: 'Our innovation lab provides the resources, expertise, and regulatory guidance needed to navigate complex compliance landscapes and accelerate development.'
+              subtitle: 'De-risk before you scale.',
+              description: 'Our innovation lab works closely with teams to test assumptions, explore constraints, and accelerate development. We help navigate complexity - technical, operational, and regulatory - so teams can move forward with confidence.'
             },
             {
               icon: TrendingUp,
               title: 'Accelerate',
-              description: 'Strategic capital deployment and network access to scale proven concepts into market-leading companies with sustainable competitive advantages.'
+              subtitle: 'Scale what works.',
+              description: 'Once a concept proves itself, we support growth through aligned capital, partnerships, and operational support. The goal is sustainable scale, not growth for growth sake.'
             }
           ].map((pillar, index) => (
             <motion.div
               key={pillar.title}
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="text-center"
             >
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <pillar.icon className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">{pillar.title}</h3>
+              <h3 className="text-2xl font-bold mb-2">{pillar.title}</h3>
+              {pillar.subtitle && (
+                <p className="text-lg font-semibold text-primary mb-3">{pillar.subtitle}</p>
+              )}
               <p className="text-muted-foreground">{pillar.description}</p>
             </motion.div>
           ))}

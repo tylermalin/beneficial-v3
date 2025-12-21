@@ -16,10 +16,10 @@ const footerLinks = {
     { href: '/about', label: 'About Us' }
   ],
   Services: [
-    { href: '/services/legal-engineering', label: 'Legal Engineering' },
-    { href: '/services/ai-blockchain-consulting', label: 'AI and Blockchain Consulting Services' },
+    { href: '/services', label: 'Technology Development & Support' },
+    { href: '/services/ai-blockchain-consulting', label: 'AI & Blockchain Services' },
     { href: '/services/strategic-capital', label: 'Strategic Capital' },
-    { href: '/services/regulatory-advisory', label: 'Regulatory Advisory' }
+    { href: '/services', label: 'Advisory & Execution' }
   ],
   Legal: [
     { href: '/privacy-policy', label: 'Privacy Policy' },
@@ -52,8 +52,11 @@ export function Footer() {
               </div>
               <span className="font-bold text-xl">Beneficial Technology</span>
             </Link>
-            <p className="text-muted-foreground mb-6 max-w-sm">
-              Legal engineering for the crypto-native future. Building, incubating, and accelerating breakthrough technologies.
+            <p className="text-muted-foreground mb-4 max-w-sm">
+              Beneficial Technology — Building and supporting technologies that matter.
+            </p>
+            <p className="text-sm font-medium text-primary mb-6 italic">
+              Technology that earns trust.
             </p>
             
             {/* Newsletter Signup */}

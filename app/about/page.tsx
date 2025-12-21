@@ -8,7 +8,7 @@ import { LimitedOffer } from '@/components/sections/limited-offer'
 
 export const metadata = {
   title: 'About Us - Beneficial Technology',
-  description: 'Learn about our mission to engineer the legal infrastructure for tomorrow\'s most ambitious ventures. Meet our team and discover our values.',
+  description: 'Building Tech That Matters. Learn about our mission to help teams build and deploy technologies that create lasting value.',
 }
 
 export default function AboutPage() {

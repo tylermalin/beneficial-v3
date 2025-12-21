@@ -15,10 +15,9 @@ export function ServicesHero() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">Legal Engineering Services</h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">Technology, Governance, and Execution—Built to Scale</h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto mb-8">
-            From ambitious startups to Fortune 500 enterprises, we provide comprehensive legal engineering solutions
-            that enable breakthrough technologies to scale globally while maintaining regulatory compliance.
+            From ambitious startups to global enterprises, we support teams building and deploying advanced technology in complex environments. Our services help you move faster, scale responsibly, and operate with confidence—without slowing innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
@@ -42,19 +41,19 @@ export function ServicesHero() {
             {
               icon: Rocket,
               title: "Startups & Scale-ups",
-              description: "Legal foundation and growth acceleration for emerging companies",
+              description: "Foundational support and hands-on guidance for teams building and shipping new technology.",
               features: ["Entity Formation", "IP Strategy", "Fundraising Support", "Regulatory Roadmaps"],
             },
             {
               icon: TrendingUp,
               title: "Growth Companies",
-              description: "Strategic legal guidance for expanding businesses",
+              description: "Strategic support for companies expanding products, markets, and operations.",
               features: ["International Expansion", "M&A Support", "Compliance Scaling", "Partnership Structuring"],
             },
             {
               icon: Building,
               title: "Fortune 500",
-              description: "Enterprise-grade legal engineering for industry leaders",
+              description: "Enterprise-grade support for organizations deploying new technology at scale.",
               features: ["Innovation Labs", "Regulatory Strategy", "Digital Transformation", "Risk Management"],
             },
           ].map((clientType, index) => (

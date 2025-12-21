@@ -111,7 +111,7 @@ export function ServicesContact() {
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Request Received!</h2>
                 <p className="text-muted-foreground mb-6">
-                  Thank you for your interest in our legal engineering services. Our team will review your requirements
+                  Thank you for your interest in our services. Our team will review your requirements
                   and get back to you within 2 hours with a customized proposal.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -143,8 +143,7 @@ export function ServicesContact() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Get Started Today</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Ready to transform your legal infrastructure? Tell us about your needs and we'll create a customized
-            solution for your company.
+            Tell us what you're building and where you're stuck. We'll help you find a clear, practical path forward.
           </p>
         </motion.div>
 
@@ -257,7 +256,7 @@ export function ServicesContact() {
                     <label className="block text-sm font-medium mb-2">Project Description *</label>
                     <Textarea
                       name="message"
-                      placeholder="Tell us about your legal engineering needs, current challenges, and strategic objectives..."
+                      placeholder="Tell us about your project, current challenges, and what you're trying to achieve..."
                       rows={6}
                       required
                     />

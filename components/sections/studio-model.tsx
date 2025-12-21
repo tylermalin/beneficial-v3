@@ -9,20 +9,20 @@ const studioModels = [
   {
     icon: Building2,
     title: 'Venture Studio',
-    description: 'We build companies from the ground up, providing legal infrastructure, capital, and operational expertise to transform breakthrough ideas into market-ready ventures.',
-    features: ['Legal Entity Formation', 'IP Strategy', 'Regulatory Compliance', 'Capital Structure']
+    description: 'We build companies from the ground up, providing product support, strategic guidance, and operational execution to turn ambitious ideas into real, working businesses. Our studio includes ventures we develop internally, as well as select partner companies we fund or support through reduced-cost services.',
+    features: ['Venture & Product Formation', 'IP & Technology Strategy', 'Governance & Operating Design', 'Capital Structure & Growth Planning']
   },
   {
     icon: Lightbulb,
     title: 'Innovation Lab',
-    description: 'Our research and development arm explores emerging technologies, regulatory frameworks, and market opportunities at the frontier of crypto-native innovation.',
-    features: ['Technology Research', 'Regulatory Analysis', 'Market Intelligence', 'Prototype Development']
+    description: 'Our research and development arm explores emerging technologies, markets, and system-level opportunities across AI, blockchain, and deep tech. The Innovation Lab supports both studio ventures and client teams by testing ideas early and reducing execution risk.',
+    features: ['Technology Research', 'Market & Ecosystem Analysis', 'Systems & Risk Exploration', 'Prototype Development']
   },
   {
     icon: TrendingUp,
     title: 'Strategic Capital',
-    description: 'We provide strategic investment and advisory services to high-potential ventures, leveraging our legal engineering expertise and network.',
-    features: ['Strategic Investment', 'Legal Advisory', 'Network Access', 'Growth Acceleration']
+    description: 'We provide strategic investment and hands-on advisory support to teams building technology with long-term value. Capital is aligned with execution—often paired with direct support, shared infrastructure, and access to partners.',
+    features: ['Strategic Investment', 'Advisory & Execution Support', 'Network Access', 'Growth Acceleration']
   }
 ]
 
@@ -41,7 +41,10 @@ export function StudioModel() {
             Our Studio Model
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive approach to building the future of crypto-native innovation through legal engineering, strategic capital, and operational excellence.
+            A comprehensive approach to building and supporting beneficial technologies through venture creation, strategic services, and aligned capital.
+            We work across internal studio ventures and external clients—from startups to established organizations—helping teams develop, deploy, and scale new technology responsibly.
+            <br /><br />
+            We measure success by what ships, not what sounds impressive.
           </p>
         </motion.div>
 
@@ -66,6 +69,12 @@ export function StudioModel() {
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {model.description}
                   </p>
+                  
+                  {model.title === 'Venture Studio' && (
+                    <p className="text-sm font-medium text-primary mb-4 italic">
+                      We build alongside founders, not above them.
+                    </p>
+                  )}
                   
                   <ul className="space-y-2">
                     {model.features.map((feature) => (

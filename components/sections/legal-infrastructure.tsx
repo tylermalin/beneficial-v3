@@ -7,39 +7,39 @@ import { Shield, Scale, FileText, Users, Globe, Zap } from 'lucide-react'
 const infrastructureComponents = [
   {
     icon: Shield,
-    title: 'Regulatory Compliance',
-    description: 'Comprehensive compliance frameworks tailored to your industry and jurisdiction.',
-    features: ['Multi-jurisdictional compliance', 'Automated reporting', 'Risk assessment', 'Ongoing monitoring']
+    title: 'Compliance & Risk',
+    description: 'Clear frameworks tailored to the realities of your industry and geography.',
+    features: ['Risk assessment', 'Ongoing monitoring', 'Reporting readiness', 'Cross-jurisdiction awareness']
   },
   {
     icon: Scale,
-    title: 'Legal Entity Structure',
-    description: 'Optimized corporate structures for tax efficiency and operational flexibility.',
-    features: ['Entity formation', 'Tax optimization', 'Governance frameworks', 'Equity structures']
+    title: 'Venture Structure',
+    description: 'Flexible structures designed to support growth and change over time.',
+    features: ['Company formation', 'Ownership & incentive design', 'Governance frameworks', 'Operational flexibility']
   },
   {
     icon: FileText,
     title: 'IP & Documentation',
-    description: 'Robust intellectual property protection and comprehensive legal documentation.',
-    features: ['Patent filing', 'Trademark protection', 'Trade secrets', 'Licensing agreements']
+    description: 'Protecting what you build and enabling future partnerships.',
+    features: ['IP strategy', 'Trademarks & patents (where applicable)', 'Licensing structures', 'Core documentation']
   },
   {
     icon: Users,
     title: 'Governance & Operations',
-    description: 'Scalable governance structures and operational frameworks for growth.',
-    features: ['Board governance', 'Employee agreements', 'Operational policies', 'Compliance training']
+    description: 'Building teams and systems that can scale.',
+    features: ['Board and leadership support', 'Team agreements', 'Operating policies', 'Internal enablement']
   },
   {
     icon: Globe,
     title: 'International Expansion',
-    description: 'Strategic guidance for global market entry and cross-border operations.',
-    features: ['Market entry strategy', 'Local partnerships', 'Regulatory mapping', 'Cultural adaptation']
+    description: 'Support for teams operating across borders.',
+    features: ['Market entry planning', 'Regulatory mapping', 'Local partner strategy', 'Operational adaptation']
   },
   {
     icon: Zap,
     title: 'Technology Integration',
-    description: 'Legal-tech solutions for automated compliance and operational efficiency.',
-    features: ['Smart contracts', 'Automated workflows', 'Compliance dashboards', 'Real-time monitoring']
+    description: 'Tools and systems that reduce friction as you grow.',
+    features: ['Automated workflows', 'Platform integrations', 'Monitoring & dashboards', 'System visibility']
   }
 ]
 
@@ -55,10 +55,10 @@ export function LegalInfrastructure() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Legal Infrastructure & Capital Stack
+            Infrastructure & Support Stack
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Our comprehensive legal engineering approach provides the foundation for scalable, compliant, and capital-efficient ventures.
+            We provide the practical support systems ventures need to scale without breaking.
           </p>
         </motion.div>
 

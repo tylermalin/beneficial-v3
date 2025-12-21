@@ -9,8 +9,8 @@ const teamMembers = [
   {
     name: "Tyler Malin",
     role: "Founder & CEO",
-    bio: "Tyler Malin is a founder, operator, and legal strategist with over 20 years of experience leading high-growth ventures. Sitting at the intersection of climate tech, blockchain, and AI, Tyler specializes in translating complex emerging technologies into trusted markets and durable real-world infrastructure. Currently, Tyler serves as Co-Founder of Mālama Labs, where he leads the development of durable carbon markets powered by biochar, blockchain-based Monitoring, Reporting, and Verification (MRV), and advanced token architecture. He is also the Founder of Beneficial Technology, a firm dedicated to supporting startups with compliant token ecosystems, fundraising strategies, and global product launches.",
-    expertise: ["Climate Tech", "Blockchain", "AI Strategy", "Legal Engineering", "Carbon Markets", "Token Architecture"],
+    bio: "Tyler is a founder and operator with 20+ years of experience building technology-driven ventures at the intersection of climate, blockchain, and AI. He is also Co-Founder of Mālama Labs, where he leads the development of durable carbon markets powered by biochar, blockchain-based MRV, and advanced market design. Through Beneficial Technology, Tyler works closely with startups and enterprises to move emerging technology into real-world deployment.",
+    expertise: ["Climate & Energy Systems", "Blockchain & Digital Infrastructure", "AI Strategy", "Carbon Markets", "Market & Token Design"],
     education: "Environmental Science & Business",
     location: "Los Angeles",
     image: "/tyler-malin-profile.png",
@@ -28,14 +28,13 @@ export function AboutTeam() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Leadership Team</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Leadership Profile</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Our team combines decades of experience in law, technology, and entrepreneurship to deliver unparalleled
-            expertise in legal engineering.
+            Our team combines decades of experience building and deploying technology across complex environments.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}

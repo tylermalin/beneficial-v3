@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export function LimitedOffer() {
@@ -17,20 +17,29 @@ export function LimitedOffer() {
           viewport={{ once: true }}
           className="text-center max-w-5xl mx-auto"
         >
-          <Badge className="mb-6 bg-primary text-primary-foreground text-sm px-4 py-1.5">
-            <Sparkles className="mr-2 h-4 w-4" />
-            Limited Offer
-          </Badge>
-          
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-            Move Beyond AI Noise.
-            <br />
-            <span className="gradient-text">Build Defensible Intelligence.</span>
+            Innovation Sprint
           </h2>
           
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto font-medium">
-            Four-week sprint. Board-ready roadmap. November only: $10k.
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-muted-foreground">
+            Build What Matters—On Purpose.
+          </h3>
+          
+          <p className="text-lg sm:text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
+            A focused, high-touch engagement for teams ready to move from experimentation to execution.
+            In a structured sprint, we help you clarify what to build, how to deploy it, and how to scale it responsibly.
+            <br /><br />
+            We take on few teams so we can go deep and deliver real outcomes.
           </p>
+          
+          <div className="mb-8">
+            <Badge className="mb-2 bg-primary text-primary-foreground text-sm px-4 py-1.5">
+              2026 Innovation Sprint Package
+            </Badge>
+            <p className="text-sm text-muted-foreground">
+              2 slots remaining
+            </p>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
@@ -53,9 +62,6 @@ export function LimitedOffer() {
             </Button>
           </div>
           
-          <p className="text-sm text-muted-foreground mt-6">
-            Regular price: $25,000 • Limited availability
-          </p>
         </motion.div>
       </div>
     </section>

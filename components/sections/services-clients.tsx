@@ -82,8 +82,7 @@ export function ServicesClients() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Trusted by Industry Leaders</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
-            From innovative startups to Fortune 500 enterprises, we've helped companies across industries navigate
-            complex legal challenges and achieve their strategic objectives.
+            From innovative startups to Fortune 500 enterprises, we've helped companies across industries build, deploy, and scale advanced technology.
           </p>
 
           {/* Client Stats */}

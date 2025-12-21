@@ -20,8 +20,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            Legal Engineering for the{' '}
-            <span className="gradient-text">Crypto-Native</span> Future
+            Building Tech That Matters
           </motion.h1>
           
           <motion.p
@@ -30,7 +29,10 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
           >
-            We build, incubate, and accelerate breakthrough technologies at the intersection of law, finance, and innovation. From AI to blockchain, we engineer the legal infrastructure for tomorrow's most ambitious ventures.
+            Technology should benefit its users, its industry, and the world it operates in.
+            We build, incubate, and accelerate breakthrough technologies focused on creating real value—across AI, blockchain, energy, and frontier systems. Our work is grounded in practical development, real-world deployment, and long-term impact.
+            <br /><br />
+            We focus on technology that earns its place in the world.
           </motion.p>
           
           <motion.div

@@ -9,25 +9,25 @@ import { CheckCircle } from "lucide-react"
 const serviceCategories = [
   {
     category: "Foundation & Formation",
-    description: "Essential legal infrastructure for new ventures and expanding companies",
+    description: "Core structures and systems that support long-term execution.",
     services: [
       {
         name: "Entity Formation & Structure",
-        description: "Optimal corporate structures for tax efficiency and operational flexibility",
+        description: "Company structures designed to support growth, flexibility, and future change.",
         deliverables: ["Corporate entity setup", "Governance frameworks", "Equity structures", "Tax optimization"],
         pricing: "Starting at $15K",
         timeline: "2-4 weeks",
       },
       {
         name: "Intellectual Property Strategy",
-        description: "Comprehensive IP protection and monetization strategies",
+        description: "Protect what you're building while enabling partnerships and scale.",
         deliverables: ["Patent filing & prosecution", "Trademark protection", "Trade secret protocols", "IP licensing"],
         pricing: "Starting at $25K",
         timeline: "4-8 weeks",
       },
       {
         name: "Regulatory Compliance Framework",
-        description: "Industry-specific compliance programs and ongoing monitoring",
+        description: "Practical compliance programs designed to support real operations—not slow them.",
         deliverables: ["Compliance assessment", "Policy development", "Training programs", "Monitoring systems"],
         pricing: "Starting at $35K",
         timeline: "6-10 weeks",
@@ -40,7 +40,7 @@ const serviceCategories = [
     services: [
       {
         name: "Fundraising & Securities",
-        description: "End-to-end support for funding rounds and securities compliance",
+        description: "Support for capital raises with an emphasis on speed, clarity, and alignment.",
         deliverables: [
           "Due diligence preparation",
           "Term sheet negotiation",
@@ -52,7 +52,7 @@ const serviceCategories = [
       },
       {
         name: "International Expansion",
-        description: "Global market entry strategies and cross-border compliance",
+        description: "Structured support for entering new markets and operating across borders.",
         deliverables: [
           "Market entry analysis",
           "Local entity formation",
@@ -64,7 +64,7 @@ const serviceCategories = [
       },
       {
         name: "M&A and Strategic Transactions",
-        description: "Complex transaction support from due diligence to closing",
+        description: "Hands-on support for complex transactions—from diligence through integration.",
         deliverables: [
           "Transaction structuring",
           "Due diligence management",
@@ -82,21 +82,21 @@ const serviceCategories = [
     services: [
       {
         name: "AI & Machine Learning Compliance",
-        description: "Navigate AI governance frameworks and algorithmic accountability",
+        description: "Support for teams deploying AI systems in real-world, regulated environments.",
         deliverables: ["AI ethics framework", "Algorithmic auditing", "Data governance", "Regulatory compliance"],
         pricing: "Starting at $40K",
         timeline: "6-12 weeks",
       },
       {
         name: "Blockchain & DeFi Legal Engineering",
-        description: "Comprehensive legal infrastructure for decentralized technologies",
+        description: "Operational and governance support for digital platforms and decentralized systems.",
         deliverables: ["Token economics", "Smart contract auditing", "DAO governance", "Regulatory strategy"],
         pricing: "Starting at $60K",
         timeline: "8-14 weeks",
       },
       {
         name: "Deep Science Regulatory Pathways",
-        description: "Specialized guidance for quantum, biotech, and advanced materials",
+        description: "Guidance for advanced technology moving from research to commercialization.",
         deliverables: [
           "Regulatory pathway mapping",
           "Clinical trial support",
@@ -114,21 +114,21 @@ const serviceCategories = [
     services: [
       {
         name: "Digital Transformation Legal Strategy",
-        description: "Legal framework for enterprise digital transformation initiatives",
+        description: "Support for enterprise technology initiatives where risk, scale, and execution matter.",
         deliverables: ["Technology assessment", "Risk analysis", "Implementation roadmap", "Change management"],
         pricing: "Custom pricing",
         timeline: "16-24 weeks",
       },
       {
         name: "Innovation Lab Legal Infrastructure",
-        description: "Legal support for corporate innovation and R&D initiatives",
+        description: "Structures that enable internal innovation, experimentation, and spin-outs.",
         deliverables: ["Innovation policies", "Partnership frameworks", "IP management", "Spin-out structures"],
         pricing: "Custom pricing",
         timeline: "12-18 weeks",
       },
       {
         name: "Global Regulatory Strategy",
-        description: "Multi-jurisdictional compliance and regulatory risk management",
+        description: "Ongoing support for organizations operating across multiple jurisdictions.",
         deliverables: ["Global compliance audit", "Regulatory monitoring", "Policy advocacy", "Crisis management"],
         pricing: "Custom pricing",
         timeline: "Ongoing",
@@ -150,8 +150,7 @@ export function ServiceCategories() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Our Service Portfolio</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Tailored legal engineering solutions designed to meet the unique needs of companies at every stage of
-            growth.
+            Our integrated approach combines technology strategy, governance, and operational execution to support companies at every stage of growth.
           </p>
         </motion.div>
 

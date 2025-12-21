@@ -19,10 +19,12 @@ export function AboutHero() {
             <span className="text-primary font-semibold">About Us</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            Engineering the Future of Law
+            Building Tech That Matters
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto mb-8">
-            We're not just lawyers—we're legal engineers, venture builders, and innovation catalysts. Our mission is to create the legal infrastructure that enables tomorrow's most ambitious technologies to thrive.
+            Technology should do more than impress—it should work, scale, and make a real difference.
+            <br /><br />
+            Beneficial Technology helps teams build and deploy technologies that create lasting value. We work across AI, blockchain, energy, and frontier systems, supporting ventures from early ideas through real-world execution.
           </p>
           <Button size="lg" className="bg-primary hover:bg-primary/90">
             Meet Our Team

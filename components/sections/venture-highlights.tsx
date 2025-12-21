@@ -7,35 +7,35 @@ import { Badge } from '@/components/ui/badge'
 const ventures = [
   {
     name: 'NeuralFlow',
-    tagline: 'AI-Powered Legal Document Analysis',
+    tagline: 'AI-Powered Document Intelligence',
     category: 'Artificial Intelligence',
     status: 'Series A',
-    description: 'Revolutionary AI platform that automates legal document review and analysis, reducing review time by 90% while improving accuracy.',
-    metrics: ['$2.5M ARR', '150+ Enterprise Clients', '99.7% Accuracy Rate']
+    description: 'An AI platform built to handle complex document workflows at enterprise scale—quietly improving speed, accuracy, and reliability where it matters most.',
+    metrics: ['Used by 150+ enterprise teams', 'Trusted for mission-critical workflows', '99.7% Accuracy']
   },
   {
     name: 'MoonKit',
-    tagline: 'Decentralized Space Commerce Platform',
+    tagline: 'Space Infrastructure Platform',
     category: 'Deep Science',
     status: 'Seed',
-    description: 'Building the legal and financial infrastructure for commercial space activities, from satellite deployment to asteroid mining rights.',
-    metrics: ['$500K MRR', '12 Space Partners', '3 Regulatory Approvals']
+    description: 'Building the tools and systems that make commercial space operations practical, coordinated, and scalable.',
+    metrics: ['Trusted by industry partners', 'Supporting active space missions', '3 Regulatory Approvals']
   },
   {
     name: 'FusionGrid',
-    tagline: 'Next-Gen Energy Trading Protocol',
+    tagline: 'Next-Generation Energy Trading Platform',
     category: 'Energy Transition',
     status: 'Pre-Seed',
-    description: 'Blockchain-based energy trading platform enabling peer-to-peer renewable energy transactions with automated compliance.',
-    metrics: ['$100K TVL', '50+ Energy Producers', '5 Pilot Programs']
+    description: 'Modern market infrastructure designed for distributed renewable energy and real-world deployment.',
+    metrics: ['Working with live energy producers', 'Running active pilot programs', '5 Pilot Programs']
   },
   {
     name: 'ChainGuard',
-    tagline: 'DeFi Security & Compliance Suite',
-    category: 'Blockchain & DeFi',
+    tagline: 'Monitoring & Security for Digital Platforms',
+    category: 'Blockchain & Digital Systems',
     status: 'Series A',
-    description: 'Comprehensive security and compliance platform for DeFi protocols, providing real-time monitoring and regulatory reporting.',
-    metrics: ['$10B+ Protected', '200+ Protocols', '24/7 Monitoring']
+    description: 'Always-on visibility and protection for complex digital systems—designed to catch issues before they become failures.',
+    metrics: ['Supporting hundreds of live platforms', '24/7 monitoring', '200+ Protocols']
   }
 ]
 
@@ -54,7 +54,7 @@ export function VentureHighlights() {
             Venture Highlights
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Our portfolio companies are pushing the boundaries of what's possible at the intersection of technology and law.
+            Some of the companies we've built and supported.
           </p>
         </motion.div>
 

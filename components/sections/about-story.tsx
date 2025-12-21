@@ -18,16 +18,15 @@ export function AboutStory() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">Our Story</h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                Founded in 2019 by a team of technologists, lawyers, and entrepreneurs, Beneficial Technology emerged from a simple observation: the most transformative technologies of our time were being held back by outdated legal frameworks and regulatory uncertainty.
+                We started Beneficial Technology in 2019 after seeing the same pattern again and again:
+                great technology stalled by weak execution, unclear structure, or systems that couldn't keep up.
               </p>
               <p>
-                We saw brilliant innovations struggling to navigate complex compliance requirements, promising startups failing due to regulatory missteps, and entire industries moving slowly because of legal ambiguity. We knew there had to be a better way.
+                The problem wasn't innovation.
+                It was everything around it.
               </p>
               <p>
-                Our approach combines deep legal expertise with technological innovation, regulatory foresight with entrepreneurial execution. We don't just solve legal problems—we engineer legal solutions that enable breakthrough technologies to scale globally.
-              </p>
-              <p>
-                Today, we're proud to have helped structure over $10 billion in compliant transactions, navigate 500+ regulatory frameworks, and build some of the most innovative companies in AI, blockchain, energy, and deep science.
+                So we built a studio designed to support the full journey—from exploration to launch to scale. We focus on the infrastructure, coordination, and decisions that turn ideas into working systems.
               </p>
             </div>
           </motion.div>
@@ -45,10 +44,10 @@ export function AboutStory() {
                   <div className="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center">
                     <Lightbulb className="h-6 w-6 text-blue-500" />
                   </div>
-                  <h3 className="text-xl font-bold">Innovation First</h3>
+                  <h3 className="text-xl font-bold">Technology First</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  We believe that legal frameworks should enable innovation, not hinder it. Our approach starts with understanding the technology and its potential impact.
+                  We start with how the system actually works and who it serves.
                 </p>
               </CardContent>
             </Card>
@@ -59,10 +58,10 @@ export function AboutStory() {
                   <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center">
                     <Scale className="h-6 w-6 text-green-500" />
                   </div>
-                  <h3 className="text-xl font-bold">Regulatory Excellence</h3>
+                  <h3 className="text-xl font-bold">Built for Reality</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  Our team includes former regulators, policy experts, and compliance specialists who understand how to navigate complex regulatory landscapes.
+                  If it can't survive production, it doesn't matter.
                 </p>
               </CardContent>
             </Card>
@@ -73,10 +72,10 @@ export function AboutStory() {
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Rocket className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold">Venture Building</h3>
+                  <h3 className="text-xl font-bold">Hands-On</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  We don't just provide legal services—we build companies. Our venture studio approach combines legal engineering with strategic capital and operational expertise.
+                  We build alongside teams, not from the sidelines.
                 </p>
               </CardContent>
             </Card>

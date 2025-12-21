@@ -7,7 +7,7 @@ import { LimitedOffer } from '@/components/sections/limited-offer'
 
 export const metadata = {
   title: 'Studio Model - Beneficial Technology',
-  description: 'Our comprehensive approach to building crypto-native ventures through legal engineering, strategic capital, and operational excellence.',
+  description: 'Our comprehensive approach to building and supporting beneficial technologies through venture creation, strategic services, and aligned capital.',
 }
 
 export default function StudioPage() {

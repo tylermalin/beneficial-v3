@@ -9,42 +9,42 @@ const serviceOverview = [
   {
     icon: Shield,
     title: "Regulatory Compliance",
-    description: "Navigate complex regulatory landscapes with confidence",
+    description: "Navigate complex regulatory environments without slowing innovation.",
     color: "from-blue-500 to-cyan-500",
     stats: "500+ Frameworks Navigated",
   },
   {
     icon: Scale,
     title: "Legal Engineering",
-    description: "Build scalable legal infrastructure for technology companies",
+    description: "Build scalable operational and governance infrastructure that supports growth.",
     color: "from-green-500 to-emerald-500",
     stats: "$10B+ Transactions Structured",
   },
   {
     icon: Lightbulb,
     title: "Innovation Strategy",
-    description: "Transform breakthrough technologies into market-ready solutions",
+    description: "Turn advanced technology into deployable, market-ready systems.",
     color: "from-yellow-500 to-orange-500",
     stats: "200+ Innovations Launched",
   },
   {
     icon: Globe,
     title: "Global Expansion",
-    description: "Scale your business across international markets",
+    description: "Scale across borders with clarity and coordination.",
     color: "from-purple-500 to-pink-500",
     stats: "50+ Jurisdictions Covered",
   },
   {
     icon: Zap,
     title: "Digital Transformation",
-    description: "Modernize legal operations with cutting-edge technology",
+    description: "Modernize operations and governance alongside technology adoption.",
     color: "from-red-500 to-rose-500",
     stats: "95% Efficiency Improvement",
   },
   {
     icon: Users,
     title: "Strategic Advisory",
-    description: "Executive-level guidance for critical business decisions",
+    description: "Executive-level guidance for high-stakes decisions and moments of change.",
     color: "from-indigo-500 to-blue-500",
     stats: "24/7 Expert Support",
   },
@@ -61,10 +61,9 @@ export function ServicesOverview() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Comprehensive Legal Engineering Solutions</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Comprehensive Services Overview</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Our integrated approach combines legal expertise, technological innovation, and strategic thinking to
-            deliver unparalleled value across all stages of your company's growth.
+            Our integrated approach combines technology strategy, governance, and operational execution to support companies at every stage of growth.
           </p>
         </motion.div>
 

@@ -7,38 +7,38 @@ import { Shield, Globe, Zap, Heart, Target, Users } from 'lucide-react'
 const values = [
   {
     icon: Shield,
-    title: 'Integrity First',
-    description: 'We maintain the highest ethical standards in everything we do, ensuring our clients can trust us with their most important ventures.',
+    title: 'Integrity',
+    description: 'Long-term trust beats short-term wins.',
     color: 'from-blue-500 to-cyan-500'
   },
   {
-    icon: Globe,
-    title: 'Global Perspective',
-    description: 'We think globally from day one, helping our clients navigate regulatory frameworks across multiple jurisdictions.',
+    icon: Heart,
+    title: 'Purpose',
+    description: 'We work on technologies that improve real systems.',
     color: 'from-green-500 to-emerald-500'
   },
   {
-    icon: Zap,
-    title: 'Innovation Catalyst',
-    description: 'We accelerate innovation by removing legal barriers and creating frameworks that enable breakthrough technologies.',
+    icon: Target,
+    title: 'Discipline',
+    description: 'Speed matters. Durability matters more.',
     color: 'from-yellow-500 to-orange-500'
   },
   {
-    icon: Heart,
-    title: 'Purpose Driven',
-    description: 'We work on technologies that have the potential to create positive impact and solve humanity\'s greatest challenges.',
+    icon: Zap,
+    title: 'Results',
+    description: 'We measure success by what ships and scales.',
     color: 'from-pink-500 to-rose-500'
   },
   {
-    icon: Target,
-    title: 'Results Focused',
-    description: 'We measure our success by our clients\' success, focusing on outcomes that drive real business value.',
+    icon: Users,
+    title: 'Collaboration',
+    description: 'The best outcomes are built together.',
     color: 'from-purple-500 to-violet-500'
   },
   {
-    icon: Users,
-    title: 'Collaborative Spirit',
-    description: 'We believe the best solutions emerge from collaboration between legal experts, technologists, and entrepreneurs.',
+    icon: Globe,
+    title: 'Clarity',
+    description: 'Simple plans. Executed well.',
     color: 'from-indigo-500 to-blue-500'
   }
 ]

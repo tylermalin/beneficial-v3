@@ -9,49 +9,49 @@ const processSteps = [
   {
     phase: 'Phase 1',
     title: 'Discovery & Validation',
-    duration: '4-6 weeks',
-    description: 'Deep dive into market opportunity, regulatory landscape, and technical feasibility.',
+    duration: '4–6 weeks',
+    description: 'We start by pressure-testing the idea. Is the opportunity real? Can it be built? What stands in the way?',
     deliverables: [
-      'Market Analysis Report',
-      'Regulatory Compliance Assessment',
-      'Technical Architecture Review',
-      'Go-to-Market Strategy'
+      'Market & Opportunity Analysis',
+      'Technical Feasibility Review',
+      'Risk & Constraint Mapping',
+      'Initial Go-to-Market Direction'
     ]
   },
   {
     phase: 'Phase 2',
-    title: 'Legal Foundation',
-    duration: '6-8 weeks',
-    description: 'Establish robust legal infrastructure and intellectual property protection.',
+    title: 'Foundation',
+    duration: '6–8 weeks',
+    description: 'With clarity in place, we help establish the structures needed to build and operate responsibly as the venture grows.',
     deliverables: [
-      'Entity Formation & Structure',
-      'IP Strategy & Filing',
-      'Regulatory Framework',
-      'Compliance Protocols'
+      'Venture & Operating Structure',
+      'IP & Technology Positioning',
+      'Governance & Risk Framework',
+      'Readiness for Build & Launch'
     ]
   },
   {
     phase: 'Phase 3',
     title: 'Product Development',
-    duration: '12-16 weeks',
-    description: 'Build MVP with integrated compliance and prepare for market entry.',
+    duration: '12–16 weeks',
+    description: 'We move into execution—building, testing, and preparing for real-world use.',
     deliverables: [
-      'MVP Development',
-      'Security Audit',
-      'Compliance Integration',
-      'Beta Testing Program'
+      'MVP or Initial Product Build',
+      'Security & Reliability Review',
+      'Systems Integration',
+      'Beta or Pilot Program'
     ]
   },
   {
     phase: 'Phase 4',
     title: 'Market Launch',
-    duration: '8-12 weeks',
-    description: 'Strategic market entry with ongoing legal and operational support.',
+    duration: '8–12 weeks',
+    description: 'From first release to early scale, we support teams as they move into production and real customer use.',
     deliverables: [
       'Product Launch',
-      'Marketing Campaign',
-      'Partnership Development',
-      'Ongoing Legal Support'
+      'Early Customer & Partner Activation',
+      'Operational Support',
+      'Ongoing Advisory & Optimization'
     ]
   }
 ]
@@ -71,7 +71,7 @@ export function StudioProcess() {
             Our Process
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A systematic approach to venture building that combines legal engineering with proven startup methodologies.
+            A practical, phased approach to venture building—designed to move teams from uncertainty to execution.
           </p>
         </motion.div>
 

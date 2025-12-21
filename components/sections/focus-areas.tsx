@@ -9,29 +9,29 @@ const focusAreas = [
   {
     icon: Brain,
     title: 'Artificial Intelligence',
-    description: 'Legal frameworks for AI governance, data rights, and algorithmic accountability in the age of machine intelligence.',
-    subcategories: ['AI Governance', 'Data Rights', 'Algorithmic Auditing', 'ML Compliance'],
+    description: 'Building and deploying AI systems that are useful, reliable, and ready for the real world.',
+    subcategories: ['AI Product Strategy', 'Data & Model Readiness', 'System Oversight', 'Enterprise Deployment'],
     color: 'from-blue-500 to-purple-600'
   },
   {
     icon: Atom,
     title: 'Deep Science',
-    description: 'Regulatory pathways for breakthrough scientific innovations, from quantum computing to biotechnology.',
+    description: 'Supporting advanced technical innovation as it moves from research into real-world systems.',
     subcategories: ['Quantum Computing', 'Biotechnology', 'Materials Science', 'Space Technology'],
     color: 'from-green-500 to-teal-600'
   },
   {
     icon: Zap,
     title: 'Energy Transition',
-    description: 'Legal infrastructure for renewable energy, carbon markets, and sustainable technology deployment.',
+    description: 'Developing and scaling technologies that support a more resilient, sustainable energy system.',
     subcategories: ['Renewable Energy', 'Carbon Markets', 'Grid Technology', 'Energy Storage'],
     color: 'from-yellow-500 to-orange-600'
   },
   {
     icon: Coins,
-    title: 'Blockchain & DeFi',
-    description: 'Comprehensive legal engineering for decentralized finance, digital assets, and Web3 infrastructure.',
-    subcategories: ['DeFi Protocols', 'Digital Assets', 'Smart Contracts', 'DAO Governance'],
+    title: 'Blockchain & Digital Systems',
+    description: 'Building digital infrastructure focused on real use cases, not speculation.',
+    subcategories: ['Platforms & Protocols', 'Digital Assets', 'Smart Contracts', 'Network & DAO Operations'],
     color: 'from-primary to-red-600'
   }
 ]
@@ -51,7 +51,9 @@ export function FocusAreas() {
             Focus Areas
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We specialize in the legal engineering challenges of tomorrow's most transformative technologies.
+            We focus on technologies with the potential to create meaningful, lasting impact.
+            <br /><br />
+            These are hard problems with real stakes. That's the point.
           </p>
         </motion.div>
 
