@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Fraunces } from 'next/font/google'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { SmoothScrollProvider } from '@/components/providers/smooth-scroll'
 import { Grain } from '@/components/ui/grain'
@@ -174,6 +175,7 @@ export default function RootLayout({
             {children}
           </SmoothScrollProvider>
           <Grain />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
