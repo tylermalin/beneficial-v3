@@ -2,8 +2,10 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 
 export const metadata = {
-  title: 'Disclaimer — Beneficial Technology',
+  title: 'Disclaimer',
   description: 'Beneficial Technology is not a law firm and does not provide legal advice. Full disclaimer.',
+  alternates: { canonical: 'https://www.beneficial.technology/disclaimer' },
+  robots: { index: true, follow: true },
 }
 
 export default function DisclaimerPage() {

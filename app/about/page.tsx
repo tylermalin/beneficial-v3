@@ -6,8 +6,15 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 
 export const metadata = {
-  title: 'About — Beneficial Technology',
-  description: 'Operator-attorney led. Beneficial Technology provides fractional structural strategy and project-based legal engineering for founders building in regulated verticals.',
+  title: 'About',
+  description: 'Operator-attorney led. Beneficial Technology provides fractional structural strategy and project-based legal engineering for founders building in regulated verticals. Tyler Malin: Cravath, CFTC fellow, Fordham JD, CEO of Mālama Labs.',
+  alternates: { canonical: 'https://www.beneficial.technology/about' },
+  openGraph: {
+    title: 'About — Beneficial Technology',
+    description: 'Operator-attorney led. Built for founders who can\'t afford the standard playbook.',
+    url: 'https://www.beneficial.technology/about',
+    type: 'profile',
+  },
 }
 
 export default function AboutPage() {
