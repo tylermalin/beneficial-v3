@@ -41,7 +41,7 @@ export async function GET() {
             Operator-attorney · Cravath · CFTC · Fordham JD
           </div>
           <div style={{ display: 'flex', fontSize: 18, color: '#8C5E3C', fontFamily: 'sans-serif', textTransform: 'uppercase', letterSpacing: '0.18em' }}>
-            beneficial.tech
+            beneficial.technology
           </div>
         </div>
       </div>

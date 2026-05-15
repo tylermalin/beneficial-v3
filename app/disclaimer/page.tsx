@@ -124,11 +124,11 @@ export default function DisclaimerPage() {
             <DisclaimerSection num="10" title="Contact">
               <div className="bg-sand-soft border-l-2 border-sienna pl-6 py-5 not-italic">
                 <p className="font-serif text-lg text-forest mb-2">Beneficial Technology, LLC</p>
-                <p className="text-sm mb-1"><span className="text-slate-soft uppercase tracking-wider text-xs mr-2">Email</span> legal@beneficial.tech</p>
+                <p className="text-sm mb-1"><span className="text-slate-soft uppercase tracking-wider text-xs mr-2">Email</span> legal@beneficial.technology</p>
                 <p className="text-sm mb-1"><span className="text-slate-soft uppercase tracking-wider text-xs mr-2">Address</span> 8 The Green, Ste A, Dover, DE 19901</p>
               </div>
               <p>
-                For general inquiries, contact <a href="mailto:tyler@beneficial.tech" className="text-forest border-b border-sienna pb-0.5 hover:text-sienna transition-colors">tyler@beneficial.tech</a>.
+                For general inquiries, contact <a href="mailto:tyler@beneficial.technology" className="text-forest border-b border-sienna pb-0.5 hover:text-sienna transition-colors">tyler@beneficial.technology</a>.
               </p>
             </DisclaimerSection>
 

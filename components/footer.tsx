@@ -27,10 +27,10 @@ export function Footer() {
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <a
-                href="mailto:tyler@beneficial.tech"
+                href="mailto:tyler@beneficial.technology"
                 className="text-sm text-slate-ink hover:text-forest"
               >
-                tyler@beneficial.tech
+                tyler@beneficial.technology
               </a>
             </div>
           </div>

@@ -72,11 +72,11 @@ export function FinalCTA() {
                 cal.com/beneficialtech
               </MagneticButton>
               <a
-                href="mailto:tyler@beneficial.tech"
+                href="mailto:tyler@beneficial.technology"
                 className="group text-cream/80 hover:text-cream relative inline-flex items-center"
               >
                 <span className="relative">
-                  tyler@beneficial.tech
+                  tyler@beneficial.technology
                   <span className="absolute -bottom-0.5 left-0 h-px w-full bg-[#D4A574]/60 origin-right scale-x-100 group-hover:scale-x-0 transition-transform duration-500" />
                 </span>
               </a>

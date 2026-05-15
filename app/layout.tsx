@@ -105,7 +105,7 @@ const jsonLd = {
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'business',
-        email: 'tyler@beneficial.tech',
+        email: 'tyler@beneficial.technology',
         url: 'https://cal.com/beneficialtech',
       },
       hasOfferCatalog: {
