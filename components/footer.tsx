@@ -1,156 +1,70 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Twitter, Linkedin, Github, Mail } from 'lucide-react'
-import { submitNewsletterSubscription } from '@/lib/actions'
-import { useState } from 'react'
-
-const footerLinks = {
-  Studio: [
-    { href: '/studio', label: 'Studio Model' },
-    { href: '/focus', label: 'Focus Areas' },
-    { href: '/ventures', label: 'Ventures' },
-    { href: '/about', label: 'About Us' }
-  ],
-  Services: [
-    { href: '/services', label: 'Technology Development & Support' },
-    { href: '/services/ai-blockchain-consulting', label: 'AI & Blockchain Services' },
-    { href: '/services/strategic-capital', label: 'Strategic Capital' },
-    { href: '/services', label: 'Advisory & Execution' },
-    { href: '/investor-services', label: 'Investor Services' }
-  ],
-  Legal: [
-    { href: '/privacy-policy', label: 'Privacy Policy' },
-    { href: '/terms-of-service', label: 'Terms of Service' },
-    { href: '/data-deletion', label: 'Data Deletion' },
-    { href: '/disclaimer', label: 'Legal Disclaimer' }
-  ]
-}
-
-const socialLinks = [
-  { href: 'https://twitter.com/beneficial_tech', icon: Twitter, label: 'Twitter' },
-  { href: 'https://linkedin.com/company/beneficial-technology', icon: Linkedin, label: 'LinkedIn' },
-  { href: 'https://github.com/beneficial-tech', icon: Github, label: 'GitHub' },
-  { href: 'mailto:hello@beneficial.technology', icon: Mail, label: 'Email' }
-]
+import { ArrowUpRight } from 'lucide-react'
 
 export function Footer() {
-  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [newsletterMessage, setNewsletterMessage] = useState<string | null>(null)
-
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">B</span>
-              </div>
-              <span className="font-bold text-xl">Beneficial Technology</span>
+    <footer className="bg-cream border-t border-rule">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="lg:col-span-5">
+            <Link href="/" className="inline-block">
+              <span className="font-serif text-2xl text-forest tracking-tight">
+                Beneficial Technology
+              </span>
             </Link>
-            <p className="text-muted-foreground mb-4 max-w-sm">
-              Beneficial Technology — Building and supporting technologies that matter.
+            <p className="mt-4 font-serif italic text-base text-slate-ink leading-relaxed max-w-md">
+              Legal engineering and structural strategy for founders building at the regulated frontier.
             </p>
-            <p className="text-sm font-medium text-primary mb-6 italic">
-              Technology that earns trust.
-            </p>
-            
-            {/* Newsletter Signup */}
-            <div className="space-y-2">
-              <h4 className="font-semibold">Stay Updated</h4>
-              <form 
-                action={async (formData: FormData) => {
-                  setNewsletterStatus('loading')
-                  const result = await submitNewsletterSubscription(formData)
-                  if (result.success) {
-                    setNewsletterStatus('success')
-                    setNewsletterMessage(result.message)
-                  } else {
-                    setNewsletterStatus('error')
-                    setNewsletterMessage(result.message)
-                  }
-                }}
-                className="space-y-2"
-              >
-                <div className="flex gap-2">
-                  <Input 
-                    type="email" 
-                    name="email"
-                    placeholder="Enter your email" 
-                    className="max-w-xs"
-                    required
-                    disabled={newsletterStatus === 'loading' || newsletterStatus === 'success'}
-                  />
-                  <Button 
-                    type="submit"
-                    size="sm" 
-                    className="bg-primary hover:bg-primary/90"
-                    disabled={newsletterStatus === 'loading' || newsletterStatus === 'success'}
-                  >
-                    {newsletterStatus === 'loading' ? 'Subscribing...' : 
-                     newsletterStatus === 'success' ? 'Subscribed!' : 'Subscribe'}
-                  </Button>
-                </div>
-                {newsletterMessage && (
-                  <p className={`text-xs ${newsletterStatus === 'success' ? 'text-green-600' : 'text-red-600'}`}>
-                    {newsletterMessage}
-                  </p>
-                )}
-              </form>
-            </div>
-          </div>
 
-          {/* Footer Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="font-semibold mb-4">{category}</h4>
-              <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link.href}>
-                    <Link 
-                      href={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Beneficial Technology. All rights reserved.
-          </div>
-          
-          {/* Social Links */}
-          <div className="flex space-x-4">
-            {socialLinks.map((social) => (
+            <div className="mt-8 flex flex-col gap-3">
               <Link
-                key={social.href}
-                href={social.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                aria-label={social.label}
+                href="https://cal.com/beneficialtech"
+                className="group inline-flex items-center gap-2 text-forest text-base"
               >
-                <social.icon size={20} />
+                <span className="font-serif border-b border-sienna pb-0.5">cal.com/beneficialtech</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
-            ))}
+              <a
+                href="mailto:tyler@beneficial.tech"
+                className="text-sm text-slate-ink hover:text-forest"
+              >
+                tyler@beneficial.tech
+              </a>
+            </div>
+          </div>
+
+          <div className="lg:col-span-3">
+            <div className="text-[10px] uppercase tracking-[0.18em] text-slate-soft font-medium mb-4">
+              Site
+            </div>
+            <ul className="space-y-2.5 text-sm">
+              <li><Link href="/" className="text-forest hover:text-sienna transition-colors">Home</Link></li>
+              <li><Link href="/#engagements" className="text-forest hover:text-sienna transition-colors">Engagements</Link></li>
+              <li><Link href="/about" className="text-forest hover:text-sienna transition-colors">About</Link></li>
+              <li><Link href="/beneficial-technology-services.pdf" className="text-forest hover:text-sienna transition-colors">Service sheet (PDF)</Link></li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-4">
+            <div className="text-[10px] uppercase tracking-[0.18em] text-slate-soft font-medium mb-4">
+              Important
+            </div>
+            <p className="font-serif italic text-sm text-slate-ink leading-relaxed">
+              Beneficial Technology is a Delaware limited liability company providing strategic and structural consulting services. We are not a law firm and do not provide legal advice. For any matter requiring legal advice or representation, you&apos;ll work with an attorney you separately engage.
+            </p>
+            <div className="mt-4 flex gap-4 text-xs text-slate-soft">
+              <Link href="/privacy-policy" className="hover:text-forest">Privacy</Link>
+              <Link href="/terms-of-service" className="hover:text-forest">Terms</Link>
+              <Link href="/disclaimer" className="hover:text-forest">Disclaimer</Link>
+            </div>
           </div>
         </div>
 
-        {/* Legal Disclaimer */}
-        <div className="border-t border-border mt-8 pt-8">
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            <strong>Legal Disclaimer:</strong> Beneficial Technology provides legal engineering and advisory services. This website does not constitute legal advice and should not be relied upon as such. All investments involve risk, including potential loss of principal. Past performance does not guarantee future results. Please consult with qualified legal and financial professionals before making any investment or business decisions.
-          </p>
+        <div className="mt-16 pt-8 border-t border-rule flex flex-col sm:flex-row justify-between gap-4 text-xs text-slate-soft">
+          <div>© {new Date().getFullYear()} Beneficial Technology, LLC</div>
+          <div>Delaware · Honolulu · Operator-attorney led</div>
         </div>
       </div>
     </footer>

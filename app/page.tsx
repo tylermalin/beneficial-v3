@@ -1,22 +1,28 @@
-import { Hero } from '@/components/sections/hero'
-import { StudioModel } from '@/components/sections/studio-model'
-import { FocusAreas } from '@/components/sections/focus-areas'
-import { VentureHighlights } from '@/components/sections/venture-highlights'
-import { LimitedOffer } from '@/components/sections/limited-offer'
-import { CTAStrip } from '@/components/sections/cta-strip'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+import { RepositionHero } from '@/components/sections/reposition/hero'
+import { Credentials } from '@/components/sections/reposition/credentials'
+import { WhatWeDo } from '@/components/sections/reposition/what-we-do'
+import { WhoWeWorkWith } from '@/components/sections/reposition/who-we-work-with'
+import { Tiers } from '@/components/sections/reposition/tiers'
+import { HowWeWork } from '@/components/sections/reposition/how-we-work'
+import { WhatWeDontDo } from '@/components/sections/reposition/what-we-dont-do'
+import { RecentWork } from '@/components/sections/reposition/recent-work'
+import { FinalCTA } from '@/components/sections/reposition/cta'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-cream">
       <Navigation />
-      <Hero />
-      <StudioModel />
-      <FocusAreas />
-      <VentureHighlights />
-      <LimitedOffer />
-      <CTAStrip />
+      <RepositionHero />
+      <Credentials />
+      <WhatWeDo />
+      <WhoWeWorkWith />
+      <Tiers />
+      <HowWeWork />
+      <WhatWeDontDo />
+      <RecentWork />
+      <FinalCTA />
       <Footer />
     </main>
   )

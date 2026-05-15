@@ -20,9 +20,18 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: '#FA4C14',
+          DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
+        forest: 'hsl(var(--forest))',
+        'forest-deep': 'hsl(var(--forest-deep))',
+        'slate-ink': 'hsl(var(--slate-ink))',
+        'slate-soft': 'hsl(var(--slate-soft))',
+        sand: 'hsl(var(--sand))',
+        'sand-soft': 'hsl(var(--sand-soft))',
+        cream: 'hsl(var(--cream))',
+        rule: 'hsl(var(--rule))',
+        sienna: 'hsl(var(--accent-sienna))',
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
@@ -69,6 +78,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-fraunces)', 'Fraunces', 'Georgia', 'serif'],
       },
     },
   },
