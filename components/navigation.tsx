@@ -2,94 +2,124 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { MagneticButton } from "@/components/ui/magnetic-button"
+import { WordmarkGlyph } from "@/components/ui/icons"
+
+const navItems = [
+  { href: "/#engagements", label: "Engagements" },
+  { href: "/about", label: "About" },
+  { href: "/beneficial-technology-services.pdf", label: "Service sheet" },
+]
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { scrollY } = useScroll()
+  const navBg = useTransform(scrollY, [0, 80], [0, 0.92])
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/studio", label: "Studio" },
-    { href: "/focus", label: "Focus" },
-    { href: "/ventures", label: "Ventures" },
-    { href: "/about", label: "About" },
-  ]
+    return scrollY.on('change', (v) => setScrolled(v > 30))
+  }, [scrollY])
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
-      }`}
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed top-0 left-0 right-0 z-50"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">B</span>
-            </div>
-            <span className="font-bold text-xl">Beneficial</span>
+      <motion.div
+        style={{ opacity: navBg }}
+        className="absolute inset-0 bg-cream backdrop-blur-xl border-b border-rule pointer-events-none"
+      />
+
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          <Link href="/" className="group flex items-center gap-3">
+            <motion.div
+              whileHover={{ rotate: 90 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="text-sienna"
+            >
+              <WordmarkGlyph size={24} />
+            </motion.div>
+            <span className="font-serif text-xl sm:text-[1.35rem] text-forest tracking-tight group-hover:text-sienna transition-colors duration-500">
+              Beneficial Technology
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-9">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-200"
+                className="group relative text-sm text-slate-ink hover:text-forest transition-colors"
               >
-                {item.label}
+                <span className="relative">
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-full bg-sienna scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                </span>
               </Link>
             ))}
-            <Button className="bg-primary hover:bg-primary/90" asChild>
-              <Link href="/reserve-sprint">Book a Call</Link>
-            </Button>
+            <MagneticButton href="https://cal.com/beneficialtech" external size="sm" variant="forest">
+              Book a call
+            </MagneticButton>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <button
+            className="md:hidden text-forest relative z-10"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border"
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden bg-cream border-b border-rule overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-4 space-y-4">
-              {navItems.map((item) => (
-                <Link
+            <div className="container mx-auto px-6 py-7 space-y-5">
+              {navItems.map((item, i) => (
+                <motion.div
                   key={item.href}
-                  href={item.href}
-                  className="block text-foreground/80 hover:text-primary transition-colors duration-200"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + i * 0.06 }}
+                >
+                  <Link
+                    href={item.href}
+                    className="block font-serif text-2xl text-forest hover:text-sienna transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="pt-3"
+              >
+                <a
+                  href="https://cal.com/beneficialtech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-forest text-cream px-5 py-3 text-sm"
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.label}
-                </Link>
-              ))}
-              <Button className="w-full bg-primary hover:bg-primary/90" asChild>
-                <Link href="/reserve-sprint">Book a Call</Link>
-              </Button>
+                  Book a call ↗
+                </a>
+              </motion.div>
             </div>
           </motion.div>
         )}
