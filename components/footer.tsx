@@ -42,6 +42,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li><Link href="/" className="text-forest hover:text-sienna transition-colors">Home</Link></li>
               <li><Link href="/#engagements" className="text-forest hover:text-sienna transition-colors">Engagements</Link></li>
+              <li><Link href="/resources" className="text-forest hover:text-sienna transition-colors">Resources</Link></li>
               <li><Link href="/about" className="text-forest hover:text-sienna transition-colors">About</Link></li>
               <li><Link href="/beneficial-technology-services.pdf" className="text-forest hover:text-sienna transition-colors">Service sheet (PDF)</Link></li>
             </ul>

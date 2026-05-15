@@ -9,6 +9,7 @@ import { WordmarkGlyph } from "@/components/ui/icons"
 
 const navItems = [
   { href: "/#engagements", label: "Engagements" },
+  { href: "/resources", label: "Resources" },
   { href: "/about", label: "About" },
   { href: "/beneficial-technology-services.pdf", label: "Service sheet" },
 ]
