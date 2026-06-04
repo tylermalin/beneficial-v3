@@ -10,7 +10,7 @@ import { recordEvent } from '@/lib/analytics'
 
 export default function MembershipPage() {
   const [membershipProduct, setMembershipProduct] = useState<Product | null>(null)
-  const [isSubscribed, setIsSubscribed] = useState(false)
+  const [isWaitlisted, setIsWaitlisted] = useState(false)
   const [isSimulating, setIsSimulating] = useState(false)
   const [email, setEmail] = useState('')
   const [activeTab, setActiveTab] = useState<'benefits' | 'vault'>('benefits')
@@ -20,9 +20,9 @@ export default function MembershipPage() {
     const mem = products.find(p => p.type === 'membership') || null
     setMembershipProduct(mem)
 
-    const storedSub = localStorage.getItem('beneficial_member_subscribed')
-    if (storedSub === 'true') {
-      setIsSubscribed(true)
+    const storedWaitlist = localStorage.getItem('beneficial_member_waitlisted')
+    if (storedWaitlist === 'true') {
+      setIsWaitlisted(true)
       const storedEmail = localStorage.getItem('beneficial_member_email')
       if (storedEmail) setEmail(storedEmail)
     }
@@ -30,25 +30,25 @@ export default function MembershipPage() {
     recordEvent('pageview', { section: 'membership' })
   }, [])
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleJoinWaitlist = (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
 
     setIsSimulating(true)
     setTimeout(() => {
       setIsSimulating(false)
-      setIsSubscribed(true)
-      localStorage.setItem('beneficial_member_subscribed', 'true')
+      setIsWaitlisted(true)
+      localStorage.setItem('beneficial_member_waitlisted', 'true')
       localStorage.setItem('beneficial_member_email', email)
-      recordEvent('purchase', { product: 'Regulated Frontier Membership', price: 950 })
-    }, 1500)
+      recordEvent('click', { action: 'join_membership_waitlist', email })
+    }, 1200)
   }
 
-  const handleCancelSub = () => {
-    setIsSubscribed(false)
-    localStorage.removeItem('beneficial_member_subscribed')
+  const handleLeaveWaitlist = () => {
+    setIsWaitlisted(false)
+    localStorage.removeItem('beneficial_member_waitlisted')
     localStorage.removeItem('beneficial_member_email')
-    recordEvent('click', { action: 'cancel_membership' })
+    recordEvent('click', { action: 'leave_membership_waitlist' })
   }
 
   return (
@@ -62,7 +62,7 @@ export default function MembershipPage() {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-12 bg-sienna" />
               <span className="text-xs uppercase tracking-[0.22em] text-sienna font-medium">
-                Exclusive Membership
+                Exclusive Membership (Coming Soon)
               </span>
             </div>
             <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] text-forest leading-[0.98] tracking-[-0.02em] font-normal">
@@ -86,7 +86,7 @@ export default function MembershipPage() {
                 activeTab === 'benefits' ? 'text-forest font-semibold' : 'text-slate-soft hover:text-forest'
               }`}
             >
-              Benefits & Pricing
+              Benefits &amp; Pricing
               {activeTab === 'benefits' && (
                 <motion.div layoutId="activeTabUnderline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-sienna" />
               )}
@@ -98,7 +98,7 @@ export default function MembershipPage() {
               }`}
             >
               <Key size={16} className="text-sienna" />
-              Member Vault Gated Demo
+              Member Vault (Coming Soon)
               {activeTab === 'vault' && (
                 <motion.div layoutId="activeTabUnderline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-sienna" />
               )}
@@ -145,8 +145,8 @@ export default function MembershipPage() {
                 {/* Sub Card */}
                 <div className="lg:col-span-5 bg-forest text-cream p-8 sm:p-10 rounded-sm shadow-xl relative overflow-hidden">
                   <div className="absolute inset-0 bg-forest-deep opacity-30 -z-10" />
-                  <div className="text-xs uppercase tracking-[0.2em] text-[#D4A574] font-semibold mb-2">
-                    Active Retainer
+                  <div className="text-xs uppercase tracking-[0.2em] text-[#D4A574] font-semibold mb-2 flex items-center gap-2">
+                    Active Retainer <span className="bg-[#D4A574]/20 text-[#D4A574] text-[9px] px-1.5 py-0.5 rounded-sm font-bold uppercase">Coming Soon</span>
                   </div>
                   <h3 className="font-serif text-3xl mb-1">Frontier Membership</h3>
                   <div className="flex items-baseline gap-2 mb-6">
@@ -167,11 +167,11 @@ export default function MembershipPage() {
                     ))}
                   </ul>
 
-                  {!isSubscribed ? (
-                    <form onSubmit={handleSubscribe} className="space-y-4">
+                  {!isWaitlisted ? (
+                    <form onSubmit={handleJoinWaitlist} className="space-y-4">
                       <div>
                         <label className="block text-[10px] uppercase tracking-wider text-cream/70 mb-1.5">
-                          Enter Email to Activate Simulated Membership
+                          Enter Email to Join Membership Waitlist
                         </label>
                         <input
                           type="email"
@@ -189,33 +189,24 @@ export default function MembershipPage() {
                       >
                         {isSimulating ? (
                           <>
-                            <Loader2 className="animate-spin" size={14} /> Processing...
+                            <Loader2 className="animate-spin" size={14} /> Joining Waitlist...
                           </>
                         ) : (
-                          'Subscribe Simulator'
+                          'Join Priority Waitlist'
                         )}
                       </button>
                     </form>
                   ) : (
                     <div className="space-y-4">
                       <div className="bg-forest-deep/60 p-4 border border-cream/15 rounded-sm">
-                        <p className="text-xs text-[#D4A574] font-semibold mb-1">Membership Active ✓</p>
-                        <p className="text-[11px] opacity-75">Billed to: {email}</p>
+                        <p className="text-xs text-[#D4A574] font-semibold mb-1">✓ Added to Priority Waitlist</p>
+                        <p className="text-[11px] opacity-75">We will notify: {email}</p>
                       </div>
                       <button
-                        onClick={() => {
-                          setActiveTab('vault')
-                          recordEvent('click', { action: 'view_vault_from_card' })
-                        }}
-                        className="w-full py-3.5 bg-cream hover:bg-[#D4A574] text-forest font-bold text-xs uppercase tracking-[0.2em] transition-colors duration-300 flex items-center justify-center gap-1.5"
-                      >
-                        Enter Member Vault <Key size={14} />
-                      </button>
-                      <button
-                        onClick={handleCancelSub}
+                        onClick={handleLeaveWaitlist}
                         className="w-full text-center text-[10px] text-cream/50 hover:text-cream/80 transition-colors uppercase tracking-wider underline pt-2"
                       >
-                        Simulate Cancel Subscription
+                        Leave Waitlist
                       </button>
                     </div>
                   )}
@@ -232,64 +223,25 @@ export default function MembershipPage() {
                 transition={{ duration: 0.4 }}
                 className="max-w-4xl mx-auto"
               >
-                {!isSubscribed ? (
-                  <div className="text-center py-20 bg-sand-soft border border-rule/30 rounded-sm">
-                    <Key size={48} className="mx-auto text-sienna mb-4 animate-pulse" />
-                    <h3 className="font-serif text-2xl text-forest mb-2">Member Content Gated</h3>
-                    <p className="text-sm text-slate-ink max-w-md mx-auto leading-relaxed mb-6">
-                      The document vault and toolkits are available exclusively to active members of the Regulated Frontier Club. Please subscribe on the benefits tab first to unlock this simulator.
-                    </p>
+                <div className="text-center py-20 bg-sand-soft border border-rule/30 rounded-sm">
+                  <Key size={48} className="mx-auto text-sienna mb-4 animate-pulse" />
+                  <h3 className="font-serif text-2xl text-forest mb-2">Member Document Vault (Coming Soon)</h3>
+                  <p className="text-sm text-slate-ink max-w-md mx-auto leading-relaxed mb-6">
+                    The document vault, compliance matrices, legal drafting templates, and contractor frameworks will be accessible to active members of the Regulated Frontier Club once membership launches.
+                  </p>
+                  {isWaitlisted ? (
+                    <div className="inline-block bg-emerald-50 border border-emerald-200 text-emerald-800 px-5 py-2.5 rounded-sm text-xs font-semibold">
+                      ✓ You have joined the priority waitlist for early access
+                    </div>
+                  ) : (
                     <button
                       onClick={() => setActiveTab('benefits')}
                       className="px-6 py-3.5 bg-forest hover:bg-sienna text-cream text-xs uppercase tracking-wider font-semibold transition-colors duration-300 rounded-sm"
                     >
-                      Subscribe via Simulator
+                      Join Priority Waitlist
                     </button>
-                  </div>
-                ) : (
-                  <div className="space-y-8">
-                    <div className="flex items-center justify-between bg-forest text-cream p-5 rounded-sm">
-                      <div>
-                        <span className="text-[10px] uppercase text-[#D4A574] font-semibold tracking-wider">Protected Sandbox</span>
-                        <h3 className="font-serif text-xl">Unlocked Member Area</h3>
-                      </div>
-                      <span className="text-xs bg-forest-deep px-3 py-1.5 border border-[#D4A574]/30 text-[#D4A574] font-bold">
-                        Authenticated: {email}
-                      </span>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-6">
-                      {[
-                        { title: 'Cayman SPV Constitution Template', type: 'Diligence Kit', desc: 'Pre-formatted legal draft for launching a Cayman foundation structure.', size: '412 KB' },
-                        { title: 'HIPAA-compliant AI Audio Policy Statement', type: 'AI SOP', desc: 'Staff compliance rules and OpenAI API opt-out term structures.', size: '185 KB' },
-                        { title: 'Regulated Raising Exemption Outline', type: 'Regulatory Memo', desc: 'Step-by-step blueprint comparing Reg D Rule 506(c) vs Reg S.', size: '890 KB' }
-                      ].map((doc, idx) => (
-                        <div key={idx} className="bg-sand-soft p-5 border border-rule/30 flex flex-col justify-between rounded-sm min-h-[200px]">
-                          <div>
-                            <span className="text-[9px] uppercase tracking-wider bg-cream px-2 py-0.5 border border-rule/20 text-sienna font-semibold">
-                              {doc.type}
-                            </span>
-                            <h4 className="font-serif text-lg text-forest mt-3 mb-2 leading-snug">{doc.title}</h4>
-                            <p className="text-xs text-slate-ink leading-relaxed">{doc.desc}</p>
-                          </div>
-                          <div className="flex justify-between items-center mt-5 pt-3 border-t border-rule/30 text-xs">
-                            <span className="text-slate-soft">{doc.size}</span>
-                            <a
-                              href="#"
-                              onClick={(e) => {
-                                e.preventDefault()
-                                alert(`Downloading Member Asset: ${doc.title}`)
-                              }}
-                              className="text-forest hover:text-sienna font-semibold flex items-center gap-1"
-                            >
-                              Download <Check size={12} />
-                            </a>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
