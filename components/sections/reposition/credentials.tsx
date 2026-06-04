@@ -5,7 +5,7 @@ import { StaggerGroup, staggerItem } from '@/components/ui/reveal'
 
 const items = [
   { primary: 'Operator-attorney', secondary: 'building & advising' },
-  { primary: 'Cravath', secondary: 'litigation' },
+  { primary: '15+ Yrs Law Firm', secondary: 'experience' },
   { primary: 'CFTC', secondary: 'regulatory fellowship' },
   { primary: 'Fordham Law', secondary: 'JD' },
   { primary: 'Two prior exits', secondary: 'one Inc. 500, acq. Maker Studios' },

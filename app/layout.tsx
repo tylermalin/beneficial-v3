@@ -4,7 +4,9 @@ import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { SmoothScrollProvider } from '@/components/providers/smooth-scroll'
+import { AnalyticsProvider } from '@/components/providers/analytics-provider'
 import { Grain } from '@/components/ui/grain'
+
 
 const inter = Inter({
   subsets: ['latin'],
@@ -146,7 +148,7 @@ const jsonLd = {
       alumniOf: [
         { '@type': 'EducationalOrganization', name: 'Fordham University School of Law' },
       ],
-      description: 'Operator-attorney. Former Cravath litigator, CFTC regulatory fellow. CEO of Mālama Labs. Two prior startup exits.',
+      description: 'Operator-attorney. Former litigator with 15+ year lawfirm experience, CFTC regulatory fellow. CEO of Mālama Labs. Two prior startup exits.',
     },
   ],
 }
@@ -171,9 +173,12 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <SmoothScrollProvider>
-            {children}
-          </SmoothScrollProvider>
+          <AnalyticsProvider>
+            <SmoothScrollProvider>
+              {children}
+            </SmoothScrollProvider>
+          </AnalyticsProvider>
+
           <Grain />
           <Analytics />
         </ThemeProvider>

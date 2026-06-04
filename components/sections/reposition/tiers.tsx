@@ -1,9 +1,9 @@
 'use client'
-
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Reveal, SplitWords, StaggerGroup, staggerItem } from '@/components/ui/reveal'
 import { MagneticButton } from '@/components/ui/magnetic-button'
-import { OperatorIcon, ArchitectIcon, ProjectIcon } from '@/components/ui/icons'
+import { OperatorIcon, ArchitectIcon, ProjectIcon, CustomIcon } from '@/components/ui/icons'
 import { TierCard } from './tier-card'
 import type { ComponentType, SVGProps } from 'react'
 
@@ -24,51 +24,68 @@ const tiers: Tier[] = [
     name: 'Operator',
     price: '$8,500',
     cadence: '/ month',
-    desc: 'For pre-seed and seed-stage founders who need a structural partner, not a law firm.',
+    desc: 'For pre-seed, seed, and growing SMB founders who need fractional structural guidance across operations, planning strategy, and technology integration.',
     listLabel: 'Includes',
     list: [
       'Up to 8 hours of advisory / month',
-      'Cap table, SAFE & contract structural review',
-      'Vendor and counsel referrals',
-      'Monthly working session',
-      'Async support via shared workspace',
+      'Cap table, corporate structuring & governance review',
+      'AI workflow tooling & automation advisory',
+      'Vendor, developer, and outside counsel referrals',
+      'Monthly structural alignment session',
+      'Async workspace support for rapid Q&A',
     ],
-    fit: 'Equity-only startups, climate projects without token components, AI startups in lightly regulated verticals.',
+    fit: 'Bootstrap startups, hardware/SaaS ventures, SMBs adopting AI, and lightly regulated entities.',
     Icon: OperatorIcon,
   },
   {
     name: 'Architect',
     price: '$15,000',
     cadence: '/ month',
-    desc: 'For founders launching tokens, navigating multi-jurisdiction structures, or operating in heavily regulated verticals.',
+    desc: 'For scaling enterprises and token/Web3 networks launching custom tech, navigating global structures, or building in heavily regulated spaces.',
     listLabel: 'Includes',
     list: [
       'Up to 16 hours of advisory / month',
-      'Token structure & launch design',
-      'SAFT, SAFE-T & instrument design',
-      'Regulatory positioning & risk mapping',
-      'Multi-entity setup with outside counsel',
-      'Investor & board prep for regulated raises',
-      'Bi-weekly working sessions',
+      'AI model compliance & data security mapping (HIPAA, SOC2)',
+      'Custom software architecture & dev roadmap design',
+      'Multi-jurisdictional setup with outside counsel coordination',
+      'Token structural design & distribution scheduling',
+      'Board and investor strategy preparation for regulated rounds',
+      'Bi-weekly dedicated working sessions',
     ],
-    fit: 'Pre-launch token companies, DePIN networks, climate-asset issuers, regulated AI.',
+    fit: 'High-growth AI startups, Web3 protocols, DePIN networks, digital health platforms, and cross-border SaaS.',
     Icon: ArchitectIcon,
     featured: true,
   },
   {
     name: 'Project',
     price: 'From $25,000',
-    desc: 'Flat-fee engagements for specific deliverables. Scoped per engagement. Defined timelines.',
+    desc: 'Flat-fee, high-velocity engagements with defined, time-boxed milestones across development, marketing, legal engineering, or strategy.',
     listLabel: 'Examples',
     list: [
-      'Token launch structuring memo & execution roadmap',
-      'Multi-entity setup across US, Cayman & EU',
-      'Regulatory positioning memo for a fundraise',
-      'SAFT documentation & instrument design',
-      'Counsel selection & engagement management',
+      'Full-stack software/AI agent build & system integration',
+      'Go-to-market marketing execution & branding roadmap',
+      'Regulatory positioning audits & compliance ready memos',
+      'Cayman, BVI, or EU multi-entity structuring memos',
+      'Structured contract drafting (SAFTs, DPAs, SLAs)',
     ],
-    fit: 'Founders with a specific, time-boxed structural problem.',
+    fit: 'Founders with a specific, time-boxed product, growth, or compliance milestone.',
     Icon: ProjectIcon,
+  },
+  {
+    name: 'Custom',
+    price: 'Bespoke',
+    desc: 'Build a completely custom advisory, development, or legal engineering plan aligned with your specific timeline and capacity.',
+    listLabel: 'Capabilities',
+    list: [
+      'Custom advisory hours or dedicated builders',
+      'Flexible deliverables (AI, Dev, Web3, Strategy)',
+      'Specialized software & AI model fine-tuning',
+      'Brand messaging & growth marketing squads',
+      'Direct Slack/Cal channel connection',
+      'Flexible pricing models (hourly/flat/monthly)',
+    ],
+    fit: 'Companies needing custom software builders, marketing squads, or bespoke advisory packages.',
+    Icon: CustomIcon,
   },
 ]
 
@@ -87,7 +104,7 @@ export function Tiers() {
           </Reveal>
           <h2 className="font-serif text-4xl sm:text-5xl text-forest tracking-tight leading-[1.05]">
             <span className="block">
-              <SplitWords text="Three ways to work" />
+              <SplitWords text="Four ways to work" />
             </span>
             <span className="block">
               <SplitWords text="with us." delay={0.15} />{' '}
@@ -105,11 +122,11 @@ export function Tiers() {
         </div>
 
         <StaggerGroup
-          className="grid md:grid-cols-3 gap-6 lg:gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
           stagger={0.12}
         >
           {tiers.map((tier) => (
-            <motion.div key={tier.name} variants={staggerItem}>
+            <motion.div key={tier.name} className="flex" variants={staggerItem}>
               <TierCard featured={tier.featured}>
                 {tier.featured && (
                   <div className="absolute top-0 right-0 -mt-3 mr-6 z-20">
@@ -163,6 +180,17 @@ export function Tiers() {
                     </motion.li>
                   ))}
                 </ul>
+
+                <Link
+                  href={`/portal/onboarding?tier=${tier.name}`}
+                  className={`mt-8 w-full py-3 text-center text-[10px] uppercase tracking-[0.18em] font-bold border transition-all rounded-sm ${
+                    tier.featured
+                      ? 'bg-cream text-forest border-cream hover:bg-sienna hover:border-sienna hover:text-cream'
+                      : 'bg-forest border-forest text-cream hover:bg-sienna hover:border-sienna hover:text-cream'
+                  }`}
+                >
+                  {tier.name === 'Custom' ? 'Design Custom Plan' : `Retain ${tier.name}`}
+                </Link>
 
                 <div className={`mt-8 pt-5 border-t font-serif italic text-xs leading-snug ${
                   tier.featured

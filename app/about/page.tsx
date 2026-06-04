@@ -7,7 +7,7 @@ import { ArrowUpRight } from 'lucide-react'
 
 export const metadata = {
   title: 'About',
-  description: 'Operator-attorney led. Beneficial Technology provides fractional structural strategy and project-based legal engineering for founders building in regulated verticals. Tyler Malin: Cravath, CFTC fellow, Fordham JD, CEO of Mālama Labs.',
+  description: 'Operator-attorney led. Beneficial Technology provides fractional structural strategy and project-based legal engineering for founders building in regulated verticals. Tyler Malin: 15+ year lawfirm experience, CFTC fellow, Fordham JD, CEO of Mālama Labs.',
   alternates: { canonical: 'https://www.beneficial.technology/about' },
   openGraph: {
     title: 'About — Beneficial Technology',
@@ -82,7 +82,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-9 max-w-3xl space-y-6 text-base sm:text-lg text-slate-ink leading-relaxed">
               <p>
-                Operator-attorney. Two prior startup exits, one of them an Inc. 500 company acquired by Maker Studios. Trained in litigation at Cravath, Swaine &amp; Moore. Held a regulatory fellowship at the Commodity Futures Trading Commission. JD, Fordham Law.
+                Operator-attorney. Two prior startup exits, one of them an Inc. 500 company acquired by Maker Studios. Trained in litigation with 15+ year lawfirm experience. Held a regulatory fellowship at the Commodity Futures Trading Commission. JD, Fordham Law.
               </p>
               <p>
                 Currently CEO and Co-Founder of <a href="https://malamalabs.com" className="text-forest border-b border-sienna pb-0.5 hover:text-sienna transition-colors">Mālama Labs</a> — a hardware-signed environmental data infrastructure company working at the intersection of climate dMRV, tokenized environmental assets, and on-chain registries. The day job sharpens the night job: every retainer client benefits from the operating context of running a regulated startup in real time.

@@ -2,6 +2,7 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { RepositionHero } from '@/components/sections/reposition/hero'
 import { Credentials } from '@/components/sections/reposition/credentials'
+import { Services } from '@/components/sections/reposition/services'
 import { WhatWeDo } from '@/components/sections/reposition/what-we-do'
 import { WhoWeWorkWith } from '@/components/sections/reposition/who-we-work-with'
 import { Tiers } from '@/components/sections/reposition/tiers'
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Navigation />
       <RepositionHero />
       <Credentials />
+      <Services />
       <WhatWeDo />
       <WhoWeWorkWith />
       <Tiers />
@@ -27,3 +29,4 @@ export default function HomePage() {
     </main>
   )
 }
+

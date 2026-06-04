@@ -62,9 +62,10 @@ export function FinalCTA() {
 
           <Reveal delay={0.5}>
             <p className="mt-10 text-lg text-cream/70 max-w-2xl leading-[1.55]">
-              If your legal questions are routinely returning &ldquo;it depends,&rdquo; the call is free and short. If we&apos;re not the right partner, we&apos;ll tell you and point you somewhere better.
+              If you are stuck at the intersection of complex strategy, technical AI integrations, and regulated legal bottlenecks, the call is free and short. If we&apos;re not the right partner, we&apos;ll tell you and point you somewhere better.
             </p>
           </Reveal>
+
 
           <Reveal delay={0.7}>
             <div className="mt-12 flex flex-col sm:flex-row gap-5 sm:gap-7 items-start sm:items-center">

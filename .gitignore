@@ -28,3 +28,10 @@ next-env.d.ts*.swp
 *.backup
 *.swp
 .env*.local
+
+# OS files
+.DS_Store
+**/.DS_Store
+
+# Nested backup repositories
+/beneficial

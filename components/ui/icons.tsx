@@ -152,3 +152,18 @@ export function WordmarkGlyph({ size = 32, ...rest }: IconProps) {
     </svg>
   )
 }
+
+export function CustomIcon({ size = 32, ...rest }: IconProps) {
+  return (
+    <svg {...baseProps(size, rest)}>
+      <circle cx="16" cy="16" r="11" strokeDasharray="3 3" />
+      <path d="M12 12 L20 20" />
+      <path d="M20 12 L12 20" />
+      <circle cx="12" cy="12" r="2" fill="currentColor" />
+      <circle cx="20" cy="20" r="2" fill="currentColor" />
+      <circle cx="20" cy="12" r="2" fill="currentColor" />
+      <circle cx="12" cy="20" r="2" fill="currentColor" />
+    </svg>
+  )
+}
+

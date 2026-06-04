@@ -38,7 +38,7 @@ export async function GET() {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 50, paddingTop: 26, borderTop: '1px solid #C9C0AE' }}>
           <div style={{ display: 'flex', fontSize: 22, color: '#4A5560' }}>
-            Operator-attorney · Cravath · CFTC · Fordham JD
+            Operator-attorney · 15+ Yrs Law Firm Exp · CFTC · Fordham JD
           </div>
           <div style={{ display: 'flex', fontSize: 18, color: '#8C5E3C', fontFamily: 'sans-serif', textTransform: 'uppercase', letterSpacing: '0.18em' }}>
             beneficial.technology

@@ -8,11 +8,14 @@ import { MagneticButton } from "@/components/ui/magnetic-button"
 import { WordmarkGlyph } from "@/components/ui/icons"
 
 const navItems = [
+  { href: "/#services", label: "Services" },
   { href: "/#engagements", label: "Engagements" },
+  { href: "/products", label: "Products" },
+  { href: "/membership", label: "Membership" },
   { href: "/resources", label: "Resources" },
-  { href: "/about", label: "About" },
-  { href: "/beneficial-technology-services.pdf", label: "Service sheet" },
+  { href: "/portal", label: "Client Portal" },
 ]
+
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)

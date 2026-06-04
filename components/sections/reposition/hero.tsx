@@ -55,10 +55,10 @@ export function RepositionHero() {
 
             <h1 className="font-serif text-[clamp(2.5rem,6.2vw,5rem)] text-forest leading-[0.98] tracking-[-0.02em] font-normal">
               <span className="block">
-                <SplitWords text="Legal engineering" />
+                <SplitWords text="Strategic consulting" />
               </span>
               <span className="block">
-                <SplitWords text="for founders building" delay={0.2} />
+                <SplitWords text="& engineering for builders" delay={0.2} />
               </span>
               <span className="block">
                 <SplitWords text="at the" delay={0.4} />{' '}
@@ -79,8 +79,9 @@ export function RepositionHero() {
               transition={{ duration: 0.8, delay: 1.5, ease: [0.22, 1, 0.36, 1] }}
               className="mt-10 max-w-xl text-lg text-slate-ink leading-[1.55]"
             >
-              We sit between your operating team and your legal team — doing the structural work that lawyers don&apos;t ship, and that founders shouldn&apos;t be figuring out alone.
+              We sit at the intersection of strategy, legal engineering, software development, and AI implementations — building core enterprise structures, integrating workflows, and doing the execution work traditional agencies don&apos;t ship.
             </motion.p>
+
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
