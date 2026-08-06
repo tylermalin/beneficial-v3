@@ -1,0 +1,25 @@
+--- layout.tsx	2026-08-06 16:34:37.363711366 +0000
++++ layout.new.tsx	2026-08-06 16:34:59.711513422 +0000
+@@ -86,9 +86,10 @@
+       url: siteUrl,
+       logo: `${siteUrl}/og`,
+       image: `${siteUrl}/og`,
+-      description: 'Fractional and project-based legal engineering and structural strategy for founders building at the regulated frontier — tokens, climate assets, multi-jurisdiction structures, and regulated AI.',
+-      areaServed: ['United States', 'European Union', 'Cayman Islands'],
+-      knowsAbout: ['Token Launches', 'SAFT', 'Multi-Entity Structures', 'Regulatory Positioning', 'Climate Asset Frameworks', 'DePIN', 'Tokenization', 'Compliance Architecture'],
++      description: 'Structural and technical consulting for founders building at the regulated frontier: token launches, multi-jurisdiction entity structures, climate-asset frameworks, and regulated AI systems. Legal engineering is the coordination layer between a client\u2019s retained counsel and their operating team. Beneficial Technology is a consulting firm, not a law firm, and does not provide legal advice.',
++      disambiguatingDescription: 'Beneficial Technology, LLC is a consulting firm, not a law firm. It does not provide legal advice, does not represent clients in legal matters, and does not file regulatory submissions. It performs structural and technical work upstream of legal and coordinates with the counsel each client separately retains.',
++      areaServed: ['United States', 'European Union'],
++      knowsAbout: ['Token Launches', 'SAFT', 'SAFE-T', 'Multi-Entity Structures', 'Cayman and BVI Entity Structuring', 'Regulatory Positioning', 'Climate Asset Frameworks', 'DePIN', 'Tokenization', 'Compliance Architecture'],
+       founder: {
+         '@type': 'Person',
+         '@id': `${siteUrl}/about#tyler-malin`,
+@@ -148,7 +149,7 @@
+       alumniOf: [
+         { '@type': 'EducationalOrganization', name: 'Fordham University School of Law' },
+       ],
+-      description: 'Operator-attorney. Former litigator with 15+ year lawfirm experience, CFTC regulatory fellow. CEO of Mālama Labs. Two prior startup exits.',
++      description: 'Founder and Principal of Beneficial Technology, a consulting firm. Background includes 15+ years of law firm experience as a litigator and a CFTC regulatory fellowship. Does not practice law or provide legal advice through Beneficial Technology. CEO of Mālama Labs. Two prior startup exits.',
+     },
+   ],
+ }
