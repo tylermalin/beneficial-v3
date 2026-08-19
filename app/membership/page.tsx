@@ -1,19 +1,26 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
-import { ShieldCheck, Compass, MessageSquare, BookOpen, Key, Check, Loader2 } from 'lucide-react'
+import { ShieldCheck, Compass, MessageSquare, BookOpen, Check, Loader2 } from 'lucide-react'
 import { getProducts, Product } from '@/lib/mockData'
 import { recordEvent } from '@/lib/analytics'
+import { Card, Eyebrow, FeatureTile, Button } from '@/components/ui/obsidian'
+
+const vaultItems = [
+  { icon: Compass, t: 'Monthly cohort calls', d: 'Interactive 60-minute group sessions covering token launches, HIPAA configurations, and regulatory risk mappings.' },
+  { icon: BookOpen, t: 'Diligence templates', d: 'Immediate downloads of our multi-jurisdiction setup spreadsheets, contractor agreements, and token vesting templates.' },
+  { icon: MessageSquare, t: 'Private Slack channel', d: 'Ask structure questions, get quick referrals, and collaborate with founders building at similar frontiers.' },
+  { icon: ShieldCheck, t: 'Priority 1-on-1 scoping', d: 'Members skip wait times and receive accelerated scoping proposals for custom fractional engineering work.' },
+]
 
 export default function MembershipPage() {
   const [membershipProduct, setMembershipProduct] = useState<Product | null>(null)
   const [isWaitlisted, setIsWaitlisted] = useState(false)
   const [isSimulating, setIsSimulating] = useState(false)
   const [email, setEmail] = useState('')
-  const [activeTab, setActiveTab] = useState<'benefits' | 'vault'>('benefits')
 
   useEffect(() => {
     const products = getProducts()
@@ -52,199 +59,137 @@ export default function MembershipPage() {
   }
 
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="obsidian min-h-screen">
       <Navigation />
 
-      {/* Header */}
-      <section className="pt-36 pb-16 sm:pt-44 sm:pb-20 border-b border-rule">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+      {/* Page header */}
+      <section className="relative overflow-hidden border-b border-line-hairline pt-[136px] pb-16 sm:pt-40 sm:pb-20">
+        <div aria-hidden className="grid-texture pointer-events-none absolute inset-0" />
+        <div aria-hidden className="veil-top pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-[1200px] px-6 sm:px-8">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-12 bg-sienna" />
-              <span className="text-xs uppercase tracking-[0.22em] text-sienna font-medium">
-                Exclusive Membership (Coming Soon)
-              </span>
-            </div>
-            <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] text-forest leading-[0.98] tracking-[-0.02em] font-normal">
-              The Regulated Frontier Club. <br />
-              <em className="italic font-light text-sienna">Guidance at scale.</em>
+            <Eyebrow>Membership · Coming soon</Eyebrow>
+            <h1 className="mt-6 text-[clamp(2.25rem,5.5vw,3.5rem)] font-light leading-[1.05] tracking-[-0.03em] text-body">
+              A private circle for founders at the{' '}
+              <span className="headline-em">regulated frontier</span>.
             </h1>
-            <p className="mt-8 max-w-2xl text-lg text-slate-ink leading-relaxed">
-              A private circle for founders scaling businesses at the intersection of AI, Web3, and regulated markets. Access tools, templates, peer calls, and direct advisory.
+            <p className="mt-8 max-w-measure text-[15px] leading-[1.6] text-body">
+              For founders scaling businesses at the intersection of AI, Web3, and regulated markets. Access tools, templates, peer calls, and direct advisory — before you need the full retainer.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Content Selector */}
-      <section className="py-12 border-b border-rule bg-sand-soft/50">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex gap-6 border-b border-rule/50 pb-4">
-            <button
-              onClick={() => setActiveTab('benefits')}
-              className={`font-serif text-lg pb-1 relative transition-colors ${
-                activeTab === 'benefits' ? 'text-forest font-semibold' : 'text-slate-soft hover:text-forest'
-              }`}
-            >
-              Benefits &amp; Pricing
-              {activeTab === 'benefits' && (
-                <motion.div layoutId="activeTabUnderline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-sienna" />
-              )}
-            </button>
-            <button
-              onClick={() => setActiveTab('vault')}
-              className={`font-serif text-lg pb-1 relative transition-colors flex items-center gap-1.5 ${
-                activeTab === 'vault' ? 'text-forest font-semibold' : 'text-slate-soft hover:text-forest'
-              }`}
-            >
-              <Key size={16} className="text-sienna" />
-              Member Vault (Coming Soon)
-              {activeTab === 'vault' && (
-                <motion.div layoutId="activeTabUnderline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-sienna" />
-              )}
-            </button>
+      {/* 01 — Member vault */}
+      <section className="border-b border-line-hairline bg-section py-20 sm:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
+          <div className="mb-12 max-w-measure">
+            <Eyebrow index="01">Member vault</Eyebrow>
+            <h2 className="mt-6 text-[clamp(1.75rem,4vw,2.25rem)] font-light leading-[1.1] tracking-[-0.02em] text-body">
+              What&apos;s included in the <span className="headline-em">membership</span>.
+            </h2>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {vaultItems.map((item) => {
+              const Icon = item.icon
+              return (
+                <Card key={item.t} variant="glass" interactive className="flex flex-col p-7">
+                  <FeatureTile>
+                    <Icon size={16} strokeWidth={1.5} />
+                  </FeatureTile>
+                  <h3 className="mt-6 text-xl font-normal tracking-[-0.02em] text-ink">{item.t}</h3>
+                  <p className="mt-3 text-[15px] leading-[1.6] text-body">{item.d}</p>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Tab Area */}
-      <section className="py-16">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <AnimatePresence mode="wait">
-            {activeTab === 'benefits' && (
-              <motion.div
-                key="benefits-tab"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.4 }}
-                className="grid lg:grid-cols-12 gap-12 items-start"
-              >
-                {/* Benefits List */}
-                <div className="lg:col-span-7 space-y-8">
-                  <h2 className="font-serif text-3xl text-forest">What is included in the membership:</h2>
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    {[
-                      { icon: Compass, t: 'Monthly Cohort Calls', d: 'Interactive 60-minute group sessions covering token launches, HIPAA configurations, and regulatory risk mappings.' },
-                      { icon: BookOpen, t: 'Diligence Templates', d: 'Immediate downloads of our multi-jurisdiction setup spreadsheets, contractor agreements, and token vesting templates.' },
-                      { icon: MessageSquare, t: 'Private Slack Channel', d: 'Ask structure questions, get quick referrals, and collaborate with founders building at similar frontiers.' },
-                      { icon: ShieldCheck, t: 'Priority 1-on-1 Scoping', d: 'Members skip wait times and receive accelerated scoping proposals for custom fractional engineering work.' }
-                    ].map((item, i) => {
-                      const IconComp = item.icon
-                      return (
-                        <div key={i} className="p-5 bg-sand-soft border border-rule/20 rounded-sm">
-                          <div className="text-sienna mb-3"><IconComp size={24} /></div>
-                          <h4 className="font-serif text-lg text-forest mb-2">{item.t}</h4>
-                          <p className="text-xs text-slate-ink leading-relaxed">{item.d}</p>
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
+      {/* 02 — Pricing */}
+      <section className="border-b border-line-hairline bg-canvas py-20 sm:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <Eyebrow index="02">Pricing</Eyebrow>
+              <h2 className="mt-6 max-w-measure text-[clamp(1.75rem,4vw,2.25rem)] font-light leading-[1.1] tracking-[-0.02em] text-body">
+                One membership. <span className="headline-em">Structural momentum at scale</span>.
+              </h2>
+              <p className="mt-6 max-w-measure text-[15px] leading-[1.6] text-body">
+                Gain strategic momentum, secure structural safety rails, and minimize legal bills. Prefer a dedicated partner?{' '}
+                <Link href="/#engagements" className="border-b border-line-accent pb-0.5 text-lime-400 transition-colors hover:text-ink">
+                  See the retainer engagements
+                </Link>
+                .
+              </p>
+            </div>
 
-                {/* Sub Card */}
-                <div className="lg:col-span-5 bg-forest text-cream p-8 sm:p-10 rounded-sm shadow-xl relative overflow-hidden">
-                  <div className="absolute inset-0 bg-forest-deep opacity-30 -z-10" />
-                  <div className="text-xs uppercase tracking-[0.2em] text-[#D4A574] font-semibold mb-2 flex items-center gap-2">
-                    Active Retainer <span className="bg-[#D4A574]/20 text-[#D4A574] text-[9px] px-1.5 py-0.5 rounded-sm font-bold uppercase">Coming Soon</span>
-                  </div>
-                  <h3 className="font-serif text-3xl mb-1">Frontier Membership</h3>
-                  <div className="flex items-baseline gap-2 mb-6">
-                    <span className="text-3xl font-semibold text-[#D4A574]">$950</span>
-                    <span className="text-xs opacity-75">/ month (billed annually)</span>
-                  </div>
+            <Card variant="glass" glow className="p-8 sm:p-10">
+              <div className="flex items-center gap-3">
+                <Eyebrow>Frontier membership</Eyebrow>
+              </div>
+              <div className="mt-6 flex items-baseline gap-2">
+                <span className="tabular text-[40px] font-medium leading-none text-ink">$950</span>
+                <span className="text-sm text-faint">/ month, billed annually</span>
+              </div>
 
-                  <p className="text-sm opacity-80 leading-relaxed mb-8">
-                    Gain strategic momentum. Secure structural safety rails. Minimize legal bills and move with Bain-level clarity.
+              <ul className="mt-8 space-y-3 border-t border-line-hairline pt-6">
+                {membershipProduct?.features.map((f, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-[13px] leading-snug text-body">
+                    <Check size={14} strokeWidth={2} className="mt-0.5 shrink-0 text-lime-400" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {!isWaitlisted ? (
+                <form onSubmit={handleJoinWaitlist} className="mt-8 space-y-4">
+                  <div>
+                    <label className="eyebrow mb-2 block text-faint">
+                      Enter email to join the membership waitlist
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="founder@yourstartup.com"
+                      className="w-full rounded-lg border border-line-hairline surface-flat px-4 py-2.5 text-[15px] text-ink placeholder:text-faint transition-[border-color,box-shadow] duration-200 ease-obsidian-out focus:border-line-accent focus:outline-none focus:ring-[3px] focus:ring-[rgba(204,255,0,.25)]"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    variant="accent"
+                    size="md"
+                    disabled={isSimulating}
+                    className="w-full"
+                    icon={isSimulating ? <Loader2 className="animate-spin" size={14} /> : undefined}
+                  >
+                    {isSimulating ? 'Joining waitlist…' : 'Join the priority waitlist'}
+                  </Button>
+                  <p className="text-xs leading-relaxed text-faint">
+                    We&apos;ll notify you when membership opens. No spam, unsubscribe anytime.
                   </p>
-
-                  <ul className="space-y-3 mb-8 border-t border-cream/15 pt-6">
-                    {membershipProduct?.features.map((f, i) => (
-                      <li key={i} className="text-xs flex items-start gap-2.5">
-                        <span className="text-[#D4A574]">✓</span>
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {!isWaitlisted ? (
-                    <form onSubmit={handleJoinWaitlist} className="space-y-4">
-                      <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-cream/70 mb-1.5">
-                          Enter Email to Join Membership Waitlist
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="founder@yourstartup.com"
-                          className="w-full px-4 py-3 bg-forest-deep border border-cream/20 text-cream placeholder-cream/40 focus:outline-none focus:border-[#D4A574] text-sm"
-                        />
-                      </div>
-                      <button
-                        type="submit"
-                        disabled={isSimulating}
-                        className="w-full py-4 bg-[#D4A574] hover:bg-[#c99a67] text-forest font-bold text-xs uppercase tracking-[0.2em] transition-colors duration-300 rounded-sm flex items-center justify-center gap-2"
-                      >
-                        {isSimulating ? (
-                          <>
-                            <Loader2 className="animate-spin" size={14} /> Joining Waitlist...
-                          </>
-                        ) : (
-                          'Join Priority Waitlist'
-                        )}
-                      </button>
-                    </form>
-                  ) : (
-                    <div className="space-y-4">
-                      <div className="bg-forest-deep/60 p-4 border border-cream/15 rounded-sm">
-                        <p className="text-xs text-[#D4A574] font-semibold mb-1">✓ Added to Priority Waitlist</p>
-                        <p className="text-[11px] opacity-75">We will notify: {email}</p>
-                      </div>
-                      <button
-                        onClick={handleLeaveWaitlist}
-                        className="w-full text-center text-[10px] text-cream/50 hover:text-cream/80 transition-colors uppercase tracking-wider underline pt-2"
-                      >
-                        Leave Waitlist
-                      </button>
-                    </div>
-                  )}
+                </form>
+              ) : (
+                <div className="mt-8 space-y-4">
+                  <div className="rounded-lg border border-line-accent surface-flat p-4">
+                    <p className="mb-1 flex items-center gap-2 text-[13px] font-medium text-lime-400">
+                      <Check size={14} strokeWidth={2} /> Added to the priority waitlist
+                    </p>
+                    <p className="text-xs text-faint">We&apos;ll notify: {email}</p>
+                  </div>
+                  <button
+                    onClick={handleLeaveWaitlist}
+                    className="text-xs text-faint underline transition-colors hover:text-ink"
+                  >
+                    Leave waitlist
+                  </button>
                 </div>
-              </motion.div>
-            )}
-
-            {activeTab === 'vault' && (
-              <motion.div
-                key="vault-tab"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.4 }}
-                className="max-w-4xl mx-auto"
-              >
-                <div className="text-center py-20 bg-sand-soft border border-rule/30 rounded-sm">
-                  <Key size={48} className="mx-auto text-sienna mb-4 animate-pulse" />
-                  <h3 className="font-serif text-2xl text-forest mb-2">Member Document Vault (Coming Soon)</h3>
-                  <p className="text-sm text-slate-ink max-w-md mx-auto leading-relaxed mb-6">
-                    The document vault, compliance matrices, legal drafting templates, and contractor frameworks will be accessible to active members of the Regulated Frontier Club once membership launches.
-                  </p>
-                  {isWaitlisted ? (
-                    <div className="inline-block bg-emerald-50 border border-emerald-200 text-emerald-800 px-5 py-2.5 rounded-sm text-xs font-semibold">
-                      ✓ You have joined the priority waitlist for early access
-                    </div>
-                  ) : (
-                    <button
-                      onClick={() => setActiveTab('benefits')}
-                      className="px-6 py-3.5 bg-forest hover:bg-sienna text-cream text-xs uppercase tracking-wider font-semibold transition-colors duration-300 rounded-sm"
-                    >
-                      Join Priority Waitlist
-                    </button>
-                  )}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              )}
+            </Card>
+          </div>
         </div>
       </section>
 

@@ -96,3 +96,103 @@ body {
   background: hsl(var(--accent));
   @apply rounded-full;
 }
+
+/* ============================================================
+   Obsidian Lime system — raw, theme-independent tokens
+   ============================================================ */
+:root {
+  --bg-canvas: #070707;
+  --bg-section: #0f0f0f;
+  --bg-footer: #0a0a0a;
+
+  --text-primary: #ffffff;
+  --text-body: #b4b4b4;
+  --text-muted: #7a7a7a;
+
+  --lime-400: #ccff00;
+  --lime-500: #b8e926;
+  --lime-tint-08: rgba(204, 255, 0, 0.08);
+
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-divider: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.15);
+  --border-accent: rgba(204, 255, 0, 0.35);
+
+  --surface-glass: rgba(18, 18, 18, 0.7);
+  --surface-flat: rgba(255, 255, 255, 0.04);
+
+  --shadow-depth: 0 24px 48px -24px rgba(0, 0, 0, 0.8);
+  --shadow-glow-accent: 0 0 24px rgba(184, 233, 38, 0.25);
+
+  --veil-top: radial-gradient(120% 80% at 50% 0%, rgba(204, 255, 0, 0.1), transparent 60%);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Marketing surface: dark canvas + safe inherited body color */
+.obsidian {
+  background-color: var(--bg-canvas);
+  color: var(--text-body);
+}
+
+/* Signature headline gesture — one bold phrase inside a light headline */
+.headline-em {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Numbered eyebrow */
+.eyebrow {
+  font-size: 11px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--lime-400);
+  font-weight: 500;
+}
+
+/* Surfaces */
+.surface-glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.surface-flat {
+  background: var(--surface-flat);
+}
+
+/* Header / page-header texture: hairline grid, radially masked, + top veil */
+.veil-top {
+  background: var(--veil-top);
+}
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(80% 60% at 50% 20%, black, transparent);
+  mask-image: radial-gradient(80% 60% at 50% 20%, black, transparent);
+}
+
+/* Obsidian bottom fade over imagery */
+.obsidian-fade::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, var(--bg-canvas));
+  pointer-events: none;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -2,6 +2,7 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FinalCTA } from '@/components/sections/reposition/cta'
 import { ResourceCard } from '@/components/sections/reposition/resource-card'
+import { Card, Eyebrow, Divider } from '@/components/ui/obsidian'
 import { resources } from '@/lib/resources'
 
 export const metadata = {
@@ -18,55 +19,66 @@ export const metadata = {
   },
 }
 
+const upcoming = [
+  'A token launch checklist',
+  'A multi-entity diligence kit',
+  'A founder’s SAFT primer',
+]
+
 export default function ResourcesPage() {
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="obsidian min-h-screen">
       <Navigation />
 
-      <section className="pt-36 pb-16 sm:pt-44 sm:pb-20 border-b border-rule">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+      <section className="relative overflow-hidden border-b border-line-hairline pt-[136px] pb-16 sm:pt-40 sm:pb-20">
+        <div aria-hidden className="grid-texture pointer-events-none absolute inset-0" />
+        <div aria-hidden className="veil-top pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-[1200px] px-6 sm:px-8">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="h-px w-12 bg-sienna" />
-              <span className="text-xs uppercase tracking-[0.22em] text-sienna font-medium">
-                Resources · Field guides
-              </span>
-            </div>
-
-            <h1 className="font-serif text-[clamp(2.5rem,6vw,5rem)] text-forest leading-[0.98] tracking-[-0.02em] font-normal">
-              Tools we built for the work <em className="italic font-light text-sienna">we wish someone had handed us.</em>
+            <Eyebrow>Resources · Field guides</Eyebrow>
+            <h1 className="mt-6 text-[clamp(2.25rem,5.5vw,3.5rem)] font-light leading-[1.05] tracking-[-0.03em] text-body">
+              Tools we built for the work{' '}
+              <span className="headline-em">we wish someone had handed us</span>.
             </h1>
-
-            <p className="mt-10 max-w-2xl text-lg text-slate-ink leading-[1.55]">
+            <p className="mt-8 max-w-measure text-[15px] leading-[1.6] text-body">
               Practical, founder-facing guides at the intersection of legal engineering, AI, and the regulated frontier. Free to download. Email required so we can send you future field guides — never anything else.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="space-y-10">
-            {resources.map((resource) => (
-              <ResourceCard key={resource.slug} resource={resource} />
-            ))}
-          </div>
+      <section className="bg-canvas py-16 sm:py-20">
+        <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
+          <div className="grid gap-6 lg:grid-cols-3">
+            <div className="lg:col-span-2 flex flex-col gap-6">
+              {resources.map((resource) => (
+                <ResourceCard key={resource.slug} resource={resource} />
+              ))}
+            </div>
 
-          <div className="mt-16 pt-10 border-t border-rule grid sm:grid-cols-2 gap-8 items-end">
-            <div>
-              <div className="text-xs uppercase tracking-[0.18em] text-slate-soft mb-3">
-                More coming
-              </div>
-              <p className="font-serif italic text-xl text-slate-ink leading-snug max-w-md">
-                A token launch checklist. A multi-entity diligence kit. A founder&apos;s SAFT primer. More field guides on the way.
+            <Card variant="flat" className="flex flex-col p-8">
+              <Eyebrow>More coming</Eyebrow>
+              <p className="mt-5 text-[15px] leading-[1.6] text-body">
+                More field guides on the way.
               </p>
-            </div>
-            <div className="sm:text-right text-xs text-slate-soft">
-              Want one in particular? Tell us at{' '}
-              <a href="mailto:tyler@beneficial.technology" className="text-forest border-b border-sienna pb-0.5 hover:text-sienna transition-colors">
-                tyler@beneficial.technology
-              </a>
-            </div>
+              <div className="mt-6 flex flex-col">
+                {upcoming.map((item, i) => (
+                  <div key={item}>
+                    {i > 0 && <Divider className="bg-line-hairline" />}
+                    <div className="py-3.5 text-[15px] text-ink">{item}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-auto border-t border-line-hairline pt-6 text-[13px] leading-relaxed text-faint">
+                Want one in particular? Tell us at{' '}
+                <a
+                  href="mailto:tyler@beneficial.technology"
+                  className="font-mono text-lime-400 transition-colors hover:text-ink"
+                >
+                  tyler@beneficial.technology
+                </a>
+              </div>
+            </Card>
           </div>
         </div>
       </section>

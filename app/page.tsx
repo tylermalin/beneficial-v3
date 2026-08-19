@@ -1,7 +1,6 @@
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { RepositionHero } from '@/components/sections/reposition/hero'
-import { Credentials } from '@/components/sections/reposition/credentials'
 import { Services } from '@/components/sections/reposition/services'
 import { WhatWeDo } from '@/components/sections/reposition/what-we-do'
 import { WhoWeWorkWith } from '@/components/sections/reposition/who-we-work-with'
@@ -13,10 +12,9 @@ import { FinalCTA } from '@/components/sections/reposition/cta'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="obsidian min-h-screen">
       <Navigation />
       <RepositionHero />
-      <Credentials />
       <Services />
       <WhatWeDo />
       <WhoWeWorkWith />

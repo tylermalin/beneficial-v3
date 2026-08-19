@@ -9,11 +9,28 @@ const config: Config = {
       center: true,
       padding: '2rem',
       screens: {
-        '2xl': '1400px',
+        '2xl': '1200px',
       },
     },
     extend: {
       colors: {
+        // Obsidian Lime system
+        canvas: 'var(--bg-canvas)',
+        section: 'var(--bg-section)',
+        'footer-bg': 'var(--bg-footer)',
+        ink: 'var(--text-primary)',
+        body: 'var(--text-body)',
+        faint: 'var(--text-muted)',
+        lime: {
+          400: 'var(--lime-400)',
+          500: 'var(--lime-500)',
+        },
+        line: {
+          hairline: 'var(--border-hairline)',
+          divider: 'var(--border-divider)',
+          strong: 'var(--border-strong)',
+          accent: 'var(--border-accent)',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -77,8 +94,19 @@ const config: Config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-geist-sans)', 'Geist', 'system-ui', 'sans-serif'],
         serif: ['var(--font-fraunces)', 'Fraunces', 'Georgia', 'serif'],
+        mono: ['var(--font-mono)', 'JetBrains Mono', 'ui-monospace', 'monospace'],
+      },
+      transitionTimingFunction: {
+        'obsidian-out': 'cubic-bezier(.16,1,.3,1)',
+      },
+      boxShadow: {
+        depth: '0 24px 48px -24px rgba(0,0,0,.8)',
+        'glow-accent': '0 0 24px rgba(184,233,38,.25)',
+      },
+      maxWidth: {
+        measure: '65ch',
       },
     },
   },

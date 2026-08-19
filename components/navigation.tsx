@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { MagneticButton } from "@/components/ui/magnetic-button"
+import { Button } from "@/components/ui/obsidian"
 import { WordmarkGlyph } from "@/components/ui/icons"
 
 const navItems = [
@@ -13,67 +13,48 @@ const navItems = [
   { href: "/products", label: "Products" },
   { href: "/membership", label: "Membership" },
   { href: "/resources", label: "Resources" },
-  { href: "/portal", label: "Client Portal" },
+  { href: "/portal", label: "Client portal" },
 ]
-
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const { scrollY } = useScroll()
-  const navBg = useTransform(scrollY, [0, 80], [0, 0.92])
-
-  useEffect(() => {
-    return scrollY.on('change', (v) => setScrolled(v > 30))
-  }, [scrollY])
 
   return (
-    <motion.nav
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-0 left-0 right-0 z-50"
-    >
-      <motion.div
-        style={{ opacity: navBg }}
-        className="absolute inset-0 bg-cream backdrop-blur-xl border-b border-rule pointer-events-none"
-      />
-
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-line-hairline backdrop-blur-[16px] bg-[rgba(7,7,7,.72)]">
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
+        <div className="flex h-[68px] items-center justify-between">
           <Link href="/" className="group flex items-center gap-3">
-            <motion.div
-              whileHover={{ rotate: 90 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="text-sienna"
-            >
-              <WordmarkGlyph size={24} />
-            </motion.div>
-            <span className="font-serif text-xl sm:text-[1.35rem] text-forest tracking-tight group-hover:text-sienna transition-colors duration-500">
+            <span className="text-lime-400">
+              <WordmarkGlyph size={22} />
+            </span>
+            <span className="text-[15px] font-light tracking-[-0.02em] text-ink">
               Beneficial Technology
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-9">
+          <div className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative text-sm text-slate-ink hover:text-forest transition-colors"
+                className="group relative text-[13px] text-faint transition-colors duration-150 ease-obsidian-out hover:text-ink"
               >
-                <span className="relative">
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-full bg-sienna scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-                </span>
+                {item.label}
+                <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-lime-400 transition-transform duration-200 ease-obsidian-out group-hover:scale-x-100" />
               </Link>
             ))}
-            <MagneticButton href="https://cal.com/beneficialtech" external size="sm" variant="forest">
+            <Button
+              href="https://cal.com/beneficialtech"
+              external
+              variant="primary"
+              size="sm"
+            >
               Book a call
-            </MagneticButton>
+            </Button>
           </div>
 
           <button
-            className="md:hidden text-forest relative z-10"
+            className="relative z-10 text-ink md:hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -88,46 +69,34 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden bg-cream border-b border-rule overflow-hidden"
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden border-b border-line-hairline bg-[rgba(7,7,7,.92)] backdrop-blur-[16px] md:hidden"
           >
-            <div className="container mx-auto px-6 py-7 space-y-5">
-              {navItems.map((item, i) => (
-                <motion.div
+            <div className="mx-auto max-w-[1200px] space-y-5 px-6 py-7">
+              {navItems.map((item) => (
+                <Link
                   key={item.href}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + i * 0.06 }}
-                >
-                  <Link
-                    href={item.href}
-                    className="block font-serif text-2xl text-forest hover:text-sienna transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="pt-3"
-              >
-                <a
-                  href="https://cal.com/beneficialtech"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-forest text-cream px-5 py-3 text-sm"
+                  href={item.href}
+                  className="block text-2xl font-light tracking-[-0.02em] text-ink"
                   onClick={() => setIsOpen(false)}
                 >
-                  Book a call ↗
-                </a>
-              </motion.div>
+                  {item.label}
+                </Link>
+              ))}
+              <div className="pt-3">
+                <Button
+                  href="https://cal.com/beneficialtech"
+                  external
+                  variant="primary"
+                  size="md"
+                >
+                  Book a call
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   )
 }

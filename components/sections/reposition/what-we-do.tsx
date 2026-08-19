@@ -1,95 +1,53 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import {
-  TokenIcon,
-  MultiEntityIcon,
-  InstrumentIcon,
-  RegulatoryIcon,
-  ClimateIcon,
-  ComplianceIcon,
-  NarrativeIcon,
-} from '@/components/ui/icons'
-import { Reveal, SplitWords, StaggerGroup, staggerItem } from '@/components/ui/reveal'
+import { Reveal } from '@/components/ui/reveal'
+import { Card, Eyebrow, Tag } from '@/components/ui/obsidian'
 
 const specialties = [
-  { Icon: TokenIcon, label: 'Token launches' },
-  { Icon: MultiEntityIcon, label: 'Multi-entity structures' },
-  { Icon: InstrumentIcon, label: 'SAFT & SAFE design' },
-  { Icon: RegulatoryIcon, label: 'Regulatory positioning' },
-  { Icon: ClimateIcon, label: 'Climate-asset frameworks' },
-  { Icon: ComplianceIcon, label: 'Compliance architecture' },
-  { Icon: NarrativeIcon, label: 'Investor narrative' },
+  'Token launches',
+  'Multi-entity structures',
+  'SAFT & SAFE design',
+  'Regulatory positioning',
+  'Climate-asset frameworks',
+  'Compliance architecture',
+  'Investor narrative',
 ]
 
 export function WhatWeDo() {
   return (
-    <section className="py-24 sm:py-32 border-b border-rule relative">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-          <div className="lg:col-span-4">
+    <section className="border-b border-line-hairline bg-canvas py-24 sm:py-32">
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-5">
             <Reveal>
-              <div className="flex items-center gap-3 mb-5">
-                <div className="h-px w-8 bg-sienna" />
-                <span className="text-xs uppercase tracking-[0.22em] text-sienna font-medium">
-                  What we do
-                </span>
-              </div>
+              <Eyebrow index="02">What we do</Eyebrow>
             </Reveal>
-            <h2 className="font-serif text-3xl lg:text-4xl text-forest tracking-tight leading-[1.15]">
-              <SplitWords text="Seven things we ship." />
-            </h2>
-            <Reveal delay={0.3}>
-              <p className="mt-6 font-serif italic text-base text-slate-ink leading-relaxed max-w-md">
-                The layer most founders only realize they need after something has already broken at scale.
-              </p>
+            <Reveal delay={0.05}>
+              <h2 className="mt-6 max-w-measure text-[clamp(1.75rem,4vw,2.25rem)] font-light leading-[1.1] tracking-[-0.02em] text-body">
+                Seven things we ship, and <span className="headline-em">one we won&apos;t</span>.
+              </h2>
             </Reveal>
           </div>
 
-          <div className="lg:col-span-8">
-            <StaggerGroup
-              className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-rule"
-              stagger={0.06}
-            >
-              {specialties.map(({ Icon, label }) => (
-                <motion.div
-                  key={label}
-                  variants={staggerItem}
-                  whileHover={{ y: -3 }}
-                  transition={{ duration: 0.3 }}
-                  className="group relative bg-cream p-7 flex items-start gap-5 cursor-default overflow-hidden"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-sand-soft opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    aria-hidden="true"
-                  />
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-px bg-sienna origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"
-                    style={{ width: '100%' }}
-                    aria-hidden="true"
-                  />
-                  <div className="relative shrink-0 text-forest group-hover:text-sienna transition-colors duration-500">
-                    <Icon size={38} />
-                  </div>
-                  <div className="relative pt-1">
-                    <div className="font-serif text-xl text-forest leading-snug tracking-tight">
-                      {label}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-              <motion.div
-                variants={staggerItem}
-                className="bg-forest text-cream p-7 flex flex-col justify-between min-h-[140px]"
-              >
-                <div className="text-xs uppercase tracking-[0.18em] text-[#D4A574]">
-                  And what we don&apos;t
-                </div>
-                <p className="font-serif italic text-lg leading-snug">
+          <div className="lg:col-span-7">
+            <Reveal delay={0.1}>
+              <div className="flex flex-wrap gap-3">
+                {specialties.map((label) => (
+                  <Tag key={label} dot>
+                    {label}
+                  </Tag>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <Card variant="outline" className="mt-8 p-8">
+                <div className="eyebrow mb-4 text-faint">And what we don&apos;t</div>
+                <p className="max-w-measure text-lg font-light leading-[1.4] tracking-[-0.02em] text-ink">
                   We&apos;re not a law firm. We coordinate with the counsel you retain.
                 </p>
-              </motion.div>
-            </StaggerGroup>
+              </Card>
+            </Reveal>
           </div>
         </div>
       </div>

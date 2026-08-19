@@ -1,16 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter, Fraunces } from 'next/font/google'
+import { JetBrains_Mono, Fraunces } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { SmoothScrollProvider } from '@/components/providers/smooth-scroll'
 import { AnalyticsProvider } from '@/components/providers/analytics-provider'
-import { Grain } from '@/components/ui/grain'
 
 
-const inter = Inter({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-mono',
+  weight: ['400', '500'],
   display: 'swap',
 })
 
@@ -167,10 +168,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${fraunces.variable} font-sans antialiased relative`}>
+      <body className={`${GeistSans.variable} ${jetbrainsMono.variable} ${fraunces.variable} font-sans antialiased relative`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >
@@ -180,7 +181,6 @@ export default function RootLayout({
             </SmoothScrollProvider>
           </AnalyticsProvider>
 
-          <Grain />
           <Analytics />
         </ThemeProvider>
       </body>
