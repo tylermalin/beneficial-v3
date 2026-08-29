@@ -1,4 +1,4 @@
-// Vendored from @beneficialtech/repo-ip-auditor/core. Do not edit here.
+// Vendored from @beneficialtechnology/repo-ip-auditor/core. Do not edit here.
 // Regenerate with scripts/sync-ip-audit-core.sh after changing the package.
 import type { HeaderFinding } from './headers';
 

@@ -33,7 +33,7 @@ const STATUS_STYLE: Record<ContributorStatus, string> = {
 const gradeStyle = (g: string) =>
   g === 'A' || g === 'B' ? PASS : g === 'C' ? CAUTION : RISK
 
-const CLI_COMMAND = 'npx @beneficialtech/repo-ip-auditor . --domains acme.com'
+const CLI_COMMAND = 'npx @beneficialtechnology/repo-ip-auditor . --domains acme.com'
 const ACTION_SNIPPET = 'uses: Beneficial-Technology/repo-ip-auditor@v0'
 
 const EXPLAINER: Array<[string, string]> = [
