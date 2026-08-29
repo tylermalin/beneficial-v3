@@ -20,9 +20,9 @@ export const metadata = {
 }
 
 const upcoming = [
-  'A token launch checklist',
-  'A multi-entity diligence kit',
-  'A founder’s SAFT primer',
+  'An AI readiness checklist for funded teams',
+  'A guide to running license review in CI',
+  'An AI tooling field guide for small businesses',
 ]
 
 export default function ResourcesPage() {
@@ -59,7 +59,7 @@ export default function ResourcesPage() {
             <Card variant="flat" className="flex flex-col p-8">
               <Eyebrow>More coming</Eyebrow>
               <p className="mt-5 text-[15px] leading-[1.6] text-body">
-                More field guides on the way.
+More on the way. Each one comes out of client work, not a content calendar.
               </p>
               <div className="mt-6 flex flex-col">
                 {upcoming.map((item, i) => (
