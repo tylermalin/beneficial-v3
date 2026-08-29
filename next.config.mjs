@@ -36,7 +36,6 @@ const nextConfig = {
       { source: '/contact', destination: 'https://cal.com/beneficialtech', permanent: true, basePath: false },
       { source: '/start-your-venture-journey', destination: '/', permanent: true },
       { source: '/enterprise-ai-strategy-sprint', destination: '/#engagements', permanent: true },
-      { source: '/tools/:path*', destination: '/', permanent: true },
     ]
   },
 }
