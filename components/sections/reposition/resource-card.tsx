@@ -9,13 +9,17 @@ import type { Resource } from '@/lib/resources'
 export function ResourceCard({ resource }: { resource: Resource }) {
   const [open, setOpen] = useState(false)
   const isAvailable = resource.status === 'available'
+  const isExternal = resource.kind === 'external'
+  const offSite = resource.url.startsWith('http')
 
   return (
     <>
       <Card variant="glass" glow={isAvailable} className="flex h-full flex-col p-8 sm:p-10">
         <div className="flex flex-wrap items-center gap-3">
           <Tag tone="lime" dot>{resource.format}</Tag>
-          <span className="font-mono text-xs text-faint">{resource.size}</span>
+          {resource.size ? (
+            <span className="font-mono text-xs text-faint">{resource.size}</span>
+          ) : null}
         </div>
 
         <h3 className="mt-6 text-[28px] font-light leading-[1.1] tracking-[-0.02em] text-ink">
@@ -37,7 +41,17 @@ export function ResourceCard({ resource }: { resource: Resource }) {
         </p>
 
         <div className="mt-auto flex flex-col items-start gap-3 pt-8">
-          {isAvailable ? (
+          {isAvailable && isExternal ? (
+            <Button
+              variant="accent"
+              size="md"
+              href={resource.url}
+              external={offSite}
+              icon={<ArrowDiagonalIcon size={16} />}
+            >
+              {resource.cta ?? 'Open'}
+            </Button>
+          ) : isAvailable ? (
             <Button
               variant="accent"
               size="md"
@@ -52,11 +66,12 @@ export function ResourceCard({ resource }: { resource: Resource }) {
             </span>
           )}
           <p className="max-w-xs text-xs leading-relaxed text-faint">
-            Free download. Requires email so we can send you future field guides.
+            {resource.note ?? 'Free download. Requires email so we can send you future field guides.'}
           </p>
         </div>
       </Card>
 
+      {!isExternal ? (
       <GatedDownloadModal
         open={open}
         onClose={() => setOpen(false)}
@@ -67,6 +82,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
           url: resource.url,
         }}
       />
+      ) : null}
     </>
   )
 }
