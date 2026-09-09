@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Reveal } from '@/components/ui/reveal'
 import { Button, Eyebrow } from '@/components/ui/obsidian'
 
@@ -40,25 +41,13 @@ export function FinalCTA() {
 
         <Reveal delay={0.1}>
           <div className="relative h-[320px] w-full overflow-hidden rounded-2xl border border-line-hairline">
-            <div
-              className="absolute inset-0"
-              style={{
-                filter: 'saturate(.78) contrast(1.06) brightness(.82)',
-                background:
-                  'radial-gradient(60% 50% at 30% 25%, rgba(184,233,38,.28), transparent 60%),' +
-                  'radial-gradient(50% 45% at 78% 70%, rgba(204,255,0,.16), transparent 60%),' +
-                  'radial-gradient(40% 40% at 60% 40%, rgba(60,80,20,.5), transparent 70%),' +
-                  '#0b0f06',
-              }}
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 opacity-40"
-              style={{
-                backgroundImage:
-                  'radial-gradient(circle at 1px 1px, rgba(255,255,255,.12) 1px, transparent 0)',
-                backgroundSize: '7px 7px',
-              }}
+            <Image
+              src="/beneficial-hero-keyboard.jpg"
+              alt="Backlit mechanical keyboard on a desk, representing the tools of legal engineering work"
+              fill
+              className="object-cover"
+              style={{ filter: 'saturate(.9) contrast(1.04) brightness(.88)' }}
+              sizes="(min-width: 1024px) 560px, 100vw"
             />
             <div
               aria-hidden
