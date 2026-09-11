@@ -212,7 +212,7 @@ export default function OnboardingWizard() {
                             required
                             value={company}
                             onChange={(e) => setCompany(e.target.value)}
-                            placeholder="ScribeMed AI"
+                            placeholder="Example Company"
                             className="w-full pl-9 pr-4 py-2.5 bg-cream border border-rule/50 focus:outline-none focus:border-sienna rounded-sm text-xs text-forest"
                           />
                         </div>
@@ -224,7 +224,7 @@ export default function OnboardingWizard() {
                           required
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          placeholder="Dr. Raamit Patel"
+                          placeholder="Client name"
                           className="w-full px-4 py-2.5 bg-cream border border-rule/50 focus:outline-none focus:border-sienna rounded-sm text-xs text-forest"
                         />
                       </div>
@@ -238,7 +238,7 @@ export default function OnboardingWizard() {
                           required
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          placeholder="raamit@scribemed.ai"
+                          placeholder="client@example.com"
                           className="w-full px-4 py-2.5 bg-cream border border-rule/50 focus:outline-none focus:border-sienna rounded-sm text-xs text-forest"
                         />
                       </div>
@@ -544,7 +544,7 @@ export default function OnboardingWizard() {
                         required
                         value={clientSignature}
                         onChange={(e) => setClientSignature(e.target.value)}
-                        placeholder="Dr. Raamit Patel"
+                        placeholder="Client name"
                         className="w-full px-4 py-2.5 bg-cream border border-rule/50 focus:outline-none focus:border-sienna rounded-sm text-xs text-forest font-semibold"
                       />
                     </div>

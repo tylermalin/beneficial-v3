@@ -10,10 +10,7 @@ import { WordmarkGlyph } from "@/components/ui/icons"
 const navItems = [
   { href: "/#services", label: "Services" },
   { href: "/#engagements", label: "Engagements" },
-  { href: "/products", label: "Products" },
-  { href: "/membership", label: "Membership" },
   { href: "/resources", label: "Resources" },
-  { href: "/portal", label: "Client portal" },
 ]
 
 export function Navigation() {

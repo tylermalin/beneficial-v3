@@ -17,7 +17,7 @@ function ProposalContent() {
   const [isAdminMode, setIsAdminMode] = useState(false)
   const [nudgeSent, setNudgeSent] = useState(false)
 
-  const clientId = searchParams.get('client') || 'pearson'
+  const clientId = searchParams.get('client') || ''
 
   useEffect(() => {
     const fetchClient = async () => {

@@ -43,7 +43,7 @@ export default function ClientLoginPage() {
         recordEvent('click', { action: 'portal_login_success', email })
         router.push(`/portal?client=${clientId}`)
       } else {
-        setError('Invalid credentials. Note: Pearson password is "beneficial" for testing.')
+        setError('The client portal is currently unavailable.')
         recordEvent('click', { action: 'portal_login_failure', email })
       }
     }, 1000)
@@ -86,7 +86,7 @@ export default function ClientLoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="sarah@pearsonclimate.co"
+                  placeholder="client@example.com"
                   className="w-full pl-10 pr-4 py-3 bg-cream border border-rule/45 focus:outline-none focus:border-sienna rounded-sm text-sm text-forest"
                 />
               </div>
