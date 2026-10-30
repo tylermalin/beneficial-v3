@@ -143,7 +143,8 @@ export function Tiers() {
 
                 <div className="mt-8">
                   <Button
-                    href={`/portal/onboarding?tier=${tier.name}`}
+                    href="https://cal.com/beneficialtech"
+                    external
                     variant={tier.featured ? 'accent' : 'secondary'}
                     size="md"
                     className="w-full"

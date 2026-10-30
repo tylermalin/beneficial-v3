@@ -26,7 +26,7 @@ function ClientPortalContent() {
   const [simulationPersona, setSimulationPersona] = useState('')
   const [activePortalTab, setActivePortalTab] = useState<'roadmap' | 'kanban' | 'calendar' | 'chat'>('roadmap')
 
-  const clientParam = searchParams.get('client') || 'pearson'
+  const clientParam = searchParams.get('client') || ''
 
   useEffect(() => {
     // Check credentials

@@ -25,7 +25,7 @@ function BillingInvoicesContent() {
   const [cardNumber, setCardNumber] = useState('')
   const [paymentSuccess, setPaymentSuccess] = useState(false)
 
-  const clientParam = searchParams.get('client') || 'pearson'
+  const clientParam = searchParams.get('client') || ''
 
   useEffect(() => {
     // Authenticate

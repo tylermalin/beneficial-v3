@@ -25,7 +25,7 @@ function DocumentVaultContent() {
   const [newFileCategory, setNewFileCategory] = useState<'legal' | 'technical' | 'strategy' | 'deliverable'>('legal')
   const [isUploading, setIsUploading] = useState(false)
 
-  const clientParam = searchParams.get('client') || 'pearson'
+  const clientParam = searchParams.get('client') || ''
 
   useEffect(() => {
     // Authenticate

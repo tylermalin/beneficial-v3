@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/obsidian"
 
 type NavItem = { href?: string; label: string; children?: { href: string; label: string }[] }
 
+// Note: /products, /membership, and /portal are disabled at launch via middleware.ts,
+// so they are intentionally omitted from the nav to avoid linking to 404s.
 const navItems: NavItem[] = [
   { href: "/work-with-us", label: "Work With Us" },
   {
@@ -21,11 +23,8 @@ const navItems: NavItem[] = [
     ],
   },
   { href: "/work", label: "Work" },
-  { href: "/products", label: "Products" },
   { href: "/tokenization", label: "Tokenization" },
-  { href: "/membership", label: "Membership" },
   { href: "/resources", label: "Resources" },
-  { href: "/portal/login", label: "Portal Login" },
 ]
 
 const linkClass =

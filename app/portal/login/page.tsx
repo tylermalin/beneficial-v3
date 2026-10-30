@@ -38,7 +38,7 @@ export default function ClientLoginPage() {
         recordEvent('click', { action: 'portal_login_success', email })
         router.push(`/portal?client=${clientId}`)
       } else {
-        setError('Invalid credentials. Please check your email and password.')
+        setError('The client portal is currently unavailable.')
         recordEvent('click', { action: 'portal_login_failure', email })
       }
     }, 800)
