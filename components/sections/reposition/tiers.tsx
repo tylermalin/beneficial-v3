@@ -61,7 +61,7 @@ const tiers: Tier[] = [
   {
     name: 'Project',
     price: 'From $25,000',
-    desc: 'Flat-fee, high-velocity engagements with defined, time-boxed milestones across development, marketing, legal engineering, or strategy.',
+    desc: 'Flat-fee, time-boxed engagements with defined milestones across development, marketing, legal engineering, or strategy.',
     listLabel: 'Examples',
     list: [
       'Full-stack software / AI agent build & integration',

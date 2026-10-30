@@ -11,9 +11,9 @@ import { Card, Eyebrow, FeatureTile, Button } from '@/components/ui/obsidian'
 
 const vaultItems = [
   { icon: Compass, t: 'Monthly cohort calls', d: 'Interactive 60-minute group sessions covering token launches, HIPAA configurations, and regulatory risk mappings.' },
-  { icon: BookOpen, t: 'Diligence templates', d: 'Immediate downloads of our multi-jurisdiction setup spreadsheets, contractor agreements, and token vesting templates.' },
+  { icon: BookOpen, t: 'Diligence templates', d: 'Download our multi-jurisdiction setup spreadsheets, contractor agreements, and token vesting templates.' },
   { icon: MessageSquare, t: 'Private Slack channel', d: 'Ask structure questions, get quick referrals, and collaborate with founders building at similar frontiers.' },
-  { icon: ShieldCheck, t: 'Priority 1-on-1 scoping', d: 'Members skip wait times and receive accelerated scoping proposals for custom fractional engineering work.' },
+  { icon: ShieldCheck, t: 'Priority 1-on-1 scoping', d: 'Members skip the queue and get priority scoping for custom fractional engineering work.' },
 ]
 
 export default function MembershipPage() {
@@ -114,10 +114,10 @@ export default function MembershipPage() {
             <div>
               <Eyebrow index="02">Pricing</Eyebrow>
               <h2 className="mt-6 max-w-measure text-[clamp(1.75rem,4vw,2.25rem)] font-light leading-[1.1] tracking-[-0.02em] text-body">
-                One membership. <span className="headline-em">Structural momentum at scale</span>.
+                One membership. <span className="headline-em">Before you need the full retainer</span>.
               </h2>
               <p className="mt-6 max-w-measure text-[18px] leading-[1.6] text-body">
-                Gain strategic momentum, secure structural safety rails, and minimize legal bills. Prefer a dedicated partner?{' '}
+                Templates, monthly calls, and direct advisory — enough structure to move faster and keep your legal bills down. Prefer a dedicated partner?{' '}
                 <Link href="/#engagements" className="border-b border-line-accent pb-0.5 text-lime-400 transition-colors hover:text-ink">
                   See the retainer engagements
                 </Link>

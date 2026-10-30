@@ -177,7 +177,7 @@ const defaultProducts: Product[] = [
     slug: 'everyday-legal-ai-playbook',
     title: 'The Everyday Legal AI Playbook',
     price: 6.99,
-    desc: 'The comprehensive field guide on how to read contracts, leases, NDAs, and other legal documents using AI models safely and effectively.',
+    desc: 'A field guide to reading contracts, leases, NDAs, and other legal documents with AI — and knowing where it gets things wrong.',
     type: 'playbook',
     features: [
       'Step-by-step prompt library for contract parsing',
