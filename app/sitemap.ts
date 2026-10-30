@@ -23,6 +23,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    ...['legal-engineering', 'ai-automation', 'rwa-tokenization', 'capital-formation'].map((s) => ({
+      url: `${siteUrl}/expertise/${s}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    })),
+    {
+      url: `${siteUrl}/work`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     {
       url: `${siteUrl}/tokenization`,
       lastModified: now,
