@@ -134,7 +134,7 @@ function ClientPortalContent() {
             {session?.role === 'admin' && (
               <Link
                 href="/admin"
-                className="text-[10px] uppercase font-bold bg-sienna text-cream px-3.5 py-1.5 hover:bg-forest transition-colors rounded-sm"
+                className="text-[12px] uppercase font-bold bg-sienna text-cream px-3.5 py-1.5 hover:bg-forest transition-colors rounded-sm"
               >
                 Go to Admin View ↗
               </Link>
@@ -171,11 +171,11 @@ function ClientPortalContent() {
                   {currentClient.tier} Engagement
                 </span>
                 {!isSowFullySigned ? (
-                  <span className="text-[10px] uppercase tracking-wider font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-sm">
+                  <span className="text-[12px] uppercase tracking-wider font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-sm">
                     SOW Proposal
                   </span>
                 ) : (
-                  <span className="text-[10px] uppercase tracking-wider font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-sm">
+                  <span className="text-[12px] uppercase tracking-wider font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-sm">
                     Active
                   </span>
                 )}
@@ -226,7 +226,7 @@ function ClientPortalContent() {
                   }
                   setActivePortalTab(tab.value as any)
                 }}
-                className={`font-serif text-base pb-1 relative transition-colors flex items-center gap-1.5 ${
+                className={`font-serif text-[18px] pb-1 relative transition-colors flex items-center gap-1.5 ${
                   !isSowFullySigned && tab.value !== 'roadmap' ? 'opacity-50 cursor-not-allowed' : ''
                 } ${
                   activePortalTab === tab.value ? 'text-forest font-bold' : 'text-slate-soft hover:text-forest'
@@ -298,7 +298,7 @@ function ClientPortalContent() {
                               {task.title}
                             </span>
                           </div>
-                          <div className="flex items-center gap-4 text-[10px] uppercase font-bold text-slate-soft">
+                          <div className="flex items-center gap-4 text-[12px] uppercase font-bold text-slate-soft">
                             {task.dueDate && <span>Due: {task.dueDate}</span>}
                             <span className="border border-rule/30 px-2 py-0.5 rounded-sm">{task.status}</span>
                           </div>
@@ -314,7 +314,7 @@ function ClientPortalContent() {
                       {currentClient.weeklyUpdates?.map((update, i) => (
                         <div key={i} className="border-l-2 border-sienna pl-5 py-1">
                           <div className="flex justify-between items-baseline mb-2">
-                            <span className="font-serif text-base text-forest font-semibold">{update.week}</span>
+                            <span className="font-serif text-[18px] text-forest font-semibold">{update.week}</span>
                           </div>
                           <p className="text-sm text-slate-ink leading-relaxed">{update.content}</p>
                         </div>
@@ -336,7 +336,7 @@ function ClientPortalContent() {
                     </p>
                     <Link
                       href={`/portal/proposal?client=${currentClient.id}`}
-                      className="w-full text-center py-2.5 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm block"
+                      className="w-full text-center py-2.5 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm block"
                     >
                       View SOW Proposal
                     </Link>
@@ -357,7 +357,7 @@ function ClientPortalContent() {
                       ) : (
                         currentClient.whatsBlocking.map((blocker) => (
                           <div key={blocker.id} className="p-4 border border-rule/30 bg-sand-soft rounded-sm">
-                            <span className="text-[8px] bg-rose-100 text-rose-800 px-1.5 py-0.5 rounded-sm font-bold uppercase block mb-1 self-start">
+                            <span className="text-[12px] bg-rose-100 text-rose-800 px-1.5 py-0.5 rounded-sm font-bold uppercase block mb-1 self-start">
                               {blocker.severity} Block
                             </span>
                             <p className="text-xs font-semibold text-forest leading-relaxed">

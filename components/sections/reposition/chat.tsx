@@ -95,10 +95,10 @@ export function MessagingPanel({
                   }`}
                 >
                   <div className="flex items-baseline justify-between gap-4 mb-1">
-                    <span className="font-bold text-[9px] uppercase tracking-wider opacity-85">
+                    <span className="font-bold text-[12px] uppercase tracking-wider opacity-85">
                       {msg.sender === 'admin' ? 'Tyler Malin (Admin)' : 'Client Representative'}
                     </span>
-                    <span className="text-[8px] opacity-60 font-mono">
+                    <span className="text-[12px] opacity-60 font-mono">
                       {new Date(msg.timestamp).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', hour12: false })}
                     </span>
                   </div>

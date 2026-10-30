@@ -94,8 +94,8 @@ export function KanbanBoard({
               className={`bg-sand-soft/40 border ${col.border} p-5 rounded-sm flex flex-col min-h-[300px]`}
             >
               <div className="flex items-center justify-between border-b border-rule/20 pb-3 mb-4">
-                <span className={`font-serif text-base font-bold ${col.text}`}>{col.label}</span>
-                <span className="text-[10px] bg-cream px-2 py-0.5 border border-rule/20 text-slate-soft font-bold rounded-full">
+                <span className={`font-serif text-[18px] font-bold ${col.text}`}>{col.label}</span>
+                <span className="text-[12px] bg-cream px-2 py-0.5 border border-rule/20 text-slate-soft font-bold rounded-full">
                   {colTasks.length}
                 </span>
               </div>
@@ -112,7 +112,7 @@ export function KanbanBoard({
                         {task.title}
                       </span>
                       {task.dueDate && (
-                        <span className="block text-[9px] text-slate-soft mt-1">Due: {task.dueDate}</span>
+                        <span className="block text-[12px] text-slate-soft mt-1">Due: {task.dueDate}</span>
                       )}
                     </div>
 

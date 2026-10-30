@@ -41,7 +41,7 @@ export function RecentWork() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-4 max-w-measure text-[15px] leading-[1.6] text-faint">
+            <p className="mt-4 max-w-measure text-[18px] leading-[1.6] text-faint">
               Anonymized to protect founders. Happy to give specifics on a call under NDA.
             </p>
           </Reveal>
@@ -58,7 +58,7 @@ export function RecentWork() {
                 — {String(i + 1).padStart(2, '0')}
               </span>
               <div>
-                <div className="mb-2 text-[13px] text-faint">{item.tag}</div>
+                <div className="mb-2 text-[14px] text-faint">{item.tag}</div>
                 <div className="max-w-measure text-[18px] font-light leading-snug text-ink">
                   {item.headline}
                 </div>

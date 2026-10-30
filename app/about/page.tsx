@@ -34,7 +34,7 @@ export default function AboutPage() {
               Operator-attorney led.{' '}
               <span className="headline-em">Built for founders who can&apos;t afford the standard playbook.</span>
             </h1>
-            <p className="mt-8 max-w-measure text-[15px] leading-[1.6] text-body">
+            <p className="mt-8 max-w-measure text-[18px] leading-[1.6] text-body">
               Beneficial Technology is a one-person bench with a deep network. It exists because the founders building in regulated frontiers — tokens, climate assets, AI in regulated verticals — are systematically underserved by both the BigLaw and standalone startup-counsel markets.
             </p>
           </div>
@@ -54,13 +54,13 @@ export default function AboutPage() {
               </h2>
             </div>
             <div className="max-w-measure space-y-6 text-body">
-              <p className="text-[17px] font-light leading-[1.6] text-body">
+              <p className="text-[18px] font-light leading-[1.6] text-body">
                 Most regulated startups don&apos;t fail because their lawyers wrote a bad memo. They fail because nobody is doing the work that sits <span className="text-ink">between</span> the law firm and the operating team — translating regulatory ambiguity into product, financing, and corporate-structure decisions that survive contact with reality.
               </p>
-              <p className="text-[15px] leading-[1.6]">
+              <p className="text-[18px] leading-[1.6]">
                 BigLaw bills the hours but won&apos;t make the call. Boutique counsel ships the doc but doesn&apos;t see the whole company. Generalist fractional GCs default to caution and end up shipping nothing. Founders are left to bridge it themselves — usually after something has already gone wrong.
               </p>
-              <p className="text-[17px] font-light leading-[1.5] text-ink">
+              <p className="text-[18px] font-light leading-[1.5] text-ink">
                 We do the layer underneath. Structural strategy. Regulatory positioning. Instrument design. Counsel orchestration. The work that lawyers don&apos;t ship and that founders shouldn&apos;t be figuring out alone.
               </p>
             </div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
               </div>
               <p className="mt-3 text-sm text-lime-400">Founder &amp; Principal</p>
             </div>
-            <div className="max-w-measure space-y-6 text-[15px] leading-[1.6] text-body">
+            <div className="max-w-measure space-y-6 text-[18px] leading-[1.6] text-body">
               <p>
                 Operator-attorney. Two prior startup exits, one of them an Inc. 500 company acquired by Maker Studios. Trained in litigation with 15+ years of law-firm experience. Held a regulatory fellowship at the Commodity Futures Trading Commission. JD, Fordham Law.
               </p>
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 <p className="mt-5 max-w-measure text-xl font-light leading-[1.35] tracking-[-0.02em] text-ink">
                   We&apos;re not a law firm. We don&apos;t give legal advice. We don&apos;t represent clients in legal matters. We don&apos;t file regulatory submissions on your behalf.
                 </p>
-                <p className="mt-5 text-[15px] leading-[1.6] text-body">
+                <p className="mt-5 text-[18px] leading-[1.6] text-body">
                   We do the structural and strategic work upstream of legal, and we coordinate with the counsel you retain. For any matter requiring legal advice or representation, you&apos;ll work with an attorney you separately engage — and we&apos;ll help you find the right one.
                 </p>
                 <div className="mt-6">

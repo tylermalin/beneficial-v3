@@ -35,3 +35,11 @@ next-env.d.ts*.swp
 
 # Nested backup repositories
 /beneficial
+
+# scroll-craft build artifacts (bulky / regenerable; site uses public/flight copies)
+scrollcraft/builds/*/out/
+scrollcraft/builds/*/lab/
+scrollcraft/builds/*/node_modules/
+scrollcraft/builds/*/assets/
+scrollcraft/builds/*/package.json
+scrollcraft/builds/*/package-lock.json

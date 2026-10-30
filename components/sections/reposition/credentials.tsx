@@ -27,7 +27,7 @@ export function Credentials() {
               className="flex flex-col justify-center bg-canvas p-7"
             >
               <div className="text-lg font-light leading-tight text-ink">{item.primary}</div>
-              <div className="mt-2 text-[13px] text-faint">{item.secondary}</div>
+              <div className="mt-2 text-[14px] text-faint">{item.secondary}</div>
             </motion.div>
           ))}
         </StaggerGroup>

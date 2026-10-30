@@ -152,7 +152,7 @@ function ProposalContent() {
 
             <div className="flex items-start justify-between border-b border-rule/30 pb-6">
               <div>
-                <span className="text-[10px] uppercase tracking-widest text-sienna font-bold bg-cream px-3 py-1 border border-rule/20 rounded-sm">
+                <span className="text-[12px] uppercase tracking-widest text-sienna font-bold bg-cream px-3 py-1 border border-rule/20 rounded-sm">
                   Statement of Work (SOW)
                 </span>
                 <h1 className="font-serif text-3xl text-forest mt-4">
@@ -166,13 +166,13 @@ function ProposalContent() {
             <div className="space-y-6 text-xs text-slate-ink leading-relaxed font-medium">
               <div className="grid sm:grid-cols-2 gap-4 border-b border-rule/20 pb-4">
                 <div>
-                  <span className="block text-[9px] uppercase tracking-wider text-slate-soft font-bold">Provider / Principal</span>
+                  <span className="block text-[12px] uppercase tracking-wider text-slate-soft font-bold">Provider / Principal</span>
                   <span className="text-sm font-serif font-bold text-forest">Beneficial Technology, LLC</span>
                   <span className="block opacity-75">Principal: Tyler Malin</span>
                   <span className="block opacity-75">tyler@beneficial.technology</span>
                 </div>
                 <div>
-                  <span className="block text-[9px] uppercase tracking-wider text-slate-soft font-bold">Client Entity</span>
+                  <span className="block text-[12px] uppercase tracking-wider text-slate-soft font-bold">Client Entity</span>
                   <span className="text-sm font-serif font-bold text-forest">{client.company}</span>
                   <span className="block opacity-75">Contact: {client.name}</span>
                   <span className="block opacity-75">{client.email}</span>
@@ -214,13 +214,13 @@ function ProposalContent() {
             <div className="border-t border-rule pt-8 grid sm:grid-cols-2 gap-8">
               {/* Client Signature */}
               <div className="border border-dashed border-rule/45 p-5 bg-cream/50 rounded-sm">
-                <span className="block text-[9px] uppercase tracking-wider text-slate-soft font-bold mb-3">Client Signature</span>
+                <span className="block text-[12px] uppercase tracking-wider text-slate-soft font-bold mb-3">Client Signature</span>
                 {clientSigned ? (
                   <div className="space-y-1">
-                    <span className="block font-serif text-base italic text-forest font-bold">
+                    <span className="block font-serif text-[18px] italic text-forest font-bold">
                       /s/ {(client as any).sowClientSignature || client.name}
                     </span>
-                    <span className="block text-[10px] text-slate-soft">Signed digitally on kickoff creation</span>
+                    <span className="block text-[12px] text-slate-soft">Signed digitally on kickoff creation</span>
                   </div>
                 ) : (
                   <span className="text-xs italic text-rose-800">Awaiting client signature</span>
@@ -229,13 +229,13 @@ function ProposalContent() {
 
               {/* Admin Signature */}
               <div className="border border-dashed border-rule/45 p-5 bg-cream/50 rounded-sm">
-                <span className="block text-[9px] uppercase tracking-wider text-slate-soft font-bold mb-3">Principal Counter-Signature</span>
+                <span className="block text-[12px] uppercase tracking-wider text-slate-soft font-bold mb-3">Principal Counter-Signature</span>
                 {adminSigned ? (
                   <div className="space-y-1">
-                    <span className="block font-serif text-base italic text-forest font-bold">
+                    <span className="block font-serif text-[18px] italic text-forest font-bold">
                       /s/ Tyler Malin
                     </span>
-                    <span className="block text-[10px] text-slate-soft">Countersigned - SOW Active ✓</span>
+                    <span className="block text-[12px] text-slate-soft">Countersigned - SOW Active ✓</span>
                   </div>
                 ) : (
                   <span className="text-xs italic text-rose-800">Awaiting countersign by Tyler Malin</span>
@@ -259,14 +259,14 @@ function ProposalContent() {
                     <button
                       onClick={handleNudgeAdmin}
                       disabled={nudgeSent}
-                      className="px-4 py-2 bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold hover:bg-forest transition-colors rounded-sm"
+                      className="px-4 py-2 bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold hover:bg-forest transition-colors rounded-sm"
                     >
                       {nudgeSent ? 'Nudge Sent ✓' : 'Nudge Tyler Malin'}
                     </button>
                   ) : (
                     <button
                       onClick={handleAdminCountersign}
-                      className="px-4 py-2.5 bg-forest text-cream text-[10px] uppercase tracking-wider font-bold hover:bg-sienna transition-colors rounded-sm shadow-sm"
+                      className="px-4 py-2.5 bg-forest text-cream text-[12px] uppercase tracking-wider font-bold hover:bg-sienna transition-colors rounded-sm shadow-sm"
                     >
                       Countersign SOW
                     </button>
@@ -283,7 +283,7 @@ function ProposalContent() {
                   </div>
                   <Link
                     href={`/portal?client=${client.id}`}
-                    className="px-4 py-3.5 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center gap-1"
+                    className="px-4 py-3.5 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center gap-1"
                   >
                     Enter Active Portal <ArrowRight size={14} />
                   </Link>

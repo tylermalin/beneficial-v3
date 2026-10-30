@@ -71,13 +71,13 @@ export function Services() {
                   <h3 className="mt-6 text-xl font-normal leading-snug tracking-[-0.02em] text-ink">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-[15px] leading-[1.6] text-body">{service.desc}</p>
+                  <p className="mt-3 text-[18px] leading-[1.6] text-body">{service.desc}</p>
 
                   <Divider className="my-6" />
 
                   <ul className="mt-auto grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                     {service.details.map((detail) => (
-                      <li key={detail} className="flex items-center gap-2 text-[13px] text-body">
+                      <li key={detail} className="flex items-center gap-2 text-[14px] text-body">
                         <Check size={14} strokeWidth={2} className="shrink-0 text-lime-400" />
                         <span>{detail}</span>
                       </li>

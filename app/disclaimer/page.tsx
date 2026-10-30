@@ -31,7 +31,7 @@ export default function DisclaimerPage() {
 
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl space-y-14 text-base text-slate-ink leading-relaxed">
+          <div className="max-w-3xl space-y-14 text-[18px] text-slate-ink leading-relaxed">
 
             <DisclaimerSection num="01" title="What we are, and what we aren't">
               <p>

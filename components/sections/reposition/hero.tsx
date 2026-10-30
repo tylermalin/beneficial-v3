@@ -41,7 +41,7 @@ export function RepositionHero() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="mt-8 max-w-measure text-[15px] leading-[1.6] text-body">
+            <p className="mt-8 max-w-measure text-[18px] leading-[1.6] text-body">
               Legal engineering, software development, and AI implementation in one
               engagement. You get the enterprise structure built, the workflows
               integrated, and the execution work traditional agencies leave unshipped.
@@ -71,7 +71,7 @@ export function RepositionHero() {
                   <span className="tabular text-[clamp(1.5rem,3vw,2.25rem)] font-medium leading-none text-ink">
                     {m.v}
                   </span>
-                  <span className="mt-2 text-[13px] text-faint">{m.k}</span>
+                  <span className="mt-2 text-[14px] text-faint">{m.k}</span>
                 </div>
               ))}
             </div>
@@ -87,8 +87,8 @@ export function RepositionHero() {
                   <div key={c.label}>
                     {i > 0 && <Divider className="bg-line-hairline" />}
                     <div className="flex items-baseline justify-between gap-4 py-3.5">
-                      <span className="text-[15px] text-ink">{c.label}</span>
-                      <span className="text-right text-[13px] text-faint">{c.value}</span>
+                      <span className="text-[18px] text-ink">{c.label}</span>
+                      <span className="text-right text-[14px] text-faint">{c.value}</span>
                     </div>
                   </div>
                 ))}

@@ -129,12 +129,12 @@ export function Tiers() {
                   {tier.cadence && <span className="text-sm text-faint">{tier.cadence}</span>}
                 </div>
 
-                <p className="mt-5 max-w-measure text-[15px] leading-[1.6] text-body">{tier.desc}</p>
+                <p className="mt-5 max-w-measure text-[18px] leading-[1.6] text-body">{tier.desc}</p>
 
                 <div className="eyebrow mt-7 text-faint">{tier.listLabel}</div>
                 <ul className="mt-3 space-y-2.5">
                   {tier.list.map((item) => (
-                    <li key={item} className="flex gap-2.5 text-[13px] leading-snug text-body">
+                    <li key={item} className="flex gap-2.5 text-[14px] leading-snug text-body">
                       <Check size={14} strokeWidth={2} className="mt-0.5 shrink-0 text-lime-400" />
                       <span>{item}</span>
                     </li>
@@ -152,7 +152,7 @@ export function Tiers() {
                   </Button>
                 </div>
 
-                <div className="mt-8 border-t border-line-hairline pt-5 text-[13px] leading-snug text-faint">
+                <div className="mt-8 border-t border-line-hairline pt-5 text-[14px] leading-snug text-faint">
                   <span className="eyebrow mr-2 inline text-faint">Right fit</span>
                   {tier.fit}
                 </div>

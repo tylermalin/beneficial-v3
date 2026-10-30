@@ -40,7 +40,7 @@ export default function ResourcesPage() {
               Tools we built for the work{' '}
               <span className="headline-em">we wish someone had handed us</span>.
             </h1>
-            <p className="mt-8 max-w-measure text-[15px] leading-[1.6] text-body">
+            <p className="mt-8 max-w-measure text-[18px] leading-[1.6] text-body">
               Practical, founder-facing guides at the intersection of legal engineering, AI, and the regulated frontier. Free to download. Email required so we can send you future field guides — never anything else.
             </p>
           </div>
@@ -58,18 +58,18 @@ export default function ResourcesPage() {
 
             <Card variant="flat" className="flex flex-col p-8">
               <Eyebrow>More coming</Eyebrow>
-              <p className="mt-5 text-[15px] leading-[1.6] text-body">
+              <p className="mt-5 text-[18px] leading-[1.6] text-body">
 More on the way. Each one comes out of client work, not a content calendar.
               </p>
               <div className="mt-6 flex flex-col">
                 {upcoming.map((item, i) => (
                   <div key={item}>
                     {i > 0 && <Divider className="bg-line-hairline" />}
-                    <div className="py-3.5 text-[15px] text-ink">{item}</div>
+                    <div className="py-3.5 text-[18px] text-ink">{item}</div>
                   </div>
                 ))}
               </div>
-              <div className="mt-auto border-t border-line-hairline pt-6 text-[13px] leading-relaxed text-faint">
+              <div className="mt-auto border-t border-line-hairline pt-6 text-[14px] leading-relaxed text-faint">
                 Want one in particular? Tell us at{' '}
                 <a
                   href="mailto:tyler@beneficial.technology"

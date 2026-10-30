@@ -32,7 +32,7 @@ export function HowWeWork() {
               <Card variant="flat" className="flex w-full flex-col p-7">
                 <span className="font-mono text-sm text-lime-400 tabular">{step.num}</span>
                 <div className="mt-6 text-xl font-normal tracking-[-0.02em] text-ink">{step.title}</div>
-                <p className="mt-2 text-[15px] leading-[1.6] text-body">{step.text}</p>
+                <p className="mt-2 text-[18px] leading-[1.6] text-body">{step.text}</p>
               </Card>
             </motion.div>
           ))}

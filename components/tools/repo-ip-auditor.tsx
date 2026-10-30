@@ -105,7 +105,7 @@ export function RepoIpAuditor() {
   return (
     <div className="flex flex-col gap-6">
       <Card variant="flat" className="p-6 sm:p-8">
-        <label htmlFor="repo" className="mb-3 block font-mono text-[11px] uppercase tracking-[0.16em] text-faint">
+        <label htmlFor="repo" className="mb-3 block font-mono text-[12px] uppercase tracking-[0.16em] text-faint">
           Repository
         </label>
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -138,7 +138,7 @@ export function RepoIpAuditor() {
           </summary>
           <div className="grid gap-5 pt-5 sm:grid-cols-2">
             <div>
-              <label htmlFor="domains" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.16em] text-faint">
+              <label htmlFor="domains" className="mb-2 block font-mono text-[12px] uppercase tracking-[0.16em] text-faint">
                 Company email domains
               </label>
               <TextInput
@@ -155,7 +155,7 @@ export function RepoIpAuditor() {
               </p>
             </div>
             <div>
-              <label htmlFor="token" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.16em] text-faint">
+              <label htmlFor="token" className="mb-2 block font-mono text-[12px] uppercase tracking-[0.16em] text-faint">
                 GitHub token
               </label>
               <TextInput
@@ -191,7 +191,7 @@ export function RepoIpAuditor() {
         <div className="grid gap-4 sm:grid-cols-2">
           {EXPLAINER.map(([title, body]) => (
             <Card key={title} variant="outline" className="p-6">
-              <h3 className="mb-2 font-mono text-[11px] uppercase tracking-[0.14em] text-lime-400">{title}</h3>
+              <h3 className="mb-2 font-mono text-[12px] uppercase tracking-[0.14em] text-lime-400">{title}</h3>
               <p className="text-[14px] leading-[1.6] text-body">{body}</p>
             </Card>
           ))}
@@ -218,10 +218,10 @@ export function RepoIpAuditor() {
               </div>
               <div className="flex items-center gap-5">
                 <div className="text-right">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-faint">Score</div>
+                  <div className="font-mono text-[12px] uppercase tracking-[0.14em] text-faint">Score</div>
                   <div className="font-serif text-3xl text-ink">
                     {report.score}
-                    <span className="text-base text-faint">/100</span>
+                    <span className="text-[18px] text-faint">/100</span>
                   </div>
                 </div>
                 <div className={`flex h-14 w-14 items-center justify-center rounded-xl border font-serif text-3xl ${gradeStyle(report.grade)}`}>
@@ -230,7 +230,7 @@ export function RepoIpAuditor() {
               </div>
             </div>
 
-            <p className="pt-6 text-[15px] leading-[1.6] text-body">{verdict(report)}</p>
+            <p className="pt-6 text-[18px] leading-[1.6] text-body">{verdict(report)}</p>
 
             {report.deductions.length > 0 && (
               <ul className="mt-6 space-y-2 border-t border-line-hairline pt-6">
@@ -284,11 +284,11 @@ export function RepoIpAuditor() {
 
           {tab === 'findings' && (
             <Card variant="outline" className="p-6 sm:p-8">
-              <ol className="list-decimal space-y-4 pl-5 text-[15px] leading-[1.6] text-body marker:font-mono marker:text-faint">
+              <ol className="list-decimal space-y-4 pl-5 text-[18px] leading-[1.6] text-body marker:font-mono marker:text-faint">
                 {unassigned.length > 0 && (
                   <li>
                     Get a signed IP assignment from {unassigned.length} contributor{unassigned.length === 1 ? '' : 's'}, starting with{' '}
-                    <code className="font-mono text-[13px] text-lime-400">
+                    <code className="font-mono text-[14px] text-lime-400">
                       {unassigned.slice(0, 3).map((c) => c.email).join(', ')}
                     </code>
                     . Retroactive assignments get harder every month after someone stops contributing.
@@ -340,7 +340,7 @@ export function RepoIpAuditor() {
                         {c.first.slice(0, 7)} to {c.last.slice(0, 7)}
                       </td>
                       <td className="p-4">
-                        <span className={`rounded border px-2 py-1 text-[10px] ${STATUS_STYLE[c.status]}`}>
+                        <span className={`rounded border px-2 py-1 text-[12px] ${STATUS_STYLE[c.status]}`}>
                           {STATUS_LABEL[c.status]}
                         </span>
                       </td>
@@ -354,7 +354,7 @@ export function RepoIpAuditor() {
           {tab === 'dependencies' && (
             <Card variant="outline" className="overflow-x-auto">
               {report.dependencies.flagged.length === 0 ? (
-                <p className="p-6 text-[15px] leading-[1.6] text-body">
+                <p className="p-6 text-[18px] leading-[1.6] text-body">
                   No copyleft obligations in the declared dependency set. {report.dependencies.resolved} of {report.dependencies.total} licenses resolved. This reads declared licenses only, not vendored code, transitive packages, or how each one is linked.
                 </p>
               ) : (
@@ -379,7 +379,7 @@ export function RepoIpAuditor() {
                           {d.direct ? '' : ', transitive'}
                         </td>
                         <td className="p-4">
-                          <span className={`rounded border px-2 py-1 text-[10px] ${
+                          <span className={`rounded border px-2 py-1 text-[12px] ${
                             d.cls === 'agpl' || d.cls === 'gpl' || d.cls === 'source-available' ? RISK : CAUTION
                           }`}>
                             {LICENSE_LABEL[d.cls]}
@@ -395,7 +395,7 @@ export function RepoIpAuditor() {
 
           <Card variant="outline" className="p-6">
             <details>
-              <summary className="cursor-pointer font-mono text-[11px] uppercase tracking-[0.14em] text-faint">
+              <summary className="cursor-pointer font-mono text-[12px] uppercase tracking-[0.14em] text-faint">
                 Scoring rubric
               </summary>
               <table className="mt-5 w-full text-left font-mono text-xs">
@@ -416,7 +416,7 @@ export function RepoIpAuditor() {
                   ))}
                 </tbody>
               </table>
-              <p className="mt-4 text-[13px] leading-relaxed text-faint">
+              <p className="mt-4 text-[14px] leading-relaxed text-faint">
                 Grades: A 90+, B 75+, C 60+, D 40+, F below 40. The same function scores the CLI, the GitHub Action, and this page.
               </p>
             </details>
@@ -435,10 +435,10 @@ export function RepoIpAuditor() {
               <p className="mt-4 mb-5 text-[14px] leading-[1.6] text-body">{body}</p>
             </div>
             <div className="flex items-center justify-between gap-3 rounded-lg border border-line-hairline px-3 py-2.5">
-              <code className="overflow-x-auto font-mono text-[11px] text-body">{snippet}</code>
+              <code className="overflow-x-auto font-mono text-[12px] text-body">{snippet}</code>
               <button
                 onClick={() => navigator.clipboard.writeText(snippet)}
-                className="shrink-0 font-mono text-[10px] uppercase tracking-[0.12em] text-lime-400 transition hover:text-lime-500"
+                className="shrink-0 font-mono text-[12px] uppercase tracking-[0.12em] text-lime-400 transition hover:text-lime-500"
               >
                 Copy
               </button>

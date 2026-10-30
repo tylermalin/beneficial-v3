@@ -240,7 +240,7 @@ Principal, Beneficial Technology`
             </div>
             <Link
               href={`/portal?client=${client.id}`}
-              className="px-4 py-2 bg-[#D4A574] text-forest hover:bg-forest hover:text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm text-center"
+              className="px-4 py-2 bg-[#D4A574] text-forest hover:bg-forest hover:text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm text-center"
             >
               Enter Client Portal view ↗
             </Link>
@@ -260,7 +260,7 @@ Principal, Beneficial Technology`
               setIsStagedModalOpen(true)
               setEmailSentSuccess(false)
             }}
-            className="px-4 py-2 bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold hover:bg-forest transition-colors rounded-sm shadow-sm"
+            className="px-4 py-2 bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold hover:bg-forest transition-colors rounded-sm shadow-sm"
           >
             Send Weekly Updates email
           </button>
@@ -287,7 +287,7 @@ Principal, Beneficial Technology`
                   }
                   setActiveTab(tab.value as any)
                 }}
-                className={`font-serif text-base pb-1 relative transition-colors flex items-center gap-1.5 ${
+                className={`font-serif text-[18px] pb-1 relative transition-colors flex items-center gap-1.5 ${
                   !isSowFullySigned && tab.value !== 'roadmap' ? 'opacity-50 cursor-not-allowed' : ''
                 } ${
                   activeTab === tab.value ? 'text-forest font-bold' : 'text-slate-soft hover:text-forest'
@@ -325,7 +325,7 @@ Principal, Beneficial Technology`
                     {/* Add task form */}
                     <form onSubmit={handleAddTask} className="grid sm:grid-cols-12 gap-4 items-end mb-6 border-b border-rule/20 pb-6">
                       <div className="sm:col-span-6">
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">New roadmap task title</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">New roadmap task title</label>
                         <input
                           type="text"
                           required
@@ -336,7 +336,7 @@ Principal, Beneficial Technology`
                         />
                       </div>
                       <div className="sm:col-span-4">
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Target deadline</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Target deadline</label>
                         <input
                           type="date"
                           value={taskDueDate}
@@ -347,7 +347,7 @@ Principal, Beneficial Technology`
                       <div className="sm:col-span-2">
                         <button
                           type="submit"
-                          className="w-full py-2 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center justify-center gap-1"
+                          className="w-full py-2 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center justify-center gap-1"
                         >
                           <Plus size={12} /> Add
                         </button>
@@ -365,7 +365,7 @@ Principal, Beneficial Technology`
                             <span className={`text-sm ${task.status === 'done' ? 'line-through text-slate-soft' : 'text-forest font-semibold'}`}>
                               {task.title}
                             </span>
-                            {task.dueDate && <span className="block text-[9px] text-slate-soft mt-1">Deadline: {task.dueDate}</span>}
+                            {task.dueDate && <span className="block text-[12px] text-slate-soft mt-1">Deadline: {task.dueDate}</span>}
                           </div>
 
                           <div className="flex items-center gap-3">
@@ -400,7 +400,7 @@ Principal, Beneficial Technology`
                     {/* Add blocker form */}
                     <form onSubmit={handleAddBlocker} className="grid sm:grid-cols-12 gap-4 items-end mb-6 border-b border-rule/20 pb-6">
                       <div className="sm:col-span-6">
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Issue / Block description</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Issue / Block description</label>
                         <input
                           type="text"
                           required
@@ -411,7 +411,7 @@ Principal, Beneficial Technology`
                         />
                       </div>
                       <div className="sm:col-span-4">
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Severity</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Severity</label>
                         <select
                           value={blockerSeverity}
                           onChange={(e) => setBlockerSeverity(e.target.value as any)}
@@ -425,7 +425,7 @@ Principal, Beneficial Technology`
                       <div className="sm:col-span-2">
                         <button
                           type="submit"
-                          className="w-full py-2 bg-sienna hover:bg-forest text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center justify-center gap-1"
+                          className="w-full py-2 bg-sienna hover:bg-forest text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center justify-center gap-1"
                         >
                           <Plus size={12} /> Add
                         </button>
@@ -448,12 +448,12 @@ Principal, Beneficial Technology`
                           >
                             <div className="space-y-1">
                               <div className="flex items-center gap-2">
-                                <span className={`text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-sm ${
+                                <span className={`text-[12px] uppercase tracking-wider px-1.5 py-0.5 rounded-sm ${
                                   blocker.severity === 'high' ? 'bg-rose-100 text-rose-800 font-bold' : 'bg-slate-100 text-slate-700'
                                 }`}>
                                   {blocker.severity}
                                 </span>
-                                {blocker.resolved && <span className="text-[10px] text-emerald-800 font-semibold">RESOLVED</span>}
+                                {blocker.resolved && <span className="text-[12px] text-emerald-800 font-semibold">RESOLVED</span>}
                               </div>
                               <p className={`text-xs ${blocker.resolved ? 'line-through text-slate-soft' : 'text-forest font-semibold'}`}>
                                 {blocker.title}
@@ -463,7 +463,7 @@ Principal, Beneficial Technology`
                             <div className="flex items-center gap-2">
                               <button
                                 onClick={() => handleToggleBlocker(blocker.id)}
-                                className={`px-3 py-1 text-[9px] uppercase tracking-wider font-bold border rounded-sm transition-all ${
+                                className={`px-3 py-1 text-[12px] uppercase tracking-wider font-bold border rounded-sm transition-all ${
                                   blocker.resolved
                                     ? 'bg-cream border-rule hover:bg-sand-soft text-slate-soft'
                                     : 'bg-sienna border-sienna text-cream hover:bg-forest hover:border-forest'
@@ -489,13 +489,13 @@ Principal, Beneficial Technology`
                 <div className="lg:col-span-4 space-y-8">
                   {/* SOW details display */}
                   <div className="bg-cream border border-rule/30 p-6 rounded-sm space-y-3 text-xs text-slate-ink">
-                    <h4 className="font-serif text-base text-forest flex items-center gap-1.5 mb-2">
+                    <h4 className="font-serif text-[18px] text-forest flex items-center gap-1.5 mb-2">
                       <Award className="text-sienna" size={16} /> SOW Scope Details
                     </h4>
                     <p><strong>Scoping:</strong> {((client as any).sowDetails?.scoping) || 'Initial scoping setup.'}</p>
                     {client.tier === 'Custom' && (client as any).customDecisions && (
                       <div className="border-t border-rule/20 pt-2.5 mt-2.5 space-y-1.5 text-xs">
-                        <p className="font-bold text-forest uppercase text-[9px] tracking-wider">Custom Brief Decisions</p>
+                        <p className="font-bold text-forest uppercase text-[12px] tracking-wider">Custom Brief Decisions</p>
                         <p><strong>Practice Areas:</strong> {((client as any).customDecisions.services || []).join(', ') || 'None selected'}</p>
                         <p><strong>Target Budget:</strong> {(client as any).customDecisions.budget}</p>
                         <p><strong>Timeline:</strong> {(client as any).customDecisions.timeline}</p>
@@ -514,7 +514,7 @@ Principal, Beneficial Technology`
                     </div>
                     <form onSubmit={handleAddInvoice} className="space-y-4">
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                           Billing description
                         </label>
                         <input
@@ -527,7 +527,7 @@ Principal, Beneficial Technology`
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                           Amount Due (USD)
                         </label>
                         <input
@@ -541,7 +541,7 @@ Principal, Beneficial Technology`
                       </div>
                       <button
                         type="submit"
-                        className="w-full py-2.5 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center justify-center gap-1 shadow-sm"
+                        className="w-full py-2.5 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center justify-center gap-1 shadow-sm"
                       >
                         <PlusCircle size={13} /> Issue Ledger Invoice
                       </button>
@@ -623,15 +623,15 @@ Principal, Beneficial Technology`
 
                   <div className="space-y-3">
                     <div>
-                      <span className="block text-[9px] uppercase tracking-wider text-slate-soft font-bold">Recipient client</span>
+                      <span className="block text-[12px] uppercase tracking-wider text-slate-soft font-bold">Recipient client</span>
                       <span className="text-xs font-semibold text-forest">{client.name} &lt;{client.email}&gt;</span>
                     </div>
                     <div>
-                      <label className="block text-[9px] uppercase tracking-wider text-slate-soft font-bold mb-1">Weekly Update Text</label>
+                      <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-bold mb-1">Weekly Update Text</label>
                       <textarea
                         value={stagedEmailContent}
                         onChange={(e) => setStagedEmailContent(e.target.value)}
-                        className="w-full h-72 p-3.5 bg-sand-soft border border-rule text-slate-ink font-mono text-[10px] leading-relaxed focus:outline-none rounded-sm"
+                        className="w-full h-72 p-3.5 bg-sand-soft border border-rule text-slate-ink font-mono text-[12px] leading-relaxed focus:outline-none rounded-sm"
                       />
                     </div>
                   </div>
@@ -664,7 +664,7 @@ Principal, Beneficial Technology`
                   </p>
                   <button
                     onClick={() => setIsStagedModalOpen(false)}
-                    className="px-6 py-3 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm"
+                    className="px-6 py-3 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm"
                   >
                     Return to CRM Details
                   </button>

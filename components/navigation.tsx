@@ -2,15 +2,16 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/obsidian"
-import { WordmarkGlyph } from "@/components/ui/icons"
 
 const navItems = [
   { href: "/#services", label: "Services" },
   { href: "/#engagements", label: "Engagements" },
   { href: "/products", label: "Products" },
+  { href: "/tokenization", label: "Tokenization" },
   { href: "/membership", label: "Membership" },
   { href: "/resources", label: "Resources" },
   { href: "/portal", label: "Client portal" },
@@ -24,10 +25,15 @@ export function Navigation() {
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
         <div className="flex h-[68px] items-center justify-between">
           <Link href="/" className="group flex items-center gap-3">
-            <span className="text-lime-400">
-              <WordmarkGlyph size={22} />
-            </span>
-            <span className="text-[15px] font-light tracking-[-0.02em] text-ink">
+            <Image
+              src="/beneficial-mark.png"
+              alt="Beneficial Technology"
+              width={28}
+              height={28}
+              priority
+              className="h-7 w-7 object-contain"
+            />
+            <span className="text-[18px] font-light tracking-[-0.02em] text-ink">
               Beneficial Technology
             </span>
           </Link>
@@ -37,7 +43,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative text-[13px] text-faint transition-colors duration-150 ease-obsidian-out hover:text-ink"
+                className="group relative text-[14px] text-faint transition-colors duration-150 ease-obsidian-out hover:text-ink"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-lime-400 transition-transform duration-200 ease-obsidian-out group-hover:scale-x-100" />

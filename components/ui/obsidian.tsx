@@ -23,9 +23,9 @@ const buttonVariants: Record<ButtonVariant, string> = {
 }
 
 const buttonSizes: Record<ButtonSize, string> = {
-  sm: 'h-8 px-4 text-[13px]',
+  sm: 'h-8 px-4 text-[14px]',
   md: 'h-10 px-5 text-sm',
-  lg: 'h-12 px-7 text-[15px]',
+  lg: 'h-12 px-7 text-[18px]',
 }
 
 type ButtonProps = {
@@ -189,7 +189,7 @@ export function Metric({
   return (
     <div className={cn('flex flex-col', className)}>
       <span className="tabular text-[40px] font-medium leading-none text-ink">{value}</span>
-      <span className="mt-2 text-[13px] text-faint">{label}</span>
+      <span className="mt-2 text-[14px] text-faint">{label}</span>
     </div>
   )
 }

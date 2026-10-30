@@ -82,7 +82,7 @@ export default function ProductsPage() {
                       </span>
                       <div className="flex flex-col items-end">
                         <span className="font-serif text-3xl text-forest font-semibold opacity-50">${product.price}</span>
-                        <span className="text-[9px] uppercase tracking-wider text-sienna font-bold mt-1 bg-sienna/10 px-2 py-0.5 rounded-sm">Coming Soon</span>
+                        <span className="text-[12px] uppercase tracking-wider text-sienna font-bold mt-1 bg-sienna/10 px-2 py-0.5 rounded-sm">Coming Soon</span>
                       </div>
                     </div>
                     <h2 className="font-serif text-3xl text-forest mb-4 leading-tight group-hover:text-sienna transition-colors duration-300">
@@ -92,7 +92,7 @@ export default function ProductsPage() {
                       {product.desc}
                     </p>
                     <div className="border-t border-rule/30 pt-6 mb-8">
-                      <div className="text-[10px] uppercase tracking-[0.16em] text-slate-soft font-bold mb-3">
+                      <div className="text-[12px] uppercase tracking-[0.16em] text-slate-soft font-bold mb-3">
                         What will be included
                       </div>
                       <ul className="space-y-2.5">
@@ -116,7 +116,7 @@ export default function ProductsPage() {
                         onSubmit={(e) => handleJoinWaitlist(e, product)}
                         className="space-y-2"
                       >
-                        <label className="block text-[9px] uppercase tracking-wider text-slate-soft font-bold">
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-bold">
                           Enter Email to join playbook waitlist
                         </label>
                         <div className="flex gap-2">
@@ -130,7 +130,7 @@ export default function ProductsPage() {
                           />
                           <button
                             type="submit"
-                            className="px-5 py-2.5 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold transition-colors rounded-sm shadow-sm"
+                            className="px-5 py-2.5 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold transition-colors rounded-sm shadow-sm"
                           >
                             Join Waitlist
                           </button>

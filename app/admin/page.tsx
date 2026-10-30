@@ -118,19 +118,19 @@ export default function AdminDashboard() {
             <div className="flex gap-3">
               <Link
                 href="/admin/create-client"
-                className="px-4 py-3 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center gap-1"
+                className="px-4 py-3 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center gap-1"
               >
                 <UserPlus size={14} /> Provision Client Portal
               </Link>
               <Link
                 href="/admin/agents"
-                className="px-4 py-3 bg-sand-soft hover:bg-[#D4A574] hover:text-cream text-forest text-[10px] uppercase tracking-wider font-bold transition-all border border-rule/30 rounded-sm flex items-center gap-1"
+                className="px-4 py-3 bg-sand-soft hover:bg-[#D4A574] hover:text-cream text-forest text-[12px] uppercase tracking-wider font-bold transition-all border border-rule/30 rounded-sm flex items-center gap-1"
               >
                 Launch AI Agent Sandbox
               </Link>
               <button
                 onClick={handleLogout}
-                className="px-3.5 py-3 border border-rule/30 text-slate-ink hover:text-rose-800 transition-colors rounded-sm flex items-center gap-1 text-[10px] uppercase tracking-wider font-bold"
+                className="px-3.5 py-3 border border-rule/30 text-slate-ink hover:text-rose-800 transition-colors rounded-sm flex items-center gap-1 text-[12px] uppercase tracking-wider font-bold"
               >
                 <LogOut size={13} /> Exit
               </button>
@@ -146,45 +146,45 @@ export default function AdminDashboard() {
             {/* KPI 1 */}
             <div className="bg-cream border border-rule/20 p-6 rounded-sm">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] uppercase tracking-wider text-slate-soft font-semibold">Active Practice MRR</span>
+                <span className="text-[12px] uppercase tracking-wider text-slate-soft font-semibold">Active Practice MRR</span>
                 <Users className="text-sienna" size={16} />
               </div>
               <span className="font-serif text-3xl text-forest font-semibold">${totalMrr.toLocaleString()}</span>
-              <span className="block text-[10px] text-emerald-800 font-semibold mt-1">✓ Retainer streams active</span>
+              <span className="block text-[12px] text-emerald-800 font-semibold mt-1">✓ Retainer streams active</span>
             </div>
 
             {/* KPI 2 */}
             <div className="bg-cream border border-rule/20 p-6 rounded-sm">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] uppercase tracking-wider text-slate-soft font-semibold">Outstanding Accounts</span>
+                <span className="text-[12px] uppercase tracking-wider text-slate-soft font-semibold">Outstanding Accounts</span>
                 <DollarSign className="text-sienna" size={16} />
               </div>
               <span className="font-serif text-3xl text-forest font-semibold">${pendingInvoiceSum.toLocaleString()}</span>
-              <span className="block text-[10px] text-amber-700 font-semibold mt-1">⚠️ Net 15 pending balances</span>
+              <span className="block text-[12px] text-amber-700 font-semibold mt-1">⚠️ Net 15 pending balances</span>
             </div>
 
             {/* KPI 3 */}
             <div className="bg-cream border border-rule/20 p-6 rounded-sm">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] uppercase tracking-wider text-slate-soft font-semibold">Simulated Page Views</span>
+                <span className="text-[12px] uppercase tracking-wider text-slate-soft font-semibold">Simulated Page Views</span>
                 <Activity className="text-sienna" size={16} />
               </div>
               <span className="font-serif text-3xl text-forest font-semibold">
                 {analytics?.totalPageViews || 142}
               </span>
-              <span className="block text-[10px] text-slate-soft mt-1">Onsite interactions tracked</span>
+              <span className="block text-[12px] text-slate-soft mt-1">Onsite interactions tracked</span>
             </div>
 
             {/* KPI 4 */}
             <div className="bg-cream border border-rule/20 p-6 rounded-sm">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] uppercase tracking-wider text-slate-soft font-semibold">Conversion Actions</span>
+                <span className="text-[12px] uppercase tracking-wider text-slate-soft font-semibold">Conversion Actions</span>
                 <Award className="text-sienna" size={16} />
               </div>
               <span className="font-serif text-3xl text-forest font-semibold">
                 {analytics?.events.filter(e => e.type !== 'pageview').length || 8}
               </span>
-              <span className="block text-[10px] text-slate-soft mt-1">Downloads / orders completed</span>
+              <span className="block text-[12px] text-slate-soft mt-1">Downloads / orders completed</span>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@ export default function AdminDashboard() {
                       <div className="space-y-1">
                         <div className="flex items-center gap-2.5">
                           <h4 className="font-serif text-xl text-forest">{client.company}</h4>
-                          <span className={`text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-sm ${
+                          <span className={`text-[12px] uppercase tracking-wider px-2 py-0.5 rounded-sm ${
                             client.tier === 'Architect' ? 'bg-indigo-50 border border-indigo-200 text-indigo-800 font-bold' : 'bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold'
                           }`}>
                             {client.tier}
@@ -219,7 +219,7 @@ export default function AdminDashboard() {
                         </div>
                         <p className="text-xs text-slate-soft font-medium">Founder: {client.name} · {client.email}</p>
                         
-                        <div className="flex items-center gap-4.5 pt-2 text-[10px] text-slate-soft uppercase tracking-wider font-bold">
+                        <div className="flex items-center gap-4.5 pt-2 text-[12px] text-slate-soft uppercase tracking-wider font-bold">
                           {hasPendingSow ? (
                             <span className="text-rose-800 font-bold flex items-center gap-1">
                               <ShieldAlert size={12} /> Awaiting countersign
@@ -238,7 +238,7 @@ export default function AdminDashboard() {
 
                       <div className="flex items-center justify-between sm:justify-end gap-6 border-t sm:border-t-0 border-rule/20 pt-4 sm:pt-0">
                         <div className="text-right sm:block hidden">
-                          <span className="block text-[9px] uppercase text-slate-soft font-semibold">Proposal Status</span>
+                          <span className="block text-[12px] uppercase text-slate-soft font-semibold">Proposal Status</span>
                           <span className={`text-xs font-bold uppercase ${
                             hasPendingSow ? 'text-amber-700 font-bold' : blockersCount > 0 ? 'text-amber-700' : 'text-emerald-800'
                           }`}>
@@ -270,7 +270,7 @@ export default function AdminDashboard() {
                 <div className="space-y-4">
                   {/* Referral summary list */}
                   <div>
-                    <span className="block text-[10px] uppercase text-slate-soft font-semibold mb-2">Referrer Hostnames</span>
+                    <span className="block text-[12px] uppercase text-slate-soft font-semibold mb-2">Referrer Hostnames</span>
                     {analytics && Object.keys(analytics.referrers).length > 0 ? (
                       <div className="space-y-2">
                         {Object.entries(analytics.referrers).slice(0, 4).map(([ref, count]) => (
@@ -287,7 +287,7 @@ export default function AdminDashboard() {
 
                   {/* UTM campaigns */}
                   <div className="pt-4 border-t border-rule/20">
-                    <span className="block text-[10px] uppercase text-slate-soft font-semibold mb-2">UTM Campaigns</span>
+                    <span className="block text-[12px] uppercase text-slate-soft font-semibold mb-2">UTM Campaigns</span>
                     {analytics && Object.keys(analytics.utmSources).length > 0 ? (
                       <div className="space-y-2">
                         {Object.entries(analytics.utmSources).slice(0, 3).map(([src, count]) => (

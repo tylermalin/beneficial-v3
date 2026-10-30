@@ -39,7 +39,7 @@ export function WhoWeWorkWith() {
                 — {String(i + 1).padStart(2, '0')}
               </span>
               <div>
-                <div className="mb-2 text-[13px] text-faint">{fit.label}</div>
+                <div className="mb-2 text-[14px] text-faint">{fit.label}</div>
                 <div className="max-w-measure text-[18px] font-light leading-snug text-ink">
                   {fit.statement}
                 </div>

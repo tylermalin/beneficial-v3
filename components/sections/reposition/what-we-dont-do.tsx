@@ -13,7 +13,7 @@ export function WhatWeDontDo() {
             <p className="mt-6 max-w-4xl text-[clamp(1.5rem,3.5vw,2rem)] font-light leading-[1.2] tracking-[-0.02em] text-ink">
               We&apos;re not a law firm. We don&apos;t give legal advice. We don&apos;t represent clients in legal matters. We don&apos;t file regulatory submissions on your behalf.
             </p>
-            <p className="mt-8 max-w-measure text-[15px] leading-[1.6] text-body">
+            <p className="mt-8 max-w-measure text-[18px] leading-[1.6] text-body">
               We do the structural and strategic work upstream of legal, and we coordinate with the counsel you retain. For any matter requiring legal advice or representation, you&apos;ll work with an attorney you separately engage — <span className="text-ink">and we&apos;ll help you find the right one.</span>
             </p>
           </Card>

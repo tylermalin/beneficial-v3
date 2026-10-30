@@ -119,7 +119,7 @@ export default function OnboardingWizard() {
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-3xl">
           {/* Progress Indicator */}
           <div className="mb-10">
-            <div className="flex justify-between text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-3">
+            <div className="flex justify-between text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-3">
               <span>Step {step} of 5</span>
               <span>
                 {step === 1 ? 'Retainer Tier' : 
@@ -177,7 +177,7 @@ export default function OnboardingWizard() {
                       >
                         <div>
                           <h4 className="font-serif text-lg text-forest">{opt.title}</h4>
-                          <p className="text-[11px] text-slate-ink mt-2 leading-relaxed">{opt.desc}</p>
+                          <p className="text-[12px] text-slate-ink mt-2 leading-relaxed">{opt.desc}</p>
                         </div>
                         <span className="text-xs uppercase text-sienna tracking-wider font-bold mt-4">{opt.price}</span>
                       </button>
@@ -204,7 +204,7 @@ export default function OnboardingWizard() {
                   <div className="space-y-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Company Name *</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Company Name *</label>
                         <div className="relative">
                           <Building2 size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-soft" />
                           <input
@@ -218,7 +218,7 @@ export default function OnboardingWizard() {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Founder Full Name *</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Founder Full Name *</label>
                         <input
                           type="text"
                           required
@@ -232,7 +232,7 @@ export default function OnboardingWizard() {
 
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Founder Email *</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Founder Email *</label>
                         <input
                           type="email"
                           required
@@ -243,7 +243,7 @@ export default function OnboardingWizard() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Portal Secure Password *</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Portal Secure Password *</label>
                         <div className="relative">
                           <Key size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-soft" />
                           <input
@@ -279,8 +279,8 @@ export default function OnboardingWizard() {
 
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-2">Practice Focus Areas *</label>
-                        <div className="grid grid-cols-2 gap-2 text-[11px]">
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-2">Practice Focus Areas *</label>
+                        <div className="grid grid-cols-2 gap-2 text-[12px]">
                           {[
                             'AI Integration & Workflows',
                             'Custom Software Build',
@@ -312,7 +312,7 @@ export default function OnboardingWizard() {
 
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Target Monthly Budget Range *</label>
+                          <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Target Monthly Budget Range *</label>
                           <select
                             value={customBudget}
                             onChange={(e) => setCustomBudget(e.target.value)}
@@ -325,7 +325,7 @@ export default function OnboardingWizard() {
                           </select>
                         </div>
                         <div>
-                          <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Engagement Urgency / Timeline *</label>
+                          <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Engagement Urgency / Timeline *</label>
                           <select
                             value={customTimeline}
                             onChange={(e) => setCustomTimeline(e.target.value)}
@@ -356,7 +356,7 @@ export default function OnboardingWizard() {
 
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Engagement Scoping Details *</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Engagement Scoping Details *</label>
                         <textarea
                           required
                           value={scoping}
@@ -365,7 +365,7 @@ export default function OnboardingWizard() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Exclusions (Scope limits) *</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Exclusions (Scope limits) *</label>
                         <textarea
                           required
                           value={exclusions}
@@ -396,7 +396,7 @@ export default function OnboardingWizard() {
 
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Primary Objectives (Brief summary) *</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Primary Objectives (Brief summary) *</label>
                         <textarea
                           required
                           value={scoping}
@@ -407,7 +407,7 @@ export default function OnboardingWizard() {
                       </div>
 
                       <div className="border border-rule/30 bg-cream p-4 rounded-sm">
-                        <span className="block text-[10px] uppercase tracking-wider text-slate-soft font-bold mb-2 flex items-center gap-1.5">
+                        <span className="block text-[12px] uppercase tracking-wider text-slate-soft font-bold mb-2 flex items-center gap-1.5">
                           <Calendar size={13} className="text-sienna" /> Book Strategy Alignment Call
                         </span>
                         
@@ -424,7 +424,7 @@ export default function OnboardingWizard() {
                               type="button"
                               key={slot}
                               onClick={() => setKickoffDate(slot)}
-                              className={`py-2 px-1 text-center text-[10px] rounded-sm border transition-all font-semibold ${
+                              className={`py-2 px-1 text-center text-[12px] rounded-sm border transition-all font-semibold ${
                                 kickoffDate === slot
                                   ? 'bg-forest text-cream border-forest'
                                   : 'bg-sand-soft/50 text-forest border-rule/30 hover:border-rule'
@@ -434,7 +434,7 @@ export default function OnboardingWizard() {
                             </button>
                           ))}
                         </div>
-                        <p className="text-[10px] text-slate-soft mt-3 italic text-center">
+                        <p className="text-[12px] text-slate-soft mt-3 italic text-center">
                           {kickoffDate ? `Selected video conference slot: ${kickoffDate}` : 'Please choose a call slot above to complete the onboarding wizard.'}
                         </p>
                       </div>
@@ -457,7 +457,7 @@ export default function OnboardingWizard() {
 
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Milestone Deliverables List *</label>
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Milestone Deliverables List *</label>
                         <textarea
                           required
                           value={deliverables}
@@ -467,7 +467,7 @@ export default function OnboardingWizard() {
                       </div>
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Target Kickoff Date</label>
+                          <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Target Kickoff Date</label>
                           <input
                             type="date"
                             value={kickoffDate}
@@ -476,7 +476,7 @@ export default function OnboardingWizard() {
                           />
                         </div>
                         <div>
-                          <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Target Delivery Date</label>
+                          <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Target Delivery Date</label>
                           <input
                             type="date"
                             value={completionDate}
@@ -538,7 +538,7 @@ export default function OnboardingWizard() {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Enter Full Name to Sign *</label>
+                      <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Enter Full Name to Sign *</label>
                       <input
                         type="text"
                         required

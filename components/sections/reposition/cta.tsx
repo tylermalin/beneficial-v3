@@ -21,7 +21,7 @@ export function FinalCTA() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-8 max-w-measure text-[15px] leading-[1.6] text-body">
+            <p className="mt-8 max-w-measure text-[18px] leading-[1.6] text-body">
               If you&apos;re stuck at the intersection of complex strategy, technical AI
               integration, and regulated legal bottlenecks, the call is free and short.
               If we&apos;re not the right partner, we&apos;ll tell you and point you somewhere better.

@@ -1,30 +1,5 @@
-import { Navigation } from '@/components/navigation'
-import { Footer } from '@/components/footer'
-import { RepositionHero } from '@/components/sections/reposition/hero'
-import { Services } from '@/components/sections/reposition/services'
-import { WhatWeDo } from '@/components/sections/reposition/what-we-do'
-import { WhoWeWorkWith } from '@/components/sections/reposition/who-we-work-with'
-import { Tiers } from '@/components/sections/reposition/tiers'
-import { HowWeWork } from '@/components/sections/reposition/how-we-work'
-import { WhatWeDontDo } from '@/components/sections/reposition/what-we-dont-do'
-import { RecentWork } from '@/components/sections/reposition/recent-work'
-import { FinalCTA } from '@/components/sections/reposition/cta'
+import { HomeWorldflight } from '@/components/worldflight/home-worldflight'
 
 export default function HomePage() {
-  return (
-    <main className="obsidian min-h-screen">
-      <Navigation />
-      <RepositionHero />
-      <Services />
-      <WhatWeDo />
-      <WhoWeWorkWith />
-      <Tiers />
-      <HowWeWork />
-      <WhatWeDontDo />
-      <RecentWork />
-      <FinalCTA />
-      <Footer />
-    </main>
-  )
+  return <HomeWorldflight />
 }
-

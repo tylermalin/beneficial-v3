@@ -33,7 +33,7 @@ export default function RepoIpAuditorPage() {
             <h1 className="mt-6 text-[clamp(2.25rem,5.5vw,3.5rem)] font-light leading-[1.05] tracking-[-0.03em] text-body">
               Repo IP Auditor. <span className="headline-em">Chain of title, in 30 seconds</span>.
             </h1>
-            <p className="mt-8 max-w-measure text-[15px] leading-[1.6] text-body">
+            <p className="mt-8 max-w-measure text-[18px] leading-[1.6] text-body">
               Audit a repository&rsquo;s commit history, root license, and package manifests. Flag unassigned
               contributor commits and copyleft obligations before an investor&rsquo;s counsel finds them. Runs
               entirely in your browser. Nothing is uploaded, stored, or logged.
@@ -50,7 +50,7 @@ export default function RepoIpAuditorPage() {
 
       <section className="border-t border-line-hairline bg-section py-12">
         <div className="mx-auto max-w-[1000px] px-6 sm:px-8">
-          <p className="text-[13px] leading-[1.7] text-faint">
+          <p className="text-[14px] leading-[1.7] text-faint">
             This tool produces an engineering signal, not a legal opinion. It reads commit metadata and declared
             dependency licenses. It cannot see signed agreements, employment records, contribution license
             agreements, or how a dependency is actually linked, and those facts change the answer. No

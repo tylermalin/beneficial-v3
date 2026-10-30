@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beneficial Technology: the layer that owns the seam</title>
+<meta name="description" content="Beneficial Technology designs the structure, systems, and software founders need where the standard legal playbook doesn't fit: token launches, climate assets, regulated AI, cross-jurisdiction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230A0A0A'/></svg>">
+<link rel="stylesheet" href="scrollcraft.css">
+<style>
+  :root {
+    --sc-canvas:     #070707;
+    --sc-surface:    #0f0f0f;
+    --sc-ink:        #ffffff;
+    --sc-ink-soft:   #b4b4b4;
+    --sc-accent:     #ccff00;
+    --sc-accent-ink: #0a0a0a;
+    --sc-font-display: "Geist", system-ui, sans-serif;
+    --sc-font-text:    "Geist", system-ui, sans-serif;
+  }
+  /* ---- page-specific classes (never restyle [data-sc-*]) ---- */
+  .bar {
+    position: fixed; inset: 0 0 auto 0; z-index: 400;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem clamp(1.25rem, 4vw, 2.5rem);
+    mix-blend-mode: difference;
+  }
+  .bar__mark { display:flex; align-items:center; gap:.6rem; font-weight:500; letter-spacing:-.02em; color:#fff; font-size:15px; }
+  .bar__mark img { width:24px; height:24px; object-fit:contain; }
+  .bar__cta { font: 500 13px var(--sc-font-text); color:#fff; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px; }
+
+  /* stronger, taller scrim: this world's sky is bright, so the stock band
+     (transparent above 58%) leaves copy over near-white. Darken the lower ~66%. */
+  body .sc-world__scrim.sc-scrim--band {
+    background: linear-gradient(to top,
+      rgba(0,0,0,.90) 0%, rgba(0,0,0,.72) 26%, rgba(0,0,0,.40) 48%,
+      rgba(0,0,0,.12) 64%, transparent 78%);
+  }
+  /* hero + finale sized to sit inside the band, max ~3 lines (not the 6-line xl) */
+  .sc-copy[data-sc-window="hero"] .sc-display { font-size: clamp(2rem, 5vw, 3.6rem); max-width: 18ch; line-height: 1.04; }
+  .sc-copy[data-sc-window="finale"] .sc-display { font-size: clamp(1.9rem, 4.2vw, 3rem); max-width: 16ch; line-height: 1.06; }
+  .sc-copy[data-sc-window="hero"] em,
+  .sc-copy[data-sc-window="finale"] em { font-style: italic; color: var(--sc-accent); }
+  @media (max-width: 760px) {
+    .sc-copy[data-sc-window="hero"] .sc-display { font-size: clamp(1.75rem, 7vw, 2.4rem); max-width: 14ch; }
+  }
+
+  /* waypoint rail */
+  .rail { position: fixed; right: clamp(1rem,3vw,2rem); top: 50%; transform: translateY(-50%); z-index: 410;
+    display:flex; flex-direction:column; gap:.9rem; }
+  @media (max-width: 760px) { .rail { display:none; } }
+  .rail__leg { display:flex; align-items:center; gap:.7rem; background:none; border:0; cursor:pointer; padding:0;
+    font: 500 11px var(--sc-font-mono, "JetBrains Mono", monospace); letter-spacing:.14em; text-transform:uppercase;
+    color: rgba(255,255,255,.4); transition: color .25s var(--sc-ease-out); }
+  .rail__dot { width:7px; height:7px; border-radius:50%; background:currentColor; transition: transform .25s var(--sc-ease-out); }
+  .rail__leg[aria-current="true"] { color: var(--sc-accent); }
+  .rail__leg[aria-current="true"] .rail__dot { transform: scale(1.5); }
+  .rail__label { opacity:0; transform: translateX(6px); transition: opacity .25s, transform .25s; }
+  .rail__leg[aria-current="true"] .rail__label, .rail:hover .rail__label { opacity:1; transform:none; }
+
+  /* ---------- the landed (grounded) half ---------- */
+  .landed { position: relative; z-index: 300; background: var(--sc-canvas); }
+  .sec { padding: clamp(5rem, 11vw, 9rem) clamp(1.25rem, 5vw, 3rem); max-width: 1200px; margin: 0 auto; }
+  .sec--line { border-top: 1px solid rgba(255,255,255,.08); }
+  .kicker { font: 500 12px var(--sc-font-mono,"JetBrains Mono",monospace); letter-spacing:.18em; text-transform:uppercase; color: var(--sc-accent); margin:0 0 1.4rem; }
+  .lede { max-width: 34ch; }
+  .muted { color: var(--sc-ink-soft); }
+
+  /* depends-on */
+  .dep__qs { display:flex; flex-wrap:wrap; gap:.6rem; margin: 2rem 0 2.5rem; }
+  .dep__q { font: 400 15px var(--sc-font-text); color: var(--sc-ink-soft); background: var(--sc-surface);
+    border: 1px solid rgba(255,255,255,.1); border-radius: 999px; padding:.6rem 1.1rem; cursor:pointer;
+    transition: color .15s, border-color .15s, background .15s; }
+  .dep__q:hover { color: var(--sc-ink); border-color: rgba(255,255,255,.25); }
+  .dep__q[aria-selected="true"] { color: var(--sc-accent-ink); background: var(--sc-accent); border-color: var(--sc-accent); }
+  .dep__q:focus-visible { outline: 2px solid var(--sc-accent); outline-offset: 3px; }
+  .dep__panel { display:none; }
+  .dep__panel[data-open="true"] { display:block; }
+  .dep__head { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 300; letter-spacing:-.02em; line-height:1.1; margin:0 0 .4rem; max-width: 20ch; }
+  .dep__vars { list-style:none; margin: 1.8rem 0 0; padding:0; border-top:1px solid rgba(255,255,255,.08); }
+  .dep__var { display:flex; gap:1rem; align-items:baseline; padding: 1rem 0; border-bottom:1px solid rgba(255,255,255,.08); }
+  .dep__var p { margin:0; font-size:15px; color: var(--sc-ink); }
+  .tag { flex:none; font: 500 11px var(--sc-font-mono,"JetBrains Mono",monospace); letter-spacing:.08em;
+    padding:.2rem .5rem; border-radius:4px; border:1px solid; white-space:nowrap; }
+  .tag--you { color:#ccff00; border-color: rgba(204,255,0,.4); }
+  .tag--counsel { color:#9ab7ff; border-color: rgba(154,183,255,.4); }
+  .tag--facts { color:#b4b4b4; border-color: rgba(255,255,255,.2); }
+  .dep__note { margin-top:1.6rem; font-size:13px; color: var(--sc-ink-soft); display:flex; gap:.6rem; align-items:flex-start; }
+  .dep__note .mk { color: var(--sc-accent); flex:none; }
+  .dep__cta { margin-top:1.4rem; }
+
+  /* who it's for */
+  .who { list-style:none; margin:2.5rem 0 0; padding:0; }
+  .who li { display:grid; grid-template-columns: 1fr; gap:.3rem; padding: 1.6rem 0; border-top:1px solid rgba(255,255,255,.08); }
+  @media (min-width: 760px){ .who li { grid-template-columns: 22ch 1fr; gap:2.5rem; align-items:baseline; } }
+  .who h3 { margin:0; font-size:20px; font-weight:400; letter-spacing:-.01em; }
+  .who p { margin:0; color: var(--sc-ink-soft); font-size:15px; max-width:56ch; }
+
+  /* tiers */
+  .tiers { display:grid; gap:1px; margin-top:2.5rem; background: rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08); border-radius:10px; overflow:hidden; }
+  @media (min-width: 900px){ .tiers { grid-template-columns: repeat(2, 1fr); } }
+  .tier { background: var(--sc-surface); padding: clamp(1.6rem,3vw,2.2rem); display:flex; flex-direction:column; gap:1rem; }
+  .tier--feat { background: #121207; }
+  .tier__top { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; }
+  .tier__name { font-size:22px; font-weight:400; letter-spacing:-.01em; }
+  .tier__price { font-variant-numeric: tabular-nums; font-size: clamp(1.8rem,3vw,2.4rem); font-weight:500; line-height:1; }
+  .tier__price span { font-size:13px; color:var(--sc-ink-soft); font-weight:400; }
+  .tier__feat-tag { font: 500 11px var(--sc-font-mono,"JetBrains Mono",monospace); letter-spacing:.1em; text-transform:uppercase; color: var(--sc-accent); }
+  .tier p.d { margin:0; color: var(--sc-ink-soft); font-size:14px; line-height:1.6; }
+
+  /* posture */
+  .posture { max-width: 24ch; font-size: clamp(2rem, 5vw, 3.4rem); font-weight:300; letter-spacing:-.03em; line-height:1.08; }
+  .posture em { font-style: normal; color: var(--sc-accent); }
+
+  /* close */
+  .close { text-align:left; padding-block: clamp(6rem,13vw,10rem); }
+  .close h2 { font-size: clamp(2.2rem,6vw,4rem); font-weight:300; letter-spacing:-.03em; line-height:1.05; max-width:16ch; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:.5rem; margin-top:2.2rem; background: var(--sc-accent); color: var(--sc-accent-ink);
+    font: 500 15px var(--sc-font-text); text-decoration:none; padding:.9rem 1.5rem; border-radius:8px;
+    transition: transform .12s var(--sc-ease-out), filter .15s; }
+  .btn:hover { filter: brightness(1.06); }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline:2px solid var(--sc-accent); outline-offset:3px; }
+  .foot { max-width:1200px; margin:0 auto; padding: 2.5rem clamp(1.25rem,5vw,3rem) 4rem; border-top:1px solid rgba(255,255,255,.08);
+    display:flex; flex-wrap:wrap; gap:1rem 2rem; justify-content:space-between; color:var(--sc-ink-soft); font-size:13px; }
+  .foot a { color: var(--sc-ink-soft); }
+</style>
+</head>
+<body>
+
+<span data-sc-progress></span>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="bar__mark" href="#top"><img src="mark.png" alt=""> Beneficial Technology</a>
+  <a class="bar__cta" href="https://cal.com/beneficialtech">Book a scoping call</a>
+</header>
+
+<main id="top">
+
+<!-- ============ THE FLIGHT ============ -->
+<div data-sc-mode="worldflight" data-sc-seam="0.16" data-sc-lerp="0.12">
+  <div data-sc-world>
+    <div data-sc-segment data-sc-w="1.3" data-sc-linger="0.32" data-sc-waypoint="Surface">
+      <img class="sc-world__poster" src="assets/p01.webp" alt="" decoding="async">
+      <video data-sc-src="assets/leg1.mp4" data-sc-src-mobile="assets/leg1-m.mp4" muted playsinline></video>
+    </div>
+    <div data-sc-segment data-sc-w="1.6" data-sc-linger="0.42" data-sc-waypoint="The seam">
+      <img class="sc-world__poster" src="assets/p02.webp" alt="" decoding="async">
+      <video data-sc-src="assets/leg2.mp4" data-sc-src-mobile="assets/leg2-m.mp4" muted playsinline></video>
+    </div>
+    <div data-sc-segment data-sc-w="1.3" data-sc-linger="0.34" data-sc-waypoint="What's built">
+      <img class="sc-world__poster" src="assets/p03.webp" alt="" decoding="async">
+      <video data-sc-src="assets/leg3.mp4" data-sc-src-mobile="assets/leg3-m.mp4" muted playsinline></video>
+    </div>
+    <div data-sc-segment data-sc-w="1.2" data-sc-linger="0.3" data-sc-waypoint="Whole">
+      <img class="sc-world__poster" src="assets/p04.webp" alt="" decoding="async">
+      <video data-sc-src="assets/leg4.mp4" data-sc-src-mobile="assets/leg4-m.mp4" muted playsinline></video>
+    </div>
+  </div>
+
+  <div data-sc-world-copy>
+    <div class="sc-world__scrim sc-scrim sc-scrim--band" aria-hidden="true"></div>
+
+    <div class="sc-copy sc-copy--lead" data-sc-copy data-sc-window="hero">
+      <h1 class="sc-display">If your legal questions keep coming back <em>&ldquo;it depends,&rdquo;</em> you&rsquo;re in the right place.</h1>
+    </div>
+
+    <div class="sc-copy sc-copy--lead" data-sc-copy data-sc-window="0.13 0.27">
+      <p class="sc-body">Your counsel sits on one side. Your operating team sits on the other. They never meet in the middle. That gap is where token launches stall, raises slip, and structures get rebuilt after the fact.</p>
+    </div>
+
+    <div class="sc-copy sc-copy--lead" data-sc-copy data-sc-window="0.31 0.52">
+      <h2 class="sc-display sc-display--lg">Beneficial Technology is the layer that owns the seam.</h2>
+    </div>
+
+    <div class="sc-copy sc-copy--trail" data-sc-copy data-sc-window="0.57 0.74">
+      <p class="sc-body">Multi-entity structures. SAFT and SAFE-T instruments. Compliance architecture. Investor narrative. Production software. Built as outputs, not slideware.</p>
+    </div>
+
+    <div class="sc-copy sc-copy--lead" data-sc-copy data-sc-window="finale">
+      <h2 class="sc-display sc-display--lg">One system. One team that owns it, end to end.</h2>
+    </div>
+  </div>
+
+  <div data-sc-spacer aria-hidden="true"></div>
+</div>
+
+<nav class="rail" aria-label="Flight waypoints">
+  <button class="rail__leg" data-leg="0" aria-current="true"><span class="rail__dot"></span><span class="rail__label">Surface</span></button>
+  <button class="rail__leg" data-leg="1"><span class="rail__dot"></span><span class="rail__label">The seam</span></button>
+  <button class="rail__leg" data-leg="2"><span class="rail__dot"></span><span class="rail__label">What&rsquo;s built</span></button>
+  <button class="rail__leg" data-leg="3"><span class="rail__dot"></span><span class="rail__label">Whole</span></button>
+</nav>
+
+<!-- ============ THE LANDED PAGE ============ -->
+<div class="landed">
+
+  <!-- Depends On -->
+  <section class="sec" id="depends-on" aria-labelledby="dep-title">
+    <p class="kicker">The signature question</p>
+    <h2 id="dep-title" class="sc-display sc-display--lg">&ldquo;It depends&rdquo; is an answer with the map torn off.</h2>
+    <p class="sc-body lede muted" style="margin-top:1rem">Pick a question you&rsquo;ve been told that on. We&rsquo;ll show the variables it actually turns on: which you control, and which need counsel. Structure only. No answer.</p>
+
+    <div class="dep__qs" role="tablist" aria-label="Questions"></div>
+    <div class="dep__panels"></div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="sec sec--line" aria-labelledby="who-title">
+    <p class="kicker">Who it&rsquo;s for</p>
+    <h2 id="who-title" class="sc-display sc-display--lg">Founders building where the playbook runs out.</h2>
+    <ul class="who">
+      <li><h3>Token &amp; network founders</h3><p>Launching a token, designing distribution, and deciding what&rsquo;s a security before the raise, not after.</p></li>
+      <li><h3>Climate-asset builders</h3><p>Issuing carbon and environmental assets on-chain, where the registry, the instrument, and the chain all have to agree.</p></li>
+      <li><h3>Regulated-AI founders</h3><p>Shipping AI into credit, health, employment, or safety decisions, where the model&rsquo;s output is a regulated act.</p></li>
+      <li><h3>Cross-jurisdiction teams</h3><p>Standing up multi-entity and offshore structures, with counsel coordinated instead of contradicting each other.</p></li>
+      <li><h3>Pre-seed to Series&nbsp;A</h3><p>Early enough that the structure you choose now is the one you&rsquo;ll either build on or rebuild.</p></li>
+    </ul>
+  </section>
+
+  <!-- Tiers -->
+  <section class="sec sec--line" aria-labelledby="tiers-title">
+    <p class="kicker">How it works</p>
+    <h2 id="tiers-title" class="sc-display sc-display--lg">Plain tiers. Prices on the page.</h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier__top"><span class="tier__name">Operator</span><span class="tier__price">$8,500<span>&thinsp;/ mo</span></span></div>
+        <p class="d">Fractional structural guidance across operations, strategy, and technology for pre-seed, seed, and growing SMB founders.</p>
+      </div>
+      <div class="tier tier--feat">
+        <div class="tier__top"><span class="tier__name">Architect</span><span class="tier__price">$15,000<span>&thinsp;/ mo</span></span></div>
+        <span class="tier__feat-tag">Most engagements</span>
+        <p class="d">For scaling enterprises and token networks launching custom tech, navigating global structures, or building in heavily regulated spaces.</p>
+      </div>
+      <div class="tier">
+        <div class="tier__top"><span class="tier__name">Project</span><span class="tier__price">From $25,000</span></div>
+        <p class="d">Flat-fee, time-boxed engagements: full-stack builds, regulatory positioning audits, multi-entity structuring memos, SAFT drafting.</p>
+      </div>
+      <div class="tier">
+        <div class="tier__top"><span class="tier__name">Custom</span><span class="tier__price">Bespoke</span></div>
+        <p class="d">A custom advisory, development, or legal-engineering plan aligned to your timeline and capacity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Posture -->
+  <section class="sec sec--line" aria-labelledby="posture-title">
+    <p class="kicker">The posture</p>
+    <p class="posture" id="posture-title">Not a law firm. We build what your counsel <em>reviews</em> and your team <em>runs</em>.</p>
+  </section>
+
+  <!-- Close -->
+  <section class="sec close sec--line">
+    <h2>Your structure and your systems are one design problem. Let&rsquo;s own the seam.</h2>
+    <a class="btn" href="https://cal.com/beneficialtech">Book a scoping call</a>
+  </section>
+
+  <footer class="foot">
+    <span>&copy; <span id="yr">2026</span> Beneficial Technology, LLC &middot; Delaware &middot; Honolulu</span>
+    <span>Not a law firm. Structure only; not legal advice. Reviewed by counsel.</span>
+  </footer>
+</div>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script src="depends-on.js"></script>
+<script>
+  ScrollCraft.mount(document.body);
+
+  // waypoint rail
+  addEventListener('sc:waypoint', function (e) {
+    document.querySelectorAll('.rail__leg').forEach(function (el) {
+      el.setAttribute('aria-current', String(+el.dataset.leg === e.detail.index));
+    });
+  });
+  document.querySelectorAll('.rail__leg').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var seg = +el.dataset.leg, total = 0, i = 0;
+      var segs = document.querySelectorAll('[data-sc-segment]');
+      var weights = Array.prototype.map.call(segs, function (s) { return parseFloat(s.dataset.scW) || 1.3; });
+      for (i = 0; i < seg; i++) total += weights[i];
+      var y = (total + weights[seg] * 0.4) * innerHeight;
+      scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // worldflight spacer sizing safeguard
+  function relayout(){ dispatchEvent(new Event('resize')); }
+  addEventListener('load', relayout);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+</script>
+</body>
+</html>

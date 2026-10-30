@@ -150,7 +150,7 @@ function BillingInvoicesContent() {
             {/* Ledger Overview */}
             <div className="lg:col-span-4 space-y-6">
               <div className="bg-forest text-cream p-8 rounded-sm shadow-md">
-                <span className="text-[10px] uppercase text-[#D4A574] tracking-widest font-semibold block mb-2">
+                <span className="text-[12px] uppercase text-[#D4A574] tracking-widest font-semibold block mb-2">
                   Active Package Retainer
                 </span>
                 <h3 className="font-serif text-2xl mb-4">{currentClient.tier} Engagement</h3>
@@ -194,7 +194,7 @@ function BillingInvoicesContent() {
                       <div>
                         <div className="flex items-center gap-2">
                           <span className="font-mono text-sm font-bold text-forest">{invoice.id}</span>
-                          <span className={`text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-sm ${
+                          <span className={`text-[12px] uppercase tracking-wider px-2 py-0.5 rounded-sm ${
                             invoice.status === 'paid'
                               ? 'bg-emerald-100 text-emerald-800'
                               : 'bg-amber-100 text-amber-800'
@@ -203,7 +203,7 @@ function BillingInvoicesContent() {
                           </span>
                         </div>
                         <p className="text-xs font-semibold text-forest mt-1.5">{invoice.description}</p>
-                        <div className="flex gap-4 text-[10px] text-slate-soft uppercase tracking-wider mt-1">
+                        <div className="flex gap-4 text-[12px] text-slate-soft uppercase tracking-wider mt-1">
                           <span>Issued: {invoice.issuedDate}</span>
                           <span>·</span>
                           <span>Due: {invoice.dueDate}</span>
@@ -216,12 +216,12 @@ function BillingInvoicesContent() {
                       {invoice.status !== 'paid' ? (
                         <button
                           onClick={() => setSelectedInvoice(invoice)}
-                          className="px-4 py-2 bg-sienna hover:bg-forest text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center gap-1 shadow-sm"
+                          className="px-4 py-2 bg-sienna hover:bg-forest text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm flex items-center gap-1 shadow-sm"
                         >
                           <CreditCard size={12} /> Pay Invoice
                         </button>
                       ) : (
-                        <span className="text-[10px] uppercase font-bold text-forest flex items-center gap-1 bg-cream px-3 py-2 border border-rule/30 rounded-sm">
+                        <span className="text-[12px] uppercase font-bold text-forest flex items-center gap-1 bg-cream px-3 py-2 border border-rule/30 rounded-sm">
                           <Check size={12} className="text-sienna" /> Receipt Sent
                         </span>
                       )}
@@ -270,8 +270,8 @@ function BillingInvoicesContent() {
                   </div>
 
                   <div className="bg-sand-soft p-4 border border-rule/20 space-y-1">
-                    <span className="text-[9px] uppercase tracking-wider text-slate-soft font-semibold">Ledger Entry</span>
-                    <span className="block font-serif text-base text-forest font-semibold">{selectedInvoice.description}</span>
+                    <span className="text-[12px] uppercase tracking-wider text-slate-soft font-semibold">Ledger Entry</span>
+                    <span className="block font-serif text-[18px] text-forest font-semibold">{selectedInvoice.description}</span>
                     <div className="flex justify-between items-baseline pt-2">
                       <span className="text-xs text-slate-ink">Invoice ID: {selectedInvoice.id}</span>
                       <span className="font-serif text-lg text-sienna font-bold">${selectedInvoice.amount.toLocaleString()}</span>
@@ -280,7 +280,7 @@ function BillingInvoicesContent() {
 
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                      <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                         Mock Credit Card Number
                       </label>
                       <input
@@ -294,7 +294,7 @@ function BillingInvoicesContent() {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                           Expiry
                         </label>
                         <input
@@ -305,7 +305,7 @@ function BillingInvoicesContent() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                           CVC
                         </label>
                         <input
@@ -348,7 +348,7 @@ function BillingInvoicesContent() {
                       setSelectedInvoice(null)
                       setPaymentSuccess(false)
                     }}
-                    className="px-6 py-3.5 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold transition-all rounded-sm"
+                    className="px-6 py-3.5 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold transition-all rounded-sm"
                   >
                     Return to Invoices
                   </button>

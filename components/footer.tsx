@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
-import { WordmarkGlyph } from '@/components/ui/icons'
 
 export function Footer() {
   return (
@@ -11,14 +11,18 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Link href="/" className="inline-flex items-center gap-3">
-              <span className="text-lime-400">
-                <WordmarkGlyph size={20} />
-              </span>
+              <Image
+                src="/beneficial-mark.png"
+                alt="Beneficial Technology"
+                width={24}
+                height={24}
+                className="h-6 w-6 object-contain"
+              />
               <span className="text-lg font-light tracking-[-0.02em] text-ink">
                 Beneficial Technology
               </span>
             </Link>
-            <p className="mt-5 max-w-measure text-[15px] leading-[1.6] text-body">
+            <p className="mt-5 max-w-measure text-[18px] leading-[1.6] text-body">
               Strategy and engineering for builders at the regulated frontier.
             </p>
 
@@ -54,7 +58,7 @@ export function Footer() {
 
           <div className="lg:col-span-4">
             <div className="eyebrow mb-4 text-faint">Important</div>
-            <p className="max-w-measure text-[13px] leading-[1.6] text-faint">
+            <p className="max-w-measure text-[14px] leading-[1.6] text-faint">
               Beneficial Technology is a Delaware limited liability company providing strategic and structural consulting services. We are not a law firm and do not provide legal advice. For any matter requiring legal advice or representation, you&apos;ll work with an attorney you separately engage.
             </p>
           </div>

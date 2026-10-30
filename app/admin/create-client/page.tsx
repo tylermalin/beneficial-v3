@@ -105,7 +105,7 @@ export default function AdminCreateClient() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Company Name</label>
+                    <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Company Name</label>
                     <div className="relative">
                       <Building2 size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-soft" />
                       <input
@@ -119,7 +119,7 @@ export default function AdminCreateClient() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Founder Name</label>
+                    <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Founder Name</label>
                     <div className="relative">
                       <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-soft" />
                       <input
@@ -135,7 +135,7 @@ export default function AdminCreateClient() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Client Email Address</label>
+                  <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Client Email Address</label>
                   <div className="relative">
                     <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-soft" />
                     <input
@@ -150,7 +150,7 @@ export default function AdminCreateClient() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Portal Security Password</label>
+                  <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">Portal Security Password</label>
                   <div className="relative">
                     <Key size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-soft" />
                     <input
@@ -165,7 +165,7 @@ export default function AdminCreateClient() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1.5">Engagement Tier</label>
+                  <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1.5">Engagement Tier</label>
                   <div className="flex gap-4">
                     {['Operator', 'Architect', 'Project'].map(t => (
                       <button
@@ -205,7 +205,7 @@ export default function AdminCreateClient() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
                     href="/admin"
-                    className="flex-1 py-3 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-bold rounded-sm"
+                    className="flex-1 py-3 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold rounded-sm"
                   >
                     Back to CRM Dashboard
                   </Link>
@@ -217,7 +217,7 @@ export default function AdminCreateClient() {
                       setEmail('')
                       setPassword('')
                     }}
-                    className="flex-1 py-3 border border-rule text-slate-ink text-[10px] uppercase tracking-wider font-bold rounded-sm"
+                    className="flex-1 py-3 border border-rule text-slate-ink text-[12px] uppercase tracking-wider font-bold rounded-sm"
                   >
                     Create Another Portal
                   </button>

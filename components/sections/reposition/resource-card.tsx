@@ -25,18 +25,18 @@ export function ResourceCard({ resource }: { resource: Resource }) {
         <h3 className="mt-6 text-[28px] font-light leading-[1.1] tracking-[-0.02em] text-ink">
           {resource.title}
         </h3>
-        <p className="mt-4 max-w-measure text-[15px] leading-[1.6] text-body">
+        <p className="mt-4 max-w-measure text-[18px] leading-[1.6] text-body">
           {resource.subtitle}
         </p>
 
-        <div className="mt-5 flex items-center gap-2 text-[13px] text-faint">
+        <div className="mt-5 flex items-center gap-2 text-[14px] text-faint">
           <span>By</span>
           <span className="text-body">{resource.author}</span>
         </div>
 
         <Divider className="my-7" />
 
-        <p className="max-w-measure text-[15px] leading-[1.6] text-body">
+        <p className="max-w-measure text-[18px] leading-[1.6] text-body">
           {resource.excerpt}
         </p>
 

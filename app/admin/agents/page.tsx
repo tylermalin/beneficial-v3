@@ -234,7 +234,7 @@ ${blockers.length > 0 ? blockers.join('\n') : 'No outstanding blocker items.'}`
 
                   <form onSubmit={handleGenerateSocial} className="grid sm:grid-cols-2 gap-5 items-end">
                     <div>
-                      <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                      <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                         Select Reference Asset
                       </label>
                       <select
@@ -247,7 +247,7 @@ ${blockers.length > 0 ? blockers.join('\n') : 'No outstanding blocker items.'}`
                       </select>
                     </div>
                     <div>
-                      <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                      <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                         Distribution Network
                       </label>
                       <select
@@ -280,11 +280,11 @@ ${blockers.length > 0 ? blockers.join('\n') : 'No outstanding blocker items.'}`
 
                   {socialResult && (
                     <div className="mt-8 pt-6 border-t border-rule/20">
-                      <label className="block text-[10px] uppercase text-slate-soft font-bold mb-2">Generated Network Copy</label>
+                      <label className="block text-[12px] uppercase text-slate-soft font-bold mb-2">Generated Network Copy</label>
                       <textarea
                         readOnly
                         value={socialResult}
-                        className="w-full h-80 p-4 bg-sand-soft border border-rule font-mono text-[11px] leading-relaxed text-slate-ink focus:outline-none rounded-sm"
+                        className="w-full h-80 p-4 bg-sand-soft border border-rule font-mono text-[12px] leading-relaxed text-slate-ink focus:outline-none rounded-sm"
                       />
                       <button
                         onClick={() => {
@@ -320,7 +320,7 @@ ${blockers.length > 0 ? blockers.join('\n') : 'No outstanding blocker items.'}`
 
                   <form onSubmit={handleGenerateSeo} className="space-y-4">
                     <div>
-                      <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                      <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                         Input Copy Draft
                       </label>
                       <textarea
@@ -350,7 +350,7 @@ ${blockers.length > 0 ? blockers.join('\n') : 'No outstanding blocker items.'}`
                     <div className="mt-8 pt-6 border-t border-rule/20 space-y-5">
                       <div className="flex items-center justify-between bg-sand-soft p-4 border border-rule/30 rounded-sm">
                         <div>
-                          <span className="text-[10px] uppercase text-slate-soft block font-semibold">Visibility Index</span>
+                          <span className="text-[12px] uppercase text-slate-soft block font-semibold">Visibility Index</span>
                           <span className="font-serif text-3xl text-forest font-bold">{seoResult.score} / 100</span>
                         </div>
                         <span className={`text-xs font-bold uppercase px-3 py-1.5 rounded-sm ${
@@ -361,7 +361,7 @@ ${blockers.length > 0 ? blockers.join('\n') : 'No outstanding blocker items.'}`
                       </div>
 
                       <div>
-                        <span className="block text-[10px] uppercase text-slate-soft font-bold mb-2">Indexed Core Keywords</span>
+                        <span className="block text-[12px] uppercase text-slate-soft font-bold mb-2">Indexed Core Keywords</span>
                         <div className="flex flex-wrap gap-2">
                           {seoResult.keywords.map((kw: string) => (
                             <span key={kw} className="text-xs bg-cream px-3 py-1 border border-rule/35 text-forest rounded-full">
@@ -372,7 +372,7 @@ ${blockers.length > 0 ? blockers.join('\n') : 'No outstanding blocker items.'}`
                       </div>
 
                       <div>
-                        <span className="block text-[10px] uppercase text-slate-soft font-bold mb-2">Audit Tuning Proposals</span>
+                        <span className="block text-[12px] uppercase text-slate-soft font-bold mb-2">Audit Tuning Proposals</span>
                         <ul className="space-y-2">
                           {seoResult.suggestions.map((sg: string, i: number) => (
                             <li key={i} className="text-xs text-forest flex items-start gap-2">
@@ -407,7 +407,7 @@ ${blockers.length > 0 ? blockers.join('\n') : 'No outstanding blocker items.'}`
 
                   <form onSubmit={handleGenerateStatus} className="grid sm:grid-cols-12 gap-4 items-end">
                     <div className="sm:col-span-8">
-                      <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                      <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                         Select Target Client
                       </label>
                       <select
@@ -441,18 +441,18 @@ ${blockers.length > 0 ? blockers.join('\n') : 'No outstanding blocker items.'}`
 
                   {statusResult && (
                     <div className="mt-8 pt-6 border-t border-rule/20">
-                      <label className="block text-[10px] uppercase text-slate-soft font-bold mb-2">Synthesized Status Report</label>
+                      <label className="block text-[12px] uppercase text-slate-soft font-bold mb-2">Synthesized Status Report</label>
                       <textarea
                         readOnly
                         value={statusResult}
-                        className="w-full h-80 p-4 bg-sand-soft border border-rule font-mono text-[11px] leading-relaxed text-slate-ink focus:outline-none rounded-sm"
+                        className="w-full h-80 p-4 bg-sand-soft border border-rule font-mono text-[12px] leading-relaxed text-slate-ink focus:outline-none rounded-sm"
                       />
                       <button
                         onClick={() => {
                           navigator.clipboard.writeText(statusResult)
                           alert('Status report copied!')
                         }}
-                        className="w-full mt-2.5 py-2.5 bg-forest hover:bg-sienna text-cream text-[10px] uppercase tracking-wider font-semibold rounded-sm transition-colors"
+                        className="w-full mt-2.5 py-2.5 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-semibold rounded-sm transition-colors"
                       >
                         Copy status report
                       </button>

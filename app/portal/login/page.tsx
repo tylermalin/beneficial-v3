@@ -65,7 +65,7 @@ export default function ClientLoginPage() {
           <div className="absolute top-0 left-0 w-full h-1 bg-sienna" />
 
           <div className="text-center mb-8">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-sienna font-bold bg-cream px-3 py-1 border border-rule/20 rounded-full inline-block mb-3">
+            <span className="text-[12px] uppercase tracking-[0.2em] text-sienna font-bold bg-cream px-3 py-1 border border-rule/20 rounded-full inline-block mb-3">
               Secure Access
             </span>
             <h1 className="font-serif text-3xl text-forest">Client Portal Login</h1>
@@ -76,7 +76,7 @@ export default function ClientLoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1.5">
+              <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1.5">
                 Client Email
               </label>
               <div className="relative">
@@ -93,7 +93,7 @@ export default function ClientLoginPage() {
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1.5">
+              <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1.5">
                 Portal Password
               </label>
               <div className="relative">

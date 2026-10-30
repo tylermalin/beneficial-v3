@@ -194,7 +194,7 @@ function DocumentVaultContent() {
                           <span className="block font-mono text-sm font-semibold text-forest leading-snug truncate max-w-sm sm:max-w-md">
                             {file.name}
                           </span>
-                          <div className="flex gap-2 text-[10px] text-slate-soft uppercase tracking-wider font-semibold mt-1">
+                          <div className="flex gap-2 text-[12px] text-slate-soft uppercase tracking-wider font-semibold mt-1">
                             <span>{file.category}</span>
                             <span>·</span>
                             <span>{file.size}</span>
@@ -234,7 +234,7 @@ function DocumentVaultContent() {
 
                 <form onSubmit={handleFileUploadSim} className="space-y-4">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                    <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                       Document Name
                     </label>
                     <input
@@ -248,7 +248,7 @@ function DocumentVaultContent() {
                   </div>
 
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
+                    <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-semibold mb-1">
                       Document Category
                     </label>
                     <select

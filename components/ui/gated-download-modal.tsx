@@ -107,7 +107,7 @@ export function GatedDownloadModal({ open, onClose, resource }: Props) {
                 >
                   {resource.title}
                 </h2>
-                <p className="mt-3 max-w-measure text-[15px] leading-[1.6] text-body">
+                <p className="mt-3 max-w-measure text-[18px] leading-[1.6] text-body">
                   {resource.subtitle}
                 </p>
 
@@ -130,7 +130,7 @@ export function GatedDownloadModal({ open, onClose, resource }: Props) {
                       className="mt-1 h-4 w-4 shrink-0 cursor-pointer accent-lime-400"
                       required
                     />
-                    <span className="text-[13px] leading-relaxed text-body transition-colors group-hover:text-ink">
+                    <span className="text-[14px] leading-relaxed text-body transition-colors group-hover:text-ink">
                       I agree to receive occasional updates from Beneficial Technology. Unsubscribe anytime.
                     </span>
                   </label>
@@ -162,7 +162,7 @@ export function GatedDownloadModal({ open, onClose, resource }: Props) {
                 <h2 className="mt-6 text-2xl font-light leading-[1.15] tracking-[-0.02em] text-ink sm:text-[28px]">
                   Your download is starting.
                 </h2>
-                <p className="mt-4 text-[15px] leading-[1.6] text-body">
+                <p className="mt-4 text-[18px] leading-[1.6] text-body">
                   If it doesn&apos;t open automatically, click below.
                 </p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -212,7 +212,7 @@ function Field({
         name={name}
         autoComplete={autoComplete}
         required={required}
-        className="w-full rounded-lg border border-line-hairline surface-flat px-4 py-2.5 text-[15px] text-ink placeholder:text-faint transition-[border-color,box-shadow] duration-200 ease-obsidian-out focus:border-line-accent focus:outline-none focus:ring-[3px] focus:ring-[rgba(204,255,0,.25)]"
+        className="w-full rounded-lg border border-line-hairline surface-flat px-4 py-2.5 text-[18px] text-ink placeholder:text-faint transition-[border-color,box-shadow] duration-200 ease-obsidian-out focus:border-line-accent focus:outline-none focus:ring-[3px] focus:ring-[rgba(204,255,0,.25)]"
       />
       {error && <span className="mt-1 block text-xs text-red-400">{error}</span>}
     </label>

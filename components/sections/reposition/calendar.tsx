@@ -105,7 +105,7 @@ export function ProjectCalendar({ client }: { client: ClientProfile }) {
         </div>
 
         {/* Days Header */}
-        <div className="grid grid-cols-7 text-center text-[10px] uppercase tracking-wider text-slate-soft font-semibold font-mono pb-2">
+        <div className="grid grid-cols-7 text-center text-[12px] uppercase tracking-wider text-slate-soft font-semibold font-mono pb-2">
           <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
         </div>
 
@@ -161,7 +161,7 @@ export function ProjectCalendar({ client }: { client: ClientProfile }) {
       {/* Events Sidebar */}
       <div className="lg:col-span-4 bg-sand-soft border border-rule/25 p-5 rounded-sm flex flex-col justify-between">
         <div>
-          <h4 className="font-serif text-base font-bold text-forest mb-4 border-b border-rule/20 pb-2">
+          <h4 className="font-serif text-[18px] font-bold text-forest mb-4 border-b border-rule/20 pb-2">
             Details: June {selectedDay}, 2026
           </h4>
 
@@ -174,7 +174,7 @@ export function ProjectCalendar({ client }: { client: ClientProfile }) {
             <div className="space-y-4">
               {selectedDateEvents.map((evt, idx) => (
                 <div key={idx} className="bg-cream border border-rule/20 p-4 rounded-sm space-y-1">
-                  <span className={`text-[8px] uppercase tracking-wider px-1.5 py-0.5 rounded-sm inline-block font-bold ${
+                  <span className={`text-[12px] uppercase tracking-wider px-1.5 py-0.5 rounded-sm inline-block font-bold ${
                     evt.type === 'kickoff'
                       ? 'bg-amber-100 text-amber-800'
                       : evt.type === 'deliverable'
@@ -186,14 +186,14 @@ export function ProjectCalendar({ client }: { client: ClientProfile }) {
                     {evt.type}
                   </span>
                   <h5 className="font-serif text-sm text-forest font-semibold leading-snug">{evt.title}</h5>
-                  {evt.description && <p className="text-[11px] text-slate-ink leading-relaxed">{evt.description}</p>}
+                  {evt.description && <p className="text-[12px] text-slate-ink leading-relaxed">{evt.description}</p>}
                 </div>
               ))}
             </div>
           )}
         </div>
 
-        <div className="border-t border-rule/20 pt-4 mt-6 flex flex-wrap gap-2 text-[8px] uppercase tracking-wider text-slate-soft font-mono">
+        <div className="border-t border-rule/20 pt-4 mt-6 flex flex-wrap gap-2 text-[12px] uppercase tracking-wider text-slate-soft font-mono">
           <div className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-amber-600" /> Kickoff</div>
           <div className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-rose-600" /> Deliverable</div>
           <div className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-indigo-600" /> Invoices</div>

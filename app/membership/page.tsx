@@ -73,7 +73,7 @@ export default function MembershipPage() {
               A private circle for founders at the{' '}
               <span className="headline-em">regulated frontier</span>.
             </h1>
-            <p className="mt-8 max-w-measure text-[15px] leading-[1.6] text-body">
+            <p className="mt-8 max-w-measure text-[18px] leading-[1.6] text-body">
               For founders scaling businesses at the intersection of AI, Web3, and regulated markets. Access tools, templates, peer calls, and direct advisory — before you need the full retainer.
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function MembershipPage() {
                     <Icon size={16} strokeWidth={1.5} />
                   </FeatureTile>
                   <h3 className="mt-6 text-xl font-normal tracking-[-0.02em] text-ink">{item.t}</h3>
-                  <p className="mt-3 text-[15px] leading-[1.6] text-body">{item.d}</p>
+                  <p className="mt-3 text-[18px] leading-[1.6] text-body">{item.d}</p>
                 </Card>
               )
             })}
@@ -116,7 +116,7 @@ export default function MembershipPage() {
               <h2 className="mt-6 max-w-measure text-[clamp(1.75rem,4vw,2.25rem)] font-light leading-[1.1] tracking-[-0.02em] text-body">
                 One membership. <span className="headline-em">Structural momentum at scale</span>.
               </h2>
-              <p className="mt-6 max-w-measure text-[15px] leading-[1.6] text-body">
+              <p className="mt-6 max-w-measure text-[18px] leading-[1.6] text-body">
                 Gain strategic momentum, secure structural safety rails, and minimize legal bills. Prefer a dedicated partner?{' '}
                 <Link href="/#engagements" className="border-b border-line-accent pb-0.5 text-lime-400 transition-colors hover:text-ink">
                   See the retainer engagements
@@ -136,7 +136,7 @@ export default function MembershipPage() {
 
               <ul className="mt-8 space-y-3 border-t border-line-hairline pt-6">
                 {membershipProduct?.features.map((f, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-[13px] leading-snug text-body">
+                  <li key={i} className="flex items-start gap-2.5 text-[14px] leading-snug text-body">
                     <Check size={14} strokeWidth={2} className="mt-0.5 shrink-0 text-lime-400" />
                     <span>{f}</span>
                   </li>
@@ -155,7 +155,7 @@ export default function MembershipPage() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="founder@yourstartup.com"
-                      className="w-full rounded-lg border border-line-hairline surface-flat px-4 py-2.5 text-[15px] text-ink placeholder:text-faint transition-[border-color,box-shadow] duration-200 ease-obsidian-out focus:border-line-accent focus:outline-none focus:ring-[3px] focus:ring-[rgba(204,255,0,.25)]"
+                      className="w-full rounded-lg border border-line-hairline surface-flat px-4 py-2.5 text-[18px] text-ink placeholder:text-faint transition-[border-color,box-shadow] duration-200 ease-obsidian-out focus:border-line-accent focus:outline-none focus:ring-[3px] focus:ring-[rgba(204,255,0,.25)]"
                     />
                   </div>
                   <Button
@@ -175,7 +175,7 @@ export default function MembershipPage() {
               ) : (
                 <div className="mt-8 space-y-4">
                   <div className="rounded-lg border border-line-accent surface-flat p-4">
-                    <p className="mb-1 flex items-center gap-2 text-[13px] font-medium text-lime-400">
+                    <p className="mb-1 flex items-center gap-2 text-[14px] font-medium text-lime-400">
                       <Check size={14} strokeWidth={2} /> Added to the priority waitlist
                     </p>
                     <p className="text-xs text-faint">We&apos;ll notify: {email}</p>

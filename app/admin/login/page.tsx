@@ -62,7 +62,7 @@ export default function AdminLoginPage() {
           <div className="absolute top-0 left-0 w-full h-1 bg-[#D4A574]" />
 
           <div className="text-center mb-8">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[#D4A574] font-bold bg-forest px-3 py-1 border border-[#D4A574]/20 rounded-full inline-block mb-3">
+            <span className="text-[12px] uppercase tracking-[0.2em] text-[#D4A574] font-bold bg-forest px-3 py-1 border border-[#D4A574]/20 rounded-full inline-block mb-3">
               Operator Console
             </span>
             <h1 className="font-serif text-3xl text-cream flex items-center justify-center gap-2">
@@ -75,7 +75,7 @@ export default function AdminLoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-cream/60 font-semibold mb-1.5">
+              <label className="block text-[12px] uppercase tracking-wider text-cream/60 font-semibold mb-1.5">
                 Admin Email
               </label>
               <div className="relative">
@@ -92,7 +92,7 @@ export default function AdminLoginPage() {
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-cream/60 font-semibold mb-1.5">
+              <label className="block text-[12px] uppercase tracking-wider text-cream/60 font-semibold mb-1.5">
                 Admin Security Password
               </label>
               <div className="relative">
