@@ -1,0 +1,398 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "components/media/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Anton|DM Sans|DM Mono|Caveat|Montserrat))/i]",
+        "message": "Font not provided by the design system. Available: Anton, DM Sans, DM Mono, Caveat, Montserrat."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|icon|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, icon, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:outline|solid|accent|ghost)$/]",
+        "message": "<Button> variant must be one of 'outline' | 'solid' | 'accent' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Callout'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|dashed|filled|children|style|key|ref|className|style|children)$/]",
+        "message": "<Callout> doesn't accept that prop. Declared props: tone, dashed, filled, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Callout'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|accent)$/]",
+        "message": "<Callout> tone must be one of 'ink' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Divider'] > JSXAttribute > JSXIdentifier[name!=/^(?:vertical|tone|style|key|ref|className|style|children)$/]",
+        "message": "<Divider> doesn't accept that prop. Declared props: vertical, tone, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Divider'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|accent)$/]",
+        "message": "<Divider> tone must be one of 'ink' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icon'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|size|tone|stroke|style|key|ref|className|style|children)$/]",
+        "message": "<Icon> doesn't accept that prop. Declared props: name, size, tone, stroke, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icon'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:accent|ink|paper)$/]",
+        "message": "<Icon> tone must be one of 'accent' | 'ink' | 'paper'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Index'] > JSXAttribute > JSXIdentifier[name!=/^(?:number|title|tone|rule|style|key|ref|className|style|children)$/]",
+        "message": "<Index> doesn't accept that prop. Declared props: number, title, tone, rule, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Index'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|accent)$/]",
+        "message": "<Index> tone must be one of 'ink' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Index'] > JSXAttribute[name.name='rule'] > Literal[value!=/^(?:bar|wave)$/]",
+        "message": "<Index> rule must be one of 'bar' | 'wave'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logo'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|height|base|style|key|ref|className|style|children)$/]",
+        "message": "<Logo> doesn't accept that prop. Declared props: variant, height, base, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logo'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:mark|stacked|horizontal)$/]",
+        "message": "<Logo> variant must be one of 'mark' | 'stacked' | 'horizontal'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Note'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|size|children|style|key|ref|className|style|children)$/]",
+        "message": "<Note> doesn't accept that prop. Declared props: tone, size, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Note'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|accent)$/]",
+        "message": "<Note> tone must be one of 'ink' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pill'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|filled|underline|children|style|key|ref|className|style|children)$/]",
+        "message": "<Pill> doesn't accept that prop. Declared props: tone, filled, underline, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pill'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|accent)$/]",
+        "message": "<Pill> tone must be one of 'ink' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RisoImage'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|alt|width|height|ink|shape|shapeStyle|offset|blob|children|style|key|ref|className|style|children)$/]",
+        "message": "<RisoImage> doesn't accept that prop. Declared props: src, alt, width, height, ink, shape, shapeStyle, offset, blob, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RisoImage'] > JSXAttribute[name.name='ink'] > Literal[value!=/^(?:ink|accent)$/]",
+        "message": "<RisoImage> ink must be one of 'ink' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RisoImage'] > JSXAttribute[name.name='shape'] > Literal[value!=/^(?:accent|ink|tint|none)$/]",
+        "message": "<RisoImage> shape must be one of 'accent' | 'ink' | 'tint' | 'none'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Rule'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|shape|width|height|fade|style|key|ref|className|style|children)$/]",
+        "message": "<Rule> doesn't accept that prop. Declared props: tone, shape, width, height, fade, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Rule'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|accent)$/]",
+        "message": "<Rule> tone must be one of 'ink' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Rule'] > JSXAttribute[name.name='shape'] > Literal[value!=/^(?:bar|wave)$/]",
+        "message": "<Rule> shape must be one of 'bar' | 'wave'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Star'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|tone|circle|style|key|ref|className|style|children)$/]",
+        "message": "<Star> doesn't accept that prop. Declared props: size, tone, circle, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Star'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|accent)$/]",
+        "message": "<Star> tone must be one of 'ink' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stat'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|unit|label|tone|size|style|key|ref|className|style|children)$/]",
+        "message": "<Stat> doesn't accept that prop. Declared props: value, unit, label, tone, size, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stat'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|accent)$/]",
+        "message": "<Stat> tone must be one of 'ink' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stat'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Stat> size must be one of 'sm' | 'md' | 'lg'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "Callout": {
+        "replaces": []
+      },
+      "Divider": {
+        "replaces": []
+      },
+      "Icon": {
+        "replaces": []
+      },
+      "Index": {
+        "replaces": []
+      },
+      "Logo": {
+        "replaces": []
+      },
+      "Note": {
+        "replaces": []
+      },
+      "Pill": {
+        "replaces": []
+      },
+      "RisoImage": {
+        "replaces": []
+      },
+      "Rule": {
+        "replaces": []
+      },
+      "Star": {
+        "replaces": []
+      },
+      "Stat": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-2",
+      "--accent-tint",
+      "--black",
+      "--border-ink",
+      "--border-soft",
+      "--dash",
+      "--duration-base",
+      "--duration-fast",
+      "--ease-out",
+      "--font-body",
+      "--font-display",
+      "--font-mono",
+      "--font-script",
+      "--font-wordmark",
+      "--grain-opacity",
+      "--grain-size",
+      "--grain-url",
+      "--halftone-accent",
+      "--halftone-ink",
+      "--halftone-size",
+      "--hover-opacity",
+      "--ink",
+      "--ink-2",
+      "--ink-3",
+      "--ink-tint",
+      "--ink-tint-2",
+      "--leading-body",
+      "--leading-display",
+      "--link",
+      "--link-hover",
+      "--overprint",
+      "--paper",
+      "--paper-2",
+      "--paper-3",
+      "--press-scale",
+      "--radius-none",
+      "--radius-pill",
+      "--radius-sm",
+      "--riso-blend",
+      "--riso-filter",
+      "--rule-thick",
+      "--rule-thin",
+      "--shadow-none",
+      "--slide-gutter",
+      "--slide-h",
+      "--slide-margin",
+      "--slide-w",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--status-alert",
+      "--status-ok",
+      "--status-warn",
+      "--surface-accent",
+      "--surface-card",
+      "--surface-inverse",
+      "--surface-page",
+      "--text-accent",
+      "--text-body",
+      "--text-body-lg",
+      "--text-body-sm",
+      "--text-caption",
+      "--text-display",
+      "--text-display-lg",
+      "--text-display-md",
+      "--text-display-sm",
+      "--text-display-xl",
+      "--text-h1",
+      "--text-h2",
+      "--text-h3",
+      "--text-label",
+      "--text-mono",
+      "--text-muted",
+      "--text-on-accent",
+      "--text-on-ink",
+      "--text-script",
+      "--tracking-display",
+      "--tracking-label",
+      "--weight-bold",
+      "--weight-medium",
+      "--weight-regular",
+      "--white"
+    ],
+    "tokenKinds": {
+      "--paper": "color",
+      "--paper-2": "color",
+      "--paper-3": "color",
+      "--ink": "color",
+      "--ink-2": "color",
+      "--ink-3": "color",
+      "--ink-tint": "color",
+      "--ink-tint-2": "color",
+      "--accent": "color",
+      "--accent-2": "color",
+      "--accent-tint": "color",
+      "--overprint": "color",
+      "--black": "color",
+      "--white": "color",
+      "--surface-page": "color",
+      "--surface-card": "color",
+      "--surface-inverse": "color",
+      "--surface-accent": "color",
+      "--text-display": "font",
+      "--text-body": "font",
+      "--text-muted": "font",
+      "--text-on-ink": "font",
+      "--text-on-accent": "font",
+      "--text-accent": "font",
+      "--border-ink": "color",
+      "--border-soft": "color",
+      "--link": "color",
+      "--link-hover": "color",
+      "--status-ok": "color",
+      "--status-warn": "color",
+      "--status-alert": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--font-mono": "font",
+      "--font-script": "font",
+      "--font-wordmark": "font",
+      "--text-display-xl": "font",
+      "--text-display-lg": "font",
+      "--text-display-md": "font",
+      "--text-display-sm": "font",
+      "--leading-display": "font",
+      "--tracking-display": "font",
+      "--text-h1": "font",
+      "--text-h2": "font",
+      "--text-h3": "font",
+      "--text-body-lg": "font",
+      "--text-body-sm": "font",
+      "--text-caption": "font",
+      "--leading-body": "font",
+      "--text-mono": "font",
+      "--text-label": "font",
+      "--tracking-label": "font",
+      "--text-script": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-bold": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--slide-w": "spacing",
+      "--slide-h": "spacing",
+      "--slide-margin": "spacing",
+      "--slide-gutter": "spacing",
+      "--radius-none": "radius",
+      "--radius-sm": "radius",
+      "--radius-pill": "radius",
+      "--rule-thin": "spacing",
+      "--rule-thick": "spacing",
+      "--dash": "other",
+      "--grain-url": "other",
+      "--grain-size": "spacing",
+      "--grain-opacity": "other",
+      "--halftone-ink": "color",
+      "--halftone-accent": "color",
+      "--halftone-size": "spacing",
+      "--riso-filter": "other",
+      "--riso-blend": "other",
+      "--shadow-none": "shadow",
+      "--ease-out": "other",
+      "--duration-fast": "other",
+      "--duration-base": "other",
+      "--hover-opacity": "other",
+      "--press-scale": "other"
+    },
+    "fontFamilies": [
+      "Anton",
+      "Caveat",
+      "DM Mono",
+      "DM Sans",
+      "Montserrat"
+    ]
+  }
+}

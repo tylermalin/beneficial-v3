@@ -1,0 +1,25 @@
+:root{
+/* Paper grain — tile over any surface */
+--grain-url:url("../assets/paper-grain.png"); /* @kind other */
+--grain-size:256px;
+--grain-opacity:0.55; /* @kind other */
+
+/* Halftone dot pattern (green / coral) */
+--halftone-ink:radial-gradient(circle,var(--ink) 1.4px,transparent 1.6px);
+--halftone-accent:radial-gradient(circle,var(--accent) 1.4px,transparent 1.6px);
+--halftone-size:5px 5px;
+
+/* Riso duotone photo treatment */
+--riso-filter:grayscale(1) contrast(1.25) brightness(1.05); /* @kind other */
+--riso-blend:multiply; /* @kind other */
+
+/* No drop shadows in this system — ink sits flat on paper */
+--shadow-none:none;
+
+/* Motion */
+--ease-out:cubic-bezier(0.2,0.8,0.2,1); /* @kind other */
+--duration-fast:120ms; /* @kind other */
+--duration-base:220ms; /* @kind other */
+--hover-opacity:0.72; /* @kind other */
+--press-scale:0.98; /* @kind other */
+}

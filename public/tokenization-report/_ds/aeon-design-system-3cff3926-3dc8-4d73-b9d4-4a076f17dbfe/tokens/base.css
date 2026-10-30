@@ -1,0 +1,5 @@
+html{background:var(--surface-page);color:var(--text-body);font-family:var(--font-body);font-size:var(--text-body);line-height:var(--leading-body);-webkit-font-smoothing:antialiased}
+body{margin:0}
+a{color:var(--link);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{color:var(--link-hover)}
+::selection{background:var(--accent-tint);color:var(--ink)}

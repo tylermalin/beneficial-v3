@@ -1,0 +1,39 @@
+:root{
+--font-display:"Anton","Impact","Arial Narrow",sans-serif;
+--font-body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+--font-mono:"DM Mono","SFMono-Regular",Menlo,monospace;
+--font-script:"Caveat","Bradley Hand",cursive;
+--font-wordmark:"Montserrat","DM Sans",sans-serif;
+
+/* Display — condensed, uppercase, tight */
+--text-display-xl:120px;
+--text-display-lg:88px;
+--text-display-md:64px;
+--text-display-sm:44px;
+--leading-display:0.92;
+--tracking-display:0.005em;
+
+/* Headings (still Anton, smaller) */
+--text-h1:40px;
+--text-h2:32px;
+--text-h3:24px;
+
+/* Body — DM Sans */
+--text-body-lg:22px;
+--text-body:18px;
+--text-body-sm:15px;
+--text-caption:13px;
+--leading-body:1.4;
+
+/* Data & labels */
+--text-mono:15px;
+--text-label:12px;
+--tracking-label:0.14em;
+
+/* Script annotations */
+--text-script:26px;
+
+--weight-regular:400;
+--weight-medium:500;
+--weight-bold:700;
+}

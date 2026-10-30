@@ -1,0 +1,27 @@
+:root{
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:24px;
+--space-6:32px;
+--space-7:48px;
+--space-8:64px;
+--space-9:96px;
+
+/* Slide geometry (1280×720 base) */
+--slide-w:1280px;
+--slide-h:720px;
+--slide-margin:72px;
+--slide-gutter:40px;
+
+/* Radii — pills or square, nothing in between */
+--radius-none:0;
+--radius-sm:4px;
+--radius-pill:999px;
+
+/* Rules */
+--rule-thin:1.5px;
+--rule-thick:3px;
+--dash:6px 6px; /* @kind other */
+}

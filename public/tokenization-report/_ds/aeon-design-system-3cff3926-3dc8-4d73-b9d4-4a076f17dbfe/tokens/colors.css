@@ -1,0 +1,38 @@
+:root{
+/* Base — two-ink risograph palette on paper */
+--paper:#EEEBE3;
+--paper-2:#E3DFD3;
+--paper-3:#D6D1C3;
+--ink:#0B4A2A;            /* AEON green, from the logo */
+--ink-2:#136B3E;
+--ink-3:#3E8A61;
+--ink-tint:#BFD8C8;
+--ink-tint-2:#DDE9E1;
+--accent:#F0553B;         /* coral overprint ink */
+--accent-2:#F7A08D;
+--accent-tint:#FBD9CF;
+--overprint:#4A3F26;      /* where green and coral inks overlap */
+--black:#1A1F1B;
+--white:#FFFFFF;
+
+/* Semantic */
+--surface-page:var(--paper);
+--surface-card:var(--paper-2);
+--surface-inverse:var(--ink);
+--surface-accent:var(--accent);
+--text-display:var(--ink);
+--text-body:var(--ink);
+--text-muted:#4F6B5B;
+--text-on-ink:var(--paper);
+--text-on-accent:var(--paper);
+--text-accent:var(--accent);
+--border-ink:var(--ink);
+--border-soft:var(--paper-3);
+--link:var(--ink);
+--link-hover:var(--accent);
+
+/* Status (used sparingly, in data views) */
+--status-ok:var(--ink-2);
+--status-warn:#D98A2B;
+--status-alert:var(--accent);
+}

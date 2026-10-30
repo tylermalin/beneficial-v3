@@ -64,6 +64,7 @@ export type Product = {
   desc: string
   type: 'playbook' | 'membership' | 'service'
   features: string[]
+  buyUrl?: string
 }
 
 const STORAGE_KEY = 'beneficial_db'
@@ -175,7 +176,7 @@ const defaultProducts: Product[] = [
   {
     slug: 'everyday-legal-ai-playbook',
     title: 'The Everyday Legal AI Playbook',
-    price: 49,
+    price: 6.99,
     desc: 'The comprehensive field guide on how to read contracts, leases, NDAs, and other legal documents using AI models safely and effectively.',
     type: 'playbook',
     features: [
@@ -183,7 +184,8 @@ const defaultProducts: Product[] = [
       'Hallucination and risk mitigation framework',
       'Interactive PDF playbook (42 pages)',
       'Pre-built Custom GPT template instructions'
-    ]
+    ],
+    buyUrl: 'https://www.amazon.com/dp/B0HH42MWCB',
   },
   {
     slug: 'token-launch-diligence-kit',

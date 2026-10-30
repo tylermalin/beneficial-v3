@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+import { Eyebrow } from '@/components/ui/obsidian'
 import { getProducts, Product } from '@/lib/mockData'
 import { recordEvent } from '@/lib/analytics'
 
@@ -12,8 +13,13 @@ export default function ProductsPage() {
   const [waitlistEmail, setWaitlistEmail] = useState<{ [slug: string]: string }>({})
 
   useEffect(() => {
-    setProducts(getProducts().filter(p => p.type === 'playbook'))
+    setProducts(getProducts().filter((p) => p.type === 'playbook'))
     recordEvent('pageview', { section: 'products_waitlist' })
+  }, [])
+
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem('beneficial_product_waitlists') || '[]')
+    setSubmittedSlugs(stored)
   }, [])
 
   const handleJoinWaitlist = (e: React.FormEvent, product: Product) => {
@@ -22,122 +28,122 @@ export default function ProductsPage() {
     if (!email) return
 
     recordEvent('click', { action: 'join_waitlist', product: product.title, email })
-    
-    // Save waitlist in localStorage to persist joined states locally
+
     const stored = JSON.parse(localStorage.getItem('beneficial_product_waitlists') || '[]')
     if (!stored.includes(product.slug)) {
       stored.push(product.slug)
       localStorage.setItem('beneficial_product_waitlists', JSON.stringify(stored))
     }
-    
-    setSubmittedSlugs(prev => [...prev, product.slug])
+    setSubmittedSlugs((prev) => [...prev, product.slug])
   }
 
-  // Load already submitted waitlists from localStorage on mount
-  useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem('beneficial_product_waitlists') || '[]')
-    setSubmittedSlugs(stored)
-  }, [])
-
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="obsidian min-h-screen">
       <Navigation />
 
-      {/* Header Section */}
-      <section className="pt-36 pb-16 sm:pt-44 sm:pb-20 border-b border-rule">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+      {/* Header */}
+      <section className="relative overflow-hidden border-b border-line-hairline pt-[136px] pb-16 sm:pt-40 sm:pb-20">
+        <div aria-hidden className="grid-texture pointer-events-none absolute inset-0" />
+        <div aria-hidden className="veil-top pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-[1200px] px-6 sm:px-8">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-12 bg-sienna" />
-              <span className="text-xs uppercase tracking-[0.22em] text-sienna font-medium">
-                Playbooks &amp; Toolkits (Coming Soon)
-              </span>
-            </div>
-            <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] text-forest leading-[0.98] tracking-[-0.02em] font-normal">
-              Frameworks that compile. <br />
-              <em className="italic font-light text-sienna">Built for builders.</em>
+            <Eyebrow>Playbooks &amp; toolkits · Coming soon</Eyebrow>
+            <h1 className="mt-6 text-[clamp(2.25rem,5.5vw,3.5rem)] font-light leading-[1.05] tracking-[-0.03em] text-body">
+              Frameworks that compile.{' '}
+              <span className="headline-em">Built for builders.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg text-slate-ink leading-relaxed">
-              We are packaging our internal legal engineering playbooks, SAFT checklists, and custom LLM prompt directories. Join the waitlists below to be notified as soon as they release.
+            <p className="mt-8 max-w-measure text-[18px] leading-[1.6] text-body">
+              We&rsquo;re packaging our internal legal-engineering playbooks, SAFT checklists,
+              and custom LLM prompt directories. Join a waitlist below to be notified the
+              moment each one ships.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Product Catalog */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid md:grid-cols-2 gap-10">
+      {/* Catalog */}
+      <section className="bg-canvas py-16 sm:py-20">
+        <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
+          <div className="grid gap-6 md:grid-cols-2">
             {products.map((product) => (
               <div
                 key={product.slug}
-                className="bg-sand-soft border border-rule/30 p-8 sm:p-10 flex flex-col justify-between rounded-sm relative group overflow-hidden"
+                className="surface-flat flex flex-col rounded-lg border border-line-hairline p-8 transition-colors duration-200 hover:border-line-strong sm:p-10"
               >
-                <div className="absolute inset-0 bg-background opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10" />
-                <div className="flex-grow flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-start justify-between mb-6">
-                      <span className="text-xs uppercase tracking-[0.16em] text-sienna font-semibold bg-cream px-3 py-1 border border-rule/20">
-                        PDF Field Guide
-                      </span>
-                      <div className="flex flex-col items-end">
-                        <span className="font-serif text-3xl text-forest font-semibold opacity-50">${product.price}</span>
-                        <span className="text-[12px] uppercase tracking-wider text-sienna font-bold mt-1 bg-sienna/10 px-2 py-0.5 rounded-sm">Coming Soon</span>
-                      </div>
-                    </div>
-                    <h2 className="font-serif text-3xl text-forest mb-4 leading-tight group-hover:text-sienna transition-colors duration-300">
-                      {product.title}
-                    </h2>
-                    <p className="text-sm text-slate-ink leading-relaxed mb-8">
-                      {product.desc}
-                    </p>
-                    <div className="border-t border-rule/30 pt-6 mb-8">
-                      <div className="text-[12px] uppercase tracking-[0.16em] text-slate-soft font-bold mb-3">
-                        What will be included
-                      </div>
-                      <ul className="space-y-2.5">
-                        {product.features.map((feature, i) => (
-                          <li key={i} className="text-xs text-forest flex items-start gap-2.5">
-                            <span className="text-sienna mt-0.5">•</span>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-mono text-xs uppercase tracking-wider text-faint">
+                    PDF field guide
+                  </span>
+                  <div className="flex flex-col items-end">
+                    <span className={`tabular text-2xl font-medium leading-none ${product.buyUrl ? 'text-ink' : 'text-ink/60'}`}>
+                      ${product.price}
+                    </span>
+                    <span className="mt-2 font-mono text-[12px] uppercase tracking-wider text-lime-400">
+                      {product.buyUrl ? 'Available now' : 'Coming soon'}
+                    </span>
                   </div>
+                </div>
 
-                  <div className="mt-8 border-t border-rule/20 pt-6">
-                    {submittedSlugs.includes(product.slug) ? (
-                      <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-sm text-center text-xs font-semibold">
-                        ✓ Joined waitlist. We will notify you when this playbook launches.
-                      </div>
-                    ) : (
-                      <form
-                        onSubmit={(e) => handleJoinWaitlist(e, product)}
-                        className="space-y-2"
-                      >
-                        <label className="block text-[12px] uppercase tracking-wider text-slate-soft font-bold">
-                          Enter Email to join playbook waitlist
-                        </label>
-                        <div className="flex gap-2">
-                          <input
-                            type="email"
-                            required
-                            value={waitlistEmail[product.slug] || ''}
-                            onChange={(e) => setWaitlistEmail(prev => ({ ...prev, [product.slug]: e.target.value }))}
-                            placeholder="founder@yourstartup.com"
-                            className="flex-grow px-4 py-2.5 bg-cream border border-rule/50 focus:outline-none focus:border-sienna rounded-sm text-xs text-forest"
-                          />
-                          <button
-                            type="submit"
-                            className="px-5 py-2.5 bg-forest hover:bg-sienna text-cream text-[12px] uppercase tracking-wider font-bold transition-colors rounded-sm shadow-sm"
-                          >
-                            Join Waitlist
-                          </button>
-                        </div>
-                      </form>
-                    )}
+                <h2 className="mt-6 text-2xl font-light tracking-[-0.01em] text-ink">
+                  {product.title}
+                </h2>
+                <p className="mt-3 text-[14px] leading-[1.6] text-faint">{product.desc}</p>
+
+                <div className="mt-6 border-t border-line-hairline pt-6">
+                  <div className="mb-3 font-mono text-[12px] uppercase tracking-wider text-faint">
+                    What will be included
                   </div>
+                  <ul className="flex flex-col gap-2.5">
+                    {product.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-[14px] text-body">
+                        <span className="mt-0.5 text-lime-400">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-auto border-t border-line-hairline pt-6">
+                  {product.buyUrl ? (
+                    <a
+                      href={product.buyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => recordEvent('click', { action: 'buy_on_amazon', product: product.title })}
+                      className="flex items-center justify-center gap-2 rounded-md bg-lime-400 px-5 py-3 font-mono text-[12px] uppercase tracking-wider font-medium text-canvas transition-[filter] hover:brightness-105"
+                    >
+                      Buy on Amazon · ${product.price}
+                    </a>
+                  ) : submittedSlugs.includes(product.slug) ? (
+                    <div className="flex items-center gap-2 rounded-md border border-line-accent bg-[var(--lime-tint-08)] p-4 text-[14px] text-ink">
+                      <span className="text-lime-400">✓</span>
+                      Joined. We&rsquo;ll notify you when this playbook launches.
+                    </div>
+                  ) : (
+                    <form onSubmit={(e) => handleJoinWaitlist(e, product)} className="flex flex-col gap-2">
+                      <label className="font-mono text-[12px] uppercase tracking-wider text-faint">
+                        Enter email to join the waitlist
+                      </label>
+                      <div className="flex flex-col gap-2 sm:flex-row">
+                        <input
+                          type="email"
+                          required
+                          value={waitlistEmail[product.slug] || ''}
+                          onChange={(e) =>
+                            setWaitlistEmail((prev) => ({ ...prev, [product.slug]: e.target.value }))
+                          }
+                          placeholder="founder@yourstartup.com"
+                          className="flex-grow rounded-md border border-line-hairline bg-section px-4 py-2.5 text-[14px] text-ink placeholder:text-faint focus:border-line-accent focus:outline-none"
+                        />
+                        <button
+                          type="submit"
+                          className="rounded-md bg-lime-400 px-5 py-2.5 font-mono text-[12px] uppercase tracking-wider font-medium text-canvas transition-[filter] hover:brightness-105"
+                        >
+                          Join waitlist
+                        </button>
+                      </div>
+                    </form>
+                  )}
                 </div>
               </div>
             ))}

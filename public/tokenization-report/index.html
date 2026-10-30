@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/aeon-design-system-3cff3926-3dc8-4d73-b9d4-4a076f17dbfe/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/aeon-design-system-3cff3926-3dc8-4d73-b9d4-4a076f17dbfe/tokens/colors.css">
+<link rel="stylesheet" href="_ds/aeon-design-system-3cff3926-3dc8-4d73-b9d4-4a076f17dbfe/tokens/typography.css">
+<link rel="stylesheet" href="_ds/aeon-design-system-3cff3926-3dc8-4d73-b9d4-4a076f17dbfe/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/aeon-design-system-3cff3926-3dc8-4d73-b9d4-4a076f17dbfe/tokens/effects.css">
+<link rel="stylesheet" href="_ds/aeon-design-system-3cff3926-3dc8-4d73-b9d4-4a076f17dbfe/tokens/base.css">
+<link rel="stylesheet" href="_ds/aeon-design-system-3cff3926-3dc8-4d73-b9d4-4a076f17dbfe/styles.css">
+<script src="_ds/aeon-design-system-3cff3926-3dc8-4d73-b9d4-4a076f17dbfe/_ds_bundle.js"></script>
+<style>html,body{margin:0;background:#EEEBE3}a{color:#0B4A2A}a:hover{color:#F0553B}button{font:inherit;color:inherit}</style>
+</helmet>
+<div data-screen-label="Tour" style="min-height:100vh;box-sizing:border-box;padding:40px clamp(20px,4vw,72px) 32px;background:#EEEBE3 url(assets/paper-grain.png);background-size:256px;color:#0B4A2A;font-family:'DM Sans',sans-serif;display:flex;flex-direction:column;gap:36px">
+
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="font-family:Montserrat,sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">Global asset tokenization · Interactive tour</div>
+<div style="font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:34px;line-height:0.92">From plumbing to <span style="color:#F0553B">protocol</span></div>
+</div>
+<div style="display:flex;align-items:center;gap:20px">
+<span style="font-family:'DM Mono',monospace;font-size:15px">{{ counter }}</span>
+<x-import component-from-global-scope="AEONDesignSystem_3cff39.Button" variant="{{ playVariant }}" size="sm" onClick="{{ togglePlay }}" hint-size="120px,34px">{{ playLabel }}</x-import>
+</div>
+</header>
+
+<section style="position:relative;height:96px;user-select:none">
+<sc-for list="{{ segments }}" as="s" hint-placeholder-count="5">
+<button onClick="{{ s.onClick }}" style="position:absolute;top:0;left:{{ s.left }};width:{{ s.width }};height:58px;padding:0;border:0;background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;text-align:left">
+<span style="font-family:Anton,Impact,sans-serif;font-size:20px;line-height:1;padding-left:2px;color:{{ s.labelColor }}">{{ s.n }}</span>
+<span style="display:block;height:10px;margin-right:4px;background:{{ s.bg }};transition:background 220ms cubic-bezier(.2,.8,.2,1)"></span>
+</button>
+</sc-for>
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="12">
+<button onClick="{{ d.onClick }}" title="{{ d.title }}" style="position:absolute;top:53px;left:{{ d.left }};width:20px;height:20px;margin-left:-10px;padding:0;border:0;background:transparent;cursor:pointer;display:grid;place-items:center">
+<span style="display:block;width:{{ d.size }};height:{{ d.size }};border-radius:999px;background:{{ d.bg }};border:1.5px solid #0B4A2A;transition:all 220ms cubic-bezier(.2,.8,.2,1)"></span>
+</button>
+</sc-for>
+<button onClick="{{ goNow }}" style="position:absolute;top:4px;left:{{ nowLeft }};height:76px;padding:0;border:0;background:transparent;cursor:pointer;display:flex;align-items:flex-start;gap:6px">
+<span style="display:block;width:2px;height:76px;background:#F0553B"></span>
+<span style="font-family:'DM Mono',monospace;font-size:12px;color:#F0553B;letter-spacing:0.08em">NOW</span>
+</button>
+<div style="position:absolute;left:0;right:0;top:76px;border-top:1.5px dashed #0B4A2A"></div>
+<sc-for list="{{ ticks }}" as="k" hint-placeholder-count="7">
+<span style="position:absolute;top:82px;left:{{ k.left }};font-family:'DM Mono',monospace;font-size:12px;color:#4F6B5B">{{ k.y }}</span>
+</sc-for>
+</section>
+
+<main style="flex:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(32px,5vw,80px);align-items:start">
+
+<div style="display:flex;flex-direction:column;gap:24px;opacity:{{ fade }};transform:translateY({{ rise }})">
+<div style="display:flex;align-items:baseline;gap:20px">
+<span style="font-family:Anton,Impact,sans-serif;font-size:96px;line-height:0.9;color:#F0553B">{{ era.n }}</span>
+<span style="font-family:'DM Mono',monospace;font-size:16px">{{ era.years }}</span>
+</div>
+<h1 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(48px,5.4vw,92px);line-height:0.92;text-wrap:balance">{{ era.title }}</h1>
+<x-import component-from-global-scope="AEONDesignSystem_3cff39.Rule" width="360" height="12" hint-size="360px,12px"></x-import>
+<p style="margin:0;font-size:21px;line-height:1.4;max-width:560px;text-wrap:pretty">{{ era.lede }}</p>
+<sc-if value="{{ hasMs }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column;border-top:1.5px solid #0B4A2A">
+<sc-for list="{{ msList }}" as="m" hint-placeholder-count="3">
+<button onClick="{{ m.onClick }}" style="display:grid;grid-template-columns:110px minmax(0,1fr) 24px;gap:16px;align-items:start;padding:16px 0;border:0;border-bottom:1.5px dashed #0B4A2A;background:transparent;cursor:pointer;text-align:left">
+<span style="font-family:'DM Mono',monospace;font-size:14px;padding-top:5px;color:{{ m.dateColor }}">{{ m.date }}</span>
+<span style="display:flex;flex-direction:column;gap:8px">
+<span style="font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:26px;line-height:1.02;color:{{ m.titleColor }}">{{ m.title }}</span>
+<sc-if value="{{ m.active }}" hint-placeholder-val="{{ false }}"><span style="font-size:17px;line-height:1.45;max-width:520px;text-wrap:pretty">{{ m.body }}</span></sc-if>
+</span>
+<span style="font-family:'DM Mono',monospace;font-size:18px;color:#F0553B">{{ m.mark }}</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+<div style="font-family:Caveat,cursive;font-size:30px;color:#F0553B">{{ era.note }}</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:24px;background:#E3DFD3;padding:clamp(24px,3vw,44px);opacity:{{ fade }}">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-family:Montserrat,sans-serif;font-size:12px;letter-spacing:0.14em;text-transform:uppercase">{{ hero.kicker }}</div>
+<div style="display:flex;align-items:baseline;gap:8px;color:#F0553B"><span style="font-family:Anton,Impact,sans-serif;font-size:clamp(84px,9vw,150px);line-height:0.9">{{ heroNum }}</span><span style="font-family:'DM Mono',monospace;font-size:34px">{{ hero.unit }}</span></div>
+<p style="margin:0;font-size:18px;line-height:1.4;max-width:520px">{{ hero.caption }}</p>
+</div>
+
+<sc-if value="{{ is1 }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;flex-wrap:wrap;gap:6px">
+<sc-for list="{{ dots161 }}" as="x" hint-placeholder-count="40"><span style="width:14px;height:14px;border-radius:999px;background:{{ x.bg }};transition:background 160ms"></span></sc-for>
+</div>
+<div style="font-family:'DM Mono',monospace;font-size:13px;color:#4F6B5B">Each dot = $100B of projected 2030 opportunity</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is2 }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:22px">
+<sc-for list="{{ bars2 }}" as="b" hint-placeholder-count="2">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:14px"><span>{{ b.label }}</span><span>{{ b.val }}</span></div>
+<div style="height:40px;background:#EEEBE3"><div style="height:100%;width:{{ b.w }};background:{{ b.bg }}"></div></div>
+</div>
+</sc-for>
+<div style="font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:28px">≈ 6× after BlackRock's BUIDL launch</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is3 }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;height:260px;border-bottom:1.5px solid #0B4A2A">
+<sc-for list="{{ bars3 }}" as="b" hint-placeholder-count="2">
+<div style="display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:8px;height:100%">
+<span style="font-family:Anton,Impact,sans-serif;font-size:32px;line-height:1;color:{{ b.tc }}">{{ b.val }}</span>
+<div style="width:100%;height:{{ b.h }};background:{{ b.bg }}"></div>
+</div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;font-family:'DM Mono',monospace;font-size:14px;text-align:center"><span>Jan 2025</span><span>Dec 2025</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is4 }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;height:40px;background:#EEEBE3"><div style="width:{{ split.a }};background:#0B4A2A"></div><div style="width:{{ split.b }};background:#F0553B"></div></div>
+<div style="display:flex;justify-content:space-between;gap:12px;font-family:'DM Mono',monospace;font-size:14px"><span>$305B stablecoins</span><span style="color:#F0553B">$38.8B yield-bearing RWAs</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:grid;grid-template-columns:repeat(10,22px);gap:8px">
+<sc-for list="{{ dots40 }}" as="x" hint-placeholder-count="40"><span style="width:22px;height:22px;border-radius:999px;border:1.5px solid #0B4A2A;box-sizing:border-box;background:{{ x.bg }};transition:background 160ms"></span></sc-for>
+</div>
+<div style="font-family:'DM Mono',monospace;font-size:13px;color:#4F6B5B">40 institutions in DTCC's first live tokenized trades, July 2026</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is5 }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:10px">
+<sc-for list="{{ scenarios }}" as="sc" hint-placeholder-count="2">
+<x-import component-from-global-scope="AEONDesignSystem_3cff39.Button" variant="{{ sc.variant }}" size="sm" onClick="{{ sc.onClick }}" hint-size="140px,34px">{{ sc.label }}</x-import>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;height:240px;border-bottom:1.5px solid #0B4A2A">
+<sc-for list="{{ bars5 }}" as="b" hint-placeholder-count="2">
+<div style="display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:8px;height:100%">
+<span style="font-family:Anton,Impact,sans-serif;font-size:32px;line-height:1;color:{{ b.tc }}">{{ b.val }}</span>
+<div style="width:100%;height:{{ b.h }};background:{{ b.bg }};transition:background 220ms"></div>
+</div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;font-family:'DM Mono',monospace;font-size:14px;text-align:center"><span>McKinsey base case</span><span>BCG optimistic</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is6 }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<x-import component-from-global-scope="AEONDesignSystem_3cff39.Button" variant="{{ scaleAllVariant }}" size="sm" onClick="{{ scaleAll }}" hint-size="140px,34px">All assets</x-import>
+<x-import component-from-global-scope="AEONDesignSystem_3cff39.Button" variant="{{ scaleExVariant }}" size="sm" onClick="{{ scaleEx }}" hint-size="160px,34px">Ex-stablecoins</x-import>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+<button onClick="{{ r.onClick }}" style="display:grid;grid-template-columns:minmax(120px,170px) minmax(0,1fr) 90px;gap:14px;align-items:center;padding:11px 0;border:0;border-bottom:1.5px dashed #D6D1C3;background:transparent;cursor:pointer;text-align:left">
+<span style="font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:19px;line-height:1;color:{{ r.tc }}">{{ r.name }}</span>
+<span style="display:flex;align-items:center;gap:8px"><span style="display:block;height:16px;width:{{ r.w }};background:{{ r.bg }}"></span><span style="font-family:'DM Mono',monospace;font-size:12px;color:#4F6B5B;white-space:nowrap">{{ r.flag }}</span></span>
+<span style="font-family:'DM Mono',monospace;font-size:14px;text-align:right">{{ r.aum }}</span>
+</button>
+</sc-for>
+</div>
+<div style="font-size:16px;line-height:1.4"><b>Key players:</b> {{ selPlayers }}</div>
+</div>
+</sc-if>
+</div>
+</main>
+
+<footer style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border-top:1.5px dashed #0B4A2A;padding-top:20px">
+<div style="display:flex;gap:10px">
+<x-import component-from-global-scope="AEONDesignSystem_3cff39.Button" onClick="{{ prev }}" size="sm" hint-size="90px,34px">← Back</x-import>
+<x-import component-from-global-scope="AEONDesignSystem_3cff39.Button" variant="solid" onClick="{{ next }}" size="sm" hint-size="90px,34px">{{ nextLabel }}</x-import>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="6">
+<button onClick="{{ c.onClick }}" style="padding:6px 14px;border-radius:999px;border:1.5px solid #0B4A2A;background:{{ c.bg }};color:{{ c.fg }};cursor:pointer;font-family:'DM Mono',monospace;font-size:13px">{{ c.label }}</button>
+</sc-for>
+</div>
+<span style="font-family:'DM Mono',monospace;font-size:13px;color:#4F6B5B">← → to step · space to play</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const ERAS = [
+  { n: "01", years: "2018–2022", s: 2018, e: 2023, title: "Foundations & early experiments", lede: "Tokenization starts as a niche experiment in illiquid assets. Liquidity is thin, but the vision is set.", note: "it started small",
+    hero: { kicker: "BCG & ADDX projection, 2022", v: 16.1, d: 1, pre: "$", unit: "T", caption: "Projected business opportunity in asset tokenization by 2030." },
+    ms: [
+      { y: 2018, date: "2018", title: "Birth of security token offerings", body: "Early platforms tokenize residential real estate and private equity. Secondary liquidity stays negligible." },
+      { y: 2021, date: "2021", title: "Regulatory & market milestones", body: "The industry moves toward standardized transparency after early cryptographic proof of reserves. Robinhood goes public." },
+      { y: 2022, date: "2022", title: "The $16.1T forecast", body: "A BCG and ADDX report sizes the 2030 opportunity at $16.1 trillion, giving institutions a number to plan around." }
+    ] },
+  { n: "02", years: "2023–2024", s: 2023, e: 2025, title: "The sovereign pivot", lede: "The market shifts from exotic illiquid assets to the most demanded asset on earth: sovereign debt.", note: "cash moved first",
+    hero: { kicker: "Tokenized Treasury value", v: 15, d: 0, pre: "$", unit: "B+", caption: "By late 2026, up from $2.4B when BlackRock launched BUIDL." },
+    ms: [
+      { y: 2023.3, date: "2023", title: "Treasuries enter the chain", body: "Ondo Finance launches OUSG, a tokenized Treasury ETF wrapper, and sovereign debt becomes the anchor asset." },
+      { y: 2024.2, date: "Mar 2024", title: "The BUIDL moment", body: "BlackRock launches BUIDL on Ethereum. Institutional credibility is validated overnight." },
+      { y: 2024.85, date: "Late 2024", title: "Safe-haven validation", body: "Tokenized Treasuries act as digital safe havens during cross-asset stress, drawing crypto-native treasury inflows." }
+    ] },
+  { n: "03", years: "2025", s: 2025, e: 2026, title: "The institutional boom", lede: "Tokenized equities reach mainstream retail and regulators start integrating rather than resisting.", note: "four times in twelve months",
+    hero: { kicker: "Distributed RWA value, ex-stablecoins", v: 21, d: 0, pre: "$", unit: "B+", caption: "December 2025, up from $5.42B in January. Roughly 4× in a single year." },
+    ms: [
+      { y: 2025.45, date: "Jun 2025", title: "Robinhood's European launch", body: "200+ tokenized stock and ETF tokens go live for EU/EEA users." },
+      { y: 2025.92, date: "Dec 2025", title: "M&A and regulatory integration", body: "Kraken acquires Backed Finance. The SEC issues a no-action letter for the DTC tokenization pilot." }
+    ] },
+  { n: "04", years: "2026", s: 2026, e: 2027, title: "Regulated production at scale", lede: "Pilots become production. Core market infrastructure settles tokenized securities for real.", note: "from pilot to plumbing",
+    hero: { kicker: "On-chain monetary substrate, Sept 2026", v: 340, d: 0, pre: "$", unit: "B+", caption: "Stablecoins plus yield-bearing RWAs. Tokenized equities growing at 17% monthly." },
+    ms: [
+      { y: 2026.5, date: "Jul 2026", title: "DTCC goes live", body: "First live production trades of tokenized blue-chip stocks and Treasuries, with 40 participating institutions." },
+      { y: 2026.85, date: "Late 2026", title: "The agentic economy begins", body: "The x402 payment protocol lets autonomous AI agents transact with tokenized assets natively over HTTP." }
+    ] },
+  { n: "05", years: "2030+", s: 2027, e: 2031, title: "The 2030 horizon", lede: "Tokenization becomes the default global rail: money, securities and identity as interoperable data.", note: "the rail becomes the default",
+    hero: { kicker: "Tokenized market cap, 2030", v: 16, d: 0, pre: "$", unit: "T", caption: "" },
+    ms: [ { y: 2030, date: "2030", title: "Interoperable finance", body: "Money, securities and identity exist as interoperable data on shared rails." } ] },
+  { n: "06", years: "Sept 2026", title: "Where value sits now", lede: "Distributed on-chain AUM by asset class. Switch the scale to see how much stablecoins dominate.", note: "measure what matters", ms: [] }
+];
+const ROWS = [
+  ["Fiat stablecoins", 305.19, 2, "B", "Tether, Circle"],
+  ["Treasuries & MMFs", 13.55, 2, "B", "BlackRock (BUIDL), Ondo, Franklin Templeton"],
+  ["Private credit", 7.96, 2, "B", "Maple Finance, Centrifuge, Apollo"],
+  ["Commodities", 4.85, 2, "B", "Paxos Gold (PAXG), Tether Gold (XAUT)"],
+  ["Equities & ETFs", 2.92, 2, "B", "Robinhood, Kraken, Coinbase, Backed"],
+  ["Real estate", 226.32, 2, "M", "RealT, Lofty, Propy"]
+];
+const pos = y => ((y - 2018) / 13 * 100) + "%";
+const INK = "#0B4A2A", AC = "#F0553B", TINT = "#BFD8C8", PAPER = "#EEEBE3", KEY = "tok-tour-ch";
+
+class Component extends DCLogic {
+  state = { ch: Math.min(5, Math.max(0, +(localStorage.getItem(KEY) || 0))), ms: 0, t: 0, playing: false, scen: 1, all: true, row: 1 };
+  componentDidMount() {
+    this.onKey = e => {
+      if (e.key === "ArrowRight") { this.stop(); this.go(this.state.ch + 1); }
+      else if (e.key === "ArrowLeft") { this.stop(); this.go(this.state.ch - 1); }
+      else if (e.key === " ") { e.preventDefault(); this.togglePlay(); }
+    };
+    window.addEventListener("keydown", this.onKey);
+    this.anim();
+  }
+  componentWillUnmount() { window.removeEventListener("keydown", this.onKey); cancelAnimationFrame(this.raf); clearInterval(this.iv); }
+  anim() {
+    cancelAnimationFrame(this.raf);
+    const s = performance.now();
+    const step = n => { const p = Math.min(1, (n - s) / 1100); this.setState({ t: 1 - Math.pow(1 - p, 3) }); if (p < 1) this.raf = requestAnimationFrame(step); };
+    this.raf = requestAnimationFrame(step);
+  }
+  go(ch, ms = 0) { ch = (ch + 6) % 6; localStorage.setItem(KEY, ch); this.setState({ ch, ms }, () => this.anim()); }
+  stop() { clearInterval(this.iv); this.setState({ playing: false }); }
+  togglePlay() {
+    if (this.state.playing) return this.stop();
+    this.iv = setInterval(() => this.go(this.state.ch + 1), 8000);
+    this.setState({ playing: true });
+  }
+  renderVals() {
+    const { ch, ms, t, playing, scen, all, row } = this.state;
+    const era = ERAS[ch];
+    const nav = (c, m) => () => { this.stop(); this.go(c, m); };
+    const fmt = (v, d) => (v * t).toFixed(d);
+    let hero = era.hero, heroNum;
+    if (ch === 4) { const v = scen ? 16 : 2; hero = { ...hero, caption: scen ? "BCG's optimistic scenario." : "McKinsey's base case." }; heroNum = "$" + fmt(v, 0); }
+    else if (ch === 5) { const r = ROWS[row]; hero = { kicker: r[0], unit: r[3], caption: "Distributed on-chain AUM, September 2026." }; heroNum = "$" + fmt(r[1], r[2]); }
+    else heroNum = hero.pre + fmt(hero.v, hero.d);
+    const dots = [];
+    ERAS.slice(0, 5).forEach((e, ci) => e.ms.forEach((m, mi) => {
+      const act = ci === ch && mi === ms, inEra = ci === ch;
+      dots.push({ left: pos(m.y), title: m.date + " · " + m.title, size: act ? "16px" : "10px", bg: act ? AC : inEra ? INK : PAPER, onClick: nav(ci, mi) });
+    }));
+    const max = all ? 305.19 : 13.55;
+    return {
+      counter: era.n + " / 06",
+      playLabel: playing ? "Pause tour" : "Play tour",
+      playVariant: playing ? "solid" : "outline",
+      togglePlay: () => this.togglePlay(),
+      segments: ERAS.slice(0, 5).map((e, i) => ({ n: e.n, left: pos(e.s), width: ((e.e - e.s) / 13 * 100) + "%", bg: i === ch ? INK : TINT, labelColor: i === ch ? AC : INK, onClick: nav(i, 0) })),
+      dots, nowLeft: pos(2026.7), goNow: nav(5, 0),
+      ticks: [2018, 2020, 2022, 2024, 2026, 2028, 2030].map(y => ({ y, left: pos(y) })),
+      fade: Math.min(1, t * 2.2), rise: (8 * (1 - Math.min(1, t * 2))) + "px",
+      era, hero, heroNum,
+      hasMs: era.ms.length > 0,
+      msList: era.ms.map((m, i) => ({ ...m, active: i === ms, dateColor: i === ms ? AC : INK, titleColor: i === ms ? INK : "#4F6B5B", mark: i === ms ? "●" : "+", onClick: () => { this.stop(); this.setState({ ms: i }); } })),
+      is1: ch === 0, is2: ch === 1, is3: ch === 2, is4: ch === 3, is5: ch === 4, is6: ch === 5,
+      dots161: Array.from({ length: 161 }, (_, i) => ({ bg: i < Math.round(161 * t) ? (i < 20 ? AC : INK) : "#D6D1C3" })),
+      bars2: [{ label: "Mar 2024 · BUIDL launch", val: "$2.4B", w: (16 * t) + "%", bg: TINT }, { label: "Late 2026", val: "$15B+", w: (100 * t) + "%", bg: AC }],
+      bars3: [{ val: "$5.42B", h: (26 * t) + "%", bg: TINT, tc: INK }, { val: "$21B+", h: (100 * t) * 0.82 + "%", bg: INK, tc: AC }],
+      split: { a: (305 / 343.8 * 100 * t) + "%", b: (38.8 / 343.8 * 100 * t) + "%" },
+      dots40: Array.from({ length: 40 }, (_, i) => ({ bg: i < Math.round(40 * t) ? AC : "transparent" })),
+      scenarios: [["Base case · $2T", 0], ["Optimistic · $16T", 1]].map(([label, v]) => ({ label, variant: scen === v ? "solid" : "outline", onClick: () => this.setState({ scen: v }, () => this.anim()) })),
+      bars5: [{ val: "$2T", h: (10 * t) + "%", bg: scen === 0 ? AC : TINT, tc: scen === 0 ? AC : INK }, { val: "$16T", h: (82 * t) + "%", bg: scen === 1 ? AC : TINT, tc: scen === 1 ? AC : INK }],
+      scaleAllVariant: all ? "solid" : "outline", scaleExVariant: all ? "outline" : "solid",
+      scaleAll: () => this.setState({ all: true }, () => this.anim()), scaleEx: () => this.setState({ all: false }, () => this.anim()),
+      rows: ROWS.map((r, i) => {
+        const v = r[3] === "M" ? r[1] / 1000 : r[1], off = v > max;
+        return { name: r[0], aum: "$" + r[1] + r[3], w: (off ? 100 : Math.max(0.6, v / max * 100)) * t * 0.82 + "%", bg: i === row ? AC : INK, tc: i === row ? AC : INK, flag: off ? "off scale" : "", onClick: () => this.setState({ row: i }, () => this.anim()) };
+      }),
+      selPlayers: ROWS[row][4],
+      prev: nav(ch - 1, 0), next: nav(ch + 1, 0), nextLabel: ch === 5 ? "Restart" : "Next →",
+      chapters: ERAS.map((e, i) => ({ label: e.n, bg: i === ch ? INK : "transparent", fg: i === ch ? PAPER : INK, onClick: nav(i, 0) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

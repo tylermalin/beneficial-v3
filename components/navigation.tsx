@@ -8,13 +8,12 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/obsidian"
 
 const navItems = [
-  { href: "/#services", label: "Services" },
-  { href: "/#engagements", label: "Engagements" },
+  { href: "/work-with-us", label: "Work With Us" },
   { href: "/products", label: "Products" },
   { href: "/tokenization", label: "Tokenization" },
   { href: "/membership", label: "Membership" },
   { href: "/resources", label: "Resources" },
-  { href: "/portal", label: "Client portal" },
+  { href: "/portal/login", label: "Portal Login" },
 ]
 
 export function Navigation() {
